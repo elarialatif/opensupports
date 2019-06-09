@@ -2283,7 +2283,8 @@ th {
 .table>tfoot>tr>td {
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top
+    vertical-align: top;
+    text-align: left;
 }
 
 /* line 1478, src/scss/_reset.scss */
@@ -14061,7 +14062,7 @@ body {
         box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
     }
 }
-/* ===================================== */
+/* =================Login Modal==================== */
 #loginModal .modal-backdrop {
     z-index: unset;
 }
@@ -14083,4 +14084,25 @@ body {
 #loginModal .login-widget__inputs{
     width: 80%;
     margin: auto;
+}
+/* ===============Dashboard================ */
+.menu__list-item a,
+.menu__list-item li {
+    color: #8D8D8D;
+    padding: 0 !important;
+    border: none !important;
+    margin-right: 0 !important;
+    background-color: white !important;
+}
+.menu__list-item.active ,
+.menu__list-item.active a ,
+.nav-tabs > li:hover,
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    background-color: #20B8c5 !important;
+    color: white !important;
+}
+.nav-tabs > li {
+    float: none;
+    margin-bottom: 0;
 }
