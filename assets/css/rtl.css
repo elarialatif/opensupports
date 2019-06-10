@@ -46,3 +46,16 @@ html[dir=rtl] .col-md-4.main-home-page__login-widget {
 html[dir=rtl] .form-field.form-field_checkbox.login-widget__input {
     float: right;
 }
+html[dir=rtl] .main-layout-header__user-name {
+    float: left;
+}
+html[dir=rtl] .menu__icon {
+    margin-right: auto;
+    margin-left: 8px;
+}
+html[dir=rtl] .table__cell {
+    text-align: center;
+}
+html[dir=rtl] .table__header-column {
+    text-align: center;
+}
