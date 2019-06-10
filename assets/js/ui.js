@@ -1,5 +1,7 @@
 $(document).ready(function () {
     console.log("ready!");
+    jQuery("html[dir=rtl]").find("head").append('<link rel="stylesheet" href="assets/css/rtl.css">', '<link rel="stylesheet" href="assets/css/responsive-rtl.css">');
+    // Error mssg
     $('#btn-validate').click(function () {
         var $captcha = $('#recaptcha'),
             response = grecaptcha.getResponse();
