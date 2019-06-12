@@ -1,0 +1,61 @@
+html[dir=rtl] * {
+    direction: rtl;
+}
+html[dir=rtl] .header__title,
+html[dir=rtl] .header__description {
+    text-align: right;
+}
+html[dir=rtl] [class*="col-"] {
+    float: right;
+}
+html[dir=rtl] .main-layout-footer__powered {
+    float: left;
+    padding-left: 20px;
+    padding-right: auto;
+}
+html[dir=rtl] .main-layout-footer__os-link {
+    float: left;
+    padding-right: 0.5rem;
+}
+html[dir=rtl] .main-layout-header__languages {
+    float: left;
+}
+html[dir=rtl] .drop-down__current-item-icon {
+    margin-left: 8px;
+    margin-right: auto;
+}
+html[dir=rtl] #loginModal .close {
+    float: left;
+}
+html[dir=rtl] #loginModal .form-field.login-widget__input{
+    text-align: right;
+}
+html[dir=rtl] .form-field_checkbox .form-field__label {
+    margin-left: auto;
+    margin-right: 10px;
+}
+html[dir=rtl] #loginModal .modal-footer {
+    text-align: left;
+}
+html[dir=rtl] #loginModal .modal-footer .btn.btn-default {
+    float: left;
+}
+html[dir=rtl] .col-md-4.main-home-page__login-widget {
+    text-align: left;
+}
+html[dir=rtl] .form-field.form-field_checkbox.login-widget__input {
+    float: right;
+}
+html[dir=rtl] .main-layout-header__user-name {
+    float: left;
+}
+html[dir=rtl] .menu__icon {
+    margin-right: auto;
+    margin-left: 8px;
+}
+html[dir=rtl] .table__cell {
+    text-align: center;
+}
+html[dir=rtl] .table__header-column {
+    text-align: center;
+}

@@ -1,0 +1,276 @@
+<!doctype html>
+<html class="no-js" lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <title>OpenSupports</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="assets/img/favIcon.png">
+</head>
+
+<body>
+    <div id="app">
+        <div data-reactroot="" class="application application_user-system">
+            <div class="application__content">
+                <div class="main-layout">
+                    <div class="main-layout-header">
+                        <div class="main-layout-header__login-links">
+                            <button class="button button_clean button_large" data-toggle="modal"
+                                data-target="#loginModal">Log in</button>
+                            <!-- Login Modal -->
+                            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-body">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">×</button>
+                                                <h4 class="modal-title" id="myModalLabel">Log in</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row main-home-page__login-widget">
+                                                    <div class="">
+                                                        <div title="Log in" style="transform: rotateY(0deg);">
+                                                            
+                                                            <form class="form login-widget__form">
+                                                                <div class="login-widget__inputs"><label
+                                                                        class="form-field login-widget__input"><span
+                                                                            class="form-field__label"></span><span
+                                                                            class="input input_small"><input type="text"
+                                                                                name="email" placeholder="email"
+                                                                                aria-required="true" class="input__text"
+                                                                                value=""></span></label><label
+                                                                        class="form-field login-widget__input"><span
+                                                                            class="form-field__label"></span><span
+                                                                            class="input input_small"><input
+                                                                                type="password" name="password"
+                                                                                placeholder="password"
+                                                                                aria-required="true" class="input__text"
+                                                                                value=""></span></label><label
+                                                                        class="form-field form-field_checkbox login-widget__input"><span
+                                                                            class="checkbox"><span aria-checked="false"
+                                                                                class="checkbox__icon" role="checkbox"
+                                                                                tabindex="0"><i
+                                                                                    class="fa fa-square fa-lg"></i></span><input
+                                                                                type="checkbox" name="remember"
+                                                                                aria-hidden="true" class="checkbox__box"
+                                                                                value="on"></span><span
+                                                                            class="form-field__label">
+                                                                            <!-- react-text: 201 -->Remember me
+                                                                            <!-- /react-text --></span></label></div>
+                                                            </form><button
+                                                                class="button button_link button_large login-widget__forgot-password">Forgot
+                                                                your password?</button>
+                                                        </div>
+                                                        <div class="widget password-recovery__content undefined widget-transition--widget"
+                                                            title="Recover Password"
+                                                            style="transform: rotateY(-180deg);">
+                                                            <h2 class="widget--title">Recover Password</h2>
+                                                            <form class="form login-widget__form">
+                                                                <div class="password-recovery__inputs"><label
+                                                                        class="form-field password-recovery__input"><span
+                                                                            class="form-field__label"></span><span
+                                                                            class="input input_small"><input type="text"
+                                                                                name="email" placeholder="email"
+                                                                                aria-required="true" class="input__text"
+                                                                                value=""></span></label></div>
+                                                                <div class="password-recovery__submit-button"><button
+                                                                        class="button button_primary button_large submit-button">Recover
+                                                                        Password</button></div>
+                                                            </form><button
+                                                                class="button button_link button_large password-recovery__forgot-password">Back
+                                                                to login form</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary" onclick="location.href='dashboard.html'">Log in</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- #Login Modal -->
+                        </div>
+                        <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
+                            <div aria-expanded="false" aria-autocomplete="list" aria-owns="drop-down-menu_1"
+                                aria-activedescendant="drop-down-menu_1__0" class="drop-down__current-item"
+                                role="combobox" tabindex="0">
+                                <div><img class="drop-down__current-item-icon"
+                                        src="https://www.opensupports.com/demos/demo1/images/icons/us.png"
+                                        aria-hidden="true"><!-- react-text: 12 -->English
+                                    <!-- /react-text -->
+                                </div>
+                            </div>
+                            <div class="drop-down__list-container" style="opacity: 0; transform: translateY(20px);">
+                                <div class="menu undefined">
+                                    <ul id="drop-down-menu_1" role="listbox" class="menu__list">
+                                        <li id="drop-down-menu_1__0" class="menu__list-item menu__list-item_selected"
+                                            role="option"><img class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/us.png"
+                                                aria-hidden="true"><!-- react-text: 18 -->English
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__1" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/es.png"
+                                                aria-hidden="true"><!-- react-text: 21 -->Spanish
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__2" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/de.png"
+                                                aria-hidden="true"><!-- react-text: 24 -->German
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__3" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/fr.png"
+                                                aria-hidden="true"><!-- react-text: 27 -->French
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__4" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/pt.png"
+                                                aria-hidden="true"><!-- react-text: 30 -->Portuguese
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__5" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/jp.png"
+                                                aria-hidden="true"><!-- react-text: 33 -->Japanese
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__6" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/ru.png"
+                                                aria-hidden="true"><!-- react-text: 36 -->Russian
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__7" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/cn.png"
+                                                aria-hidden="true"><!-- react-text: 39 -->Chinese
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__8" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/in.png"
+                                                aria-hidden="true"><!-- react-text: 42 -->Hindi
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__9" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/tr.png"
+                                                aria-hidden="true"><!-- react-text: 45 -->Turkish
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__10" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/it.png"
+                                                aria-hidden="true"><!-- react-text: 48 -->Italian
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__11" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/br.png"
+                                                aria-hidden="true"><!-- react-text: 51 -->Portuguese(BR)
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__12" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/gr.png"
+                                                aria-hidden="true"><!-- react-text: 54 -->Greek
+                                            <!-- /react-text -->
+                                        </li>
+                                        <li id="drop-down-menu_1__13" class="menu__list-item" role="option"><img
+                                                class="menu__icon"
+                                                src="https://www.opensupports.com/demos/demo1/images/icons/nl.png"
+                                                aria-hidden="true"><!-- react-text: 57 -->Dutch
+                                            <!-- /react-text -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-layout--content row">
+                        <div class="main-home-page">
+                            <div class="main-home-page__portal-wrapper col-md-12">
+                                <div class="widget main-home-page-portal" title="">
+                                    <div class="main-home-page-portal__title">
+                                        <div class="header">
+                                            <h2 class="header__title">Galactic Senate</h2>
+                                            <div class="header__description">Welcome to our support center. You can
+                                                contact us through a tickets system. Your tickets will be answered by
+                                                our staff.</div>
+                                        </div>
+                                    </div>
+                                    <div class="main-home-page-portal__cards">
+                                        <div class="main-home-page-portal__card col-md-4">
+                                            <div class="card card_red">
+                                                <div class="card__icon"><span class="fa fa-ticket fa-5x undefined"
+                                                        aria-hidden="true"></span></div>
+                                                <div class="card__title">Create Tickets</div>
+                                                <div class="card__description">Send ticket through our support center
+                                                    and get response of your doubts, suggestions and issues.</div>
+                                            </div>
+                                        </div>
+                                        <div class="main-home-page-portal__card col-md-4">
+                                            <div class="card card_green">
+                                                <div class="card__icon"><span class="fa fa-hand-o-left fa-5x undefined"
+                                                        aria-hidden="true"></span></div>
+                                                <div class="card__title">Previous Tickets </div>
+                                                <div class="card__description">All your tickets are stored in your
+                                                    account's profile. Keep track of all your tickets you send to our
+                                                    staff team.</div>
+                                            </div>
+                                        </div>
+                                        <div class="main-home-page-portal__card col-md-4">
+                                            <div class="card card_blue">
+                                                <div class="card__icon"><span class="fa fa-question fa-5x undefined"
+                                                        aria-hidden="true"></span></div>
+                                                <div class="card__title">Help</div>
+                                                <div class="card__description">Take a look to our articles about common
+                                                    issues, guides and documentation.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-layout-footer">
+                        <div class="main-layout-footer__powered">
+                            <!-- react-text: 122 -->Powered by
+                            <!-- /react-text --><a class="main-layout-footer__os-link"
+                                href="http://www.opensupports.com/" target="_blank">AlmotahidaEducationGroup</a><span>
+                                <!-- react-text: 125 -->
+                                <!-- /react-text --></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-container"></div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/recaptcha__en.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/ui.js"></script>
+    <!-- #Scripts -->
+</body>
+
+</html>
