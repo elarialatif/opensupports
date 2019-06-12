@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div class="container">
+
+    <br>
+    <br>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Code</th>
+            <th>title</th>
+            <th>الحالة</th>
+            <th>department</th>
+            <th>product</th>
+
+            <th>Date</th>
+
+        </tr>
+        </thead>
+        <tbody id="productTableBody">
+        {{#each tickets as |ticketvalue ticketkey|}}
+            <tr>
+                <td><a href="/admin/ticket/view/{{id}}">{{id}}</a></td>
+                <td>{{title}}</td>
+                <td>{{status}}</td>
+                <td>{{department}}</td>
+                <td>{{product.name}}</td>
+                <td>{{time date 'D MMMM  YYYY'}}</td>
+
+            </tr>
+        {{/each}}
+        </tbody>
+
+    </table>
+
+
+</div>

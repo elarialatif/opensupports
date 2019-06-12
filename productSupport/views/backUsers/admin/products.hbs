@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<div class="container">
+
+    <button type="button" class="btn btn-success " data-toggle="modal" data-target="#addModal">add Product</button>
+
+
+    <!-- Modal -->
+    <div id="addModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <label for="productName"> Name </label>
+                    <input id="productName" name="name" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" id="addProduct" class="btn btn-success">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>CreatedBY</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="productTableBody">
+        {{#each products}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>admin</td>
+                <td>{{time date 'D MMMM  YYYY'}}</td>
+                <td><a href="/admin/products/delete/{{id}}" class="btn btn-danger">مسح</a>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editModal{{id}}">تعديل
+                    </button>
+                    <div id="editModal{{id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <form method="post" action="/admin/products/update/{{id}}">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">add Product</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="name"> Name </label>
+                                    <input id="name" name="name" class="form-control" value="{{name}}">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+
+    </table>
+    <script>
+        $("#addProduct").click(function () {
+            var name = $('#productName').val();
+            $.ajax({
+                type: 'post',
+                url: "/admin/products/create",
+                data: {
+                    name: name,
+                },
+                success: function (data) {
+                    $('#productTableBody').append('<tr style="background-color:#09090926">' +
+                            '<td>' + data._id + '</td>' +
+                            '<td>' + data.name + '</td>' +
+                            '<td>' + 'admin' + '</td>' +
+                            '<td>' + '{{time data.date  'D MMMM  YYYY'}}' + '</td>' +
+                            '<td>' + '<a href="products/delete/' + data._id + '" class="btn btn-danger">مسح</a>' + '</td>' +
+                            '</tr>');
+                    $('#addModal').modal('toggle');
+                }
+            });
+        });
+
+    </script>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    {{ticket.title}}
+</div>
+<div>
+    <select name="department">
+
+        {{#each departments }}
+            <option>{{this}}</option>
+        {{/each}}
+    </select>
+</div>
+<div>
+    {{ticket.product.name}}
+</div>
+<div>
+    {{ticket.status}}
+</div>
+<div>
+    {{{ticket.content}}}
+</div>
