@@ -14152,3 +14152,45 @@ body {
     width: 40%;
     margin-bottom: 1rem;
 }
+.dataTables_length {
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: 0.3rem;
+}
+.dataTables_filter{
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.dataTables_filter input {
+    width: 400px;
+}
+.paginate_button.next,
+.paginate_button.previous {
+    background-color: #20b8c5;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+.paginate_button.previous {
+    margin-right: 0.5rem;
+}
+.paginate_button {
+    background-color: white;
+    color: #8D8D8D;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+.paginate_button.current{
+    background-color: #E7E7E7;
+    color: #414A59;
+    
+}
+.dataTables_info {
+    margin: 1.5rem 0;
+}

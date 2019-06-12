@@ -20,7 +20,7 @@ router.get('/Ticket/create', function (req, res, next) {
 });
 router.post('/Ticket/create', function (req, res, next) {
     ticketController.addTicket(req.body.email, req.body.name, req.body.title, req.body.content, req.body.product, req.body.department);
-    res.redirect('/productSupport/Ticket/create');
+    res.redirect('back');
     // reCAPTCHA.validateRequest(req)
     //     .then(function () {
     //         // validated and secure
