@@ -1,21 +1,23 @@
 {{>frontUsers/head}}
+
 <body>
 
-<!-- DEFINE A 'header' SECTION -->
-{{>frontUsers/header}}
-<div id="app">
-    <div data-reactroot="" class="application application_user-system">
-        <div class="application__content">
-            <div class="main-layout">
-    {{{body}}}
+    <!-- DEFINE A 'header' SECTION -->
+    {{>frontUsers/header}}
+    <div id="app">
+        <div data-reactroot="" class="application application_user-system">
+            <div class="application__content">
+                <div class="main-layout">
+                    {{{body}}}
+
+                </div>
                 {{>frontUsers/footer}}
-</div>
+            </div>
 
-</div>
-
+        </div>
     </div>
-</div>
-<!-- DEFINE A 'footer' SECTION -->
+    <!-- DEFINE A 'footer' SECTION -->
 
 </body>
+
 </html>
