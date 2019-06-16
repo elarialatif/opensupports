@@ -14276,3 +14276,15 @@ body {
 .dashboard-list-articles-page .content__help .account_logo span {
     text-transform: uppercase;
 }
+.flag {
+    width: 16px;
+    height: 11px;
+}
+.drop-down__list-container {
+    opacity: 0;
+    transform: translateY(20px);
+}
+ .drop-down__list-container.active{
+    opacity: 1;
+    transform: translateY(0px);
+}
