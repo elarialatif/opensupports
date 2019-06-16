@@ -14149,6 +14149,88 @@ body {
     display: block;
     margin: auto;
     text-align: center;
-    width: 40%;
+    width: 30%;
     margin-bottom: 1rem;
+}
+.dataTables_length {
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: 0.3rem;
+}
+.dataTables_filter{
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.dataTables_filter input {
+    width: 400px;
+}
+.paginate_button.next,
+.paginate_button.previous {
+    background-color: #20b8c5;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+.paginate_button.previous {
+    margin-right: 0.5rem;
+}
+.paginate_button {
+    background-color: white;
+    color: #8D8D8D;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+.paginate_button.current{
+    background-color: #E7E7E7;
+    color: #414A59;
+    
+}
+.dataTables_info {
+    margin: 1.5rem 0;
+}
+.__DeprtDropDown,
+.__ProdDropDown {
+    background-color: #eee;
+    border-radius: 4px 4px 0 0;
+    color: #4D4D4D;
+    padding: 6px;
+    border: 0;
+}
+.__DeprtDropDown select,
+.__ProdDropDown select {
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+    width: 100%;
+    appearance: none; 
+    /* this is must */ 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+}
+.__DeprtDropDown select:focus,
+.__ProdDropDown select:focus {
+    outline: none;
+    border: none;
+}
+.__DeprtDropDown select option.dropOption,
+.__ProdDropDown select option.dropOption {
+    background-color: white;
+    color: #8D8D8D;
+    margin-top: 1rem;
+    padding: 8px;
+    list-style-type: none;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+.__DeprtDropDown select option.dropOption:hover,
+.__ProdDropDown select option.dropOption:hover {
+    background-color: #d55;
+    color: white;
 }
