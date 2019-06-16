@@ -14237,3 +14237,19 @@ body {
 .select.input__text {
     width: 40% !important;
 }
+.modal-backdrop.in {
+    opacity: 0;
+    z-index: unset;
+}
+.modal-open .modal {
+    padding: 20px;
+}
+.modal-title {
+    color: #000;
+    font-weight: bold;
+}
+.myTickets .modal label,
+.myTickets .modal input,
+.myTickets .modal select {
+    color: #000;
+}
