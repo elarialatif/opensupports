@@ -168,6 +168,79 @@
                                                 <div class="drop-down__list-container">
 
                                                 </div>
+<<<<<<< HEAD
+                                                <form class="form" action="/productSupport/Ticket/create" method="post">
+                                                    <label class="form-field">
+                                                            <span class="form-field__label">
+                                                                Name
+                                                            </span>
+                                                        <span class="input input_large">
+                                                                <input type="text" name="name" value=""
+                                                                       aria-required="true" class="input__text">
+                                                            </span>
+                                                    </label>
+                                                    <label class="form-field">
+                                                            <span class="form-field__label">
+                                                                Email
+                                                            </span>
+                                                        <span class="input input_large">
+                                                                <input type="email" name="email" value=""
+                                                                       aria-required="true" class="input__text">
+                                                            </span>
+                                                    </label>
+                                                    <label class="form-field">
+                                                            <span class="form-field__label">
+                                                                Title of the Problem
+                                                            </span>
+                                                        <span class="input input_large">
+                                                                <input type="text" name="title" value=""
+                                                                       aria-required="true" class="input__text">
+                                                            </span>
+                                                    </label>
+                                                    <div class="row">
+                                                        <label class="form-field form-field_select col-md-5">
+                                                            <input type="checkbox" id="buttonDeprtDropDown">
+                                                            <span class="form-field__label" for="button">
+                                                                    Department
+                                                                </span>
+                                                            <div
+                                                                    class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
+
+
+                                                                <select name="department" id="department">
+                                                                    {{#each departments}}
+                                                                <option value="{{this}}">{{this}}</option>
+                                                                    {{/each}}
+                                                                </select>
+                                                            </div>
+                                                        </label>
+                                                        <label class="form-field form-field_select col-md-5">
+                                                            <input type="checkbox" id="buttonProdDropDown">
+                                                            <span class="form-field__label">
+                                                                    Product
+                                                                </span>
+                                                            <div
+                                                                    class="drop-down drop-down_closed drop-down_medium language-selector __ProdDropDown">
+                                                                <select name="product" id="parentCat">
+                                                                    {{#each products}}
+                                                                <option value="{{id}}">{{name}}</option>
+                                                                    {{/each}}
+                                                                </select>
+                                                                <div class="drop-down__list-container">
+
+                                                                </div>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-field">
+                                                            <span class="form-field__label">
+                                                                Problem Description
+                                                            </span>
+                                                        <div class="text-editor">
+                                                            <div class="quill text-editor__editor">
+
+                                                                        <textarea id="editor" name="content" rows="50">
+=======
                                             </div>
                                         </label>
                                     </div>
@@ -179,6 +252,7 @@
                                             <div class="quill text-editor__editor">
 
                                                 <textarea id="editor" name="content">
+>>>>>>> d971c95da37a3ddf7df4ed012c6aa620d86dd4b7
                                                                             Describe Here!!
                                                                         </textarea>
 
@@ -205,12 +279,33 @@
 </div>
 
 
-    <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('editor', {
-            filebrowserUploadUrl: '/uploader/upload'
-        });
-    </script>
+git add
+                    <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
+        <script>
+            ClassicEditor
+                    .create( document.querySelector( '#editor' ) ,{
+                        cloudServices: {
+                            tokenUrl: 'https://40261.cke-cs.com/token/dev/LG6pV20LrNybxoeXFYQq1jGPHwQwHmk15LTDhUYIqnzyQ6h0iA0Y1JPaLuL2',
+                            uploadUrl: 'https://40261.cke-cs.com/easyimage/upload/'
+                        }
+                    })
+                    .then( editor => {
+                        console.log( editor );
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+        </script>
+
+
+
+    <!--<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>-->
+    <!--<script>-->
+        <!--CKEDITOR.replace('editor', {-->
+            <!--filebrowserUploadUrl: '/uploader/upload'-->
+        <!--});-->
+    <!--</script>-->
+
 
 
 
