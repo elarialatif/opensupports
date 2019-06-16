@@ -2,101 +2,283 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-<div class="container">
 
-    <br>
-    <br>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Code</th>
-            <th>title</th>
-            <th>الحالة</th>
-            <th>department</th>
-            <th>product</th>
 
-            <th>Date</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody id="productTableBody">
-        {{#each tickets as |ticketvalue ticketkey|}}
-            <tr>
-                <td>{{id}}</td>
-                <td>{{title}}</td>
-                <td>{{status}}</td>
-                <td>{{department}}</td>
-                <td>{{product.name}}</td>
-                <td>{{time date 'D MMMM  YYYY'}}</td>
-                <td><a href="/productSupport/Ticket/delete/{{id}}" class="btn btn-danger">مسح</a>
-                {{#ifEquals status 'open'}}
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editModal{{id}}">تعديل
-                    </button>
-                    <div id="editModal{{id}}" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <form method="post" action="/productSupport/Ticket/update/{{id}}">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">add Product</h4>
-                                    </div>
-
-                                        <div class="form-group">
-                                            <label for="email">Email address:</label>
-                                            <input type="email" class="form-control" id="email" name="email" value="{{email}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="name">Name:</label>
-                                            <input type="text" class="form-control" id="name" name="name" value="{{userName}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="title">Title:</label>
-                                            <input type="text" class="form-control" id="title" name="title" value="{{title}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="parentCat">Product:</label>
-                                            <select name="product" id="parentCat">
-                                                {{#each ../products}}
-                                                    <option {{#ifEquals ticketvalue.product.id this.id }} selected  {{/ifEquals}} value="{{id}}">{{name}}</option>
-                                                {{/each}}
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="department">Departments:</label>
-                                            <select name="department" id="department">
-                                                {{#each ../departments}}
-                                                    <option {{#ifEquals ticketvalue.department this }} selected  {{/ifEquals}}  value="{{this}}">{{this}} </option>
-                                                {{/each}}
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="editor{{id}}">Content:</label>
-                                            <textarea type="text" class="form-control editor"  id="editor{{id}}" name="content"> {{content}} </textarea>
-                                        </div>
+<div class="main-layout-header">
+    <div class="main-layout-header__login-links">
+        Welcome,
+        <span class="main-layout-header__user-name">
+            Ahmed
+        </span>
+    </div>
+    <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
+        <div aria-expanded="false" aria-autocomplete="list" aria-owns="drop-down-menu_1"
+            aria-activedescendant="drop-down-menu_1__0" class="drop-down__current-item" role="combobox" tabindex="0">
+            <div>
+                <img class="drop-down__current-item-icon"
+                    src="https://www.opensupports.com/demos/demo1/images/icons/us.png" aria-hidden="true">English
+            </div>
+        </div>
+        <div class="drop-down__list-container" style="opacity: 0; transform: translateY(20px);">
+            <div class="menu undefined">
+                <ul id="drop-down-menu_1" role="listbox" class="menu__list">
+                    <li id="drop-down-menu_1__0" class="menu__list-item menu__list-item_selected" role="option"><img
+                            class="menu__icon" src="https://www.opensupports.com/demos/demo1/images/icons/us.png"
+                            aria-hidden="true"><!-- react-text: 21 -->English
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__1" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/es.png" aria-hidden="true">
+                        <!-- react-text: 24 -->Spanish
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__2" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/de.png" aria-hidden="true">
+                        <!-- react-text: 27 -->German
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__3" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/fr.png" aria-hidden="true">
+                        <!-- react-text: 30 -->French
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__4" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/pt.png" aria-hidden="true">
+                        <!-- react-text: 33 -->Portuguese
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__5" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/jp.png" aria-hidden="true">
+                        <!-- react-text: 36 -->Japanese
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__6" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/ru.png" aria-hidden="true">
+                        <!-- react-text: 39 -->Russian
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__7" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/cn.png" aria-hidden="true">
+                        <!-- react-text: 42 -->Chinese
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__8" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/in.png" aria-hidden="true">
+                        <!-- react-text: 45 -->Hindi
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__9" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/tr.png" aria-hidden="true">
+                        <!-- react-text: 48 -->Turkish
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__10" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/it.png" aria-hidden="true">
+                        <!-- react-text: 51 -->Italian
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__11" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/br.png" aria-hidden="true">
+                        <!-- react-text: 54 -->Portuguese(BR)
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__12" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/gr.png" aria-hidden="true">
+                        <!-- react-text: 57 -->Greek
+                        <!-- /react-text -->
+                    </li>
+                    <li id="drop-down-menu_1__13" class="menu__list-item" role="option"><img class="menu__icon"
+                            src="https://www.opensupports.com/demos/demo1/images/icons/nl.png" aria-hidden="true">
+                        <!-- react-text: 60 -->Dutch
+                        <!-- /react-text -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Save</button>
-                                    </div>
+<div class="main-layout--content row">
+    <div class="myTickets">
+        <div class="myTickets__content col-md-12">
+            <div class="widget col-md-12" title="">
+                <div class="ticket-list">
+                    <div class="ticket-list__filters"></div>
+                    <div class="table__wrapper">
+                        <div id="tickets_wrapper" class="dataTables_wrapper no-footer">
+                            <div class="dataTables_length" id="tickets_length"><label>Show <select name="tickets_length"
+                                        aria-controls="tickets" class="">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select> entries</label></div>
+                            <div id="tickets_filter" class="dataTables_filter"><label>Search:
+                                <input type="search"
+                                        class="input__text" placeholder="" aria-controls="tickets"></label></div>
+                            <table class="table table-responsive dataTable no-footer" id="tickets" role="grid"
+                                aria-describedby="tickets_info">
+                                <thead>
+                                    <tr class="table__header" role="row">
+                                        <th class="table__header-column ticket-list__number col-md-1 sorting_asc"
+                                            tabindex="0" aria-controls="tickets" rowspan="1" colspan="1"
+                                            aria-sort="ascending" aria-label="
+                                                            Number
+                                                        : activate to sort column descending" style="width: 185px;">
+                                            Number
+                                        </th>
+                                        <th class="table__header-column ticket-list__title col-md-2 sorting"
+                                            tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Title
+                                                        : activate to sort column ascending" style="width: 78px;">
+                                            Title
+                                        </th>
+                                        <th class="table__header-column ticket-list__product col-md-1 sorting"
+                                            tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Product
+                                                        : activate to sort column ascending" style="width: 127px;">
+                                            Product
+                                        </th>
+                                        <th class="table__header-column ticket-list__department col-md-1 sorting"
+                                            tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Department
+                                                        : activate to sort column ascending" style="width: 136px;">
+                                            Department
+                                        </th>
+                                        <th class="table__header-column ticket-list__status col-md-1 sorting"
+                                            tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Status
+                                                        : activate to sort column ascending" style="width: 44px;">
+                                            Status
+                                        </th>
+                                        <th class="table__header-column ticket-list__date col-md-2 sorting" tabindex="0"
+                                            aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Date
+                                                        : activate to sort column ascending" style="width: 81px;">
+                                            Date
+                                        </th>
+                                        <th class="table__header-column ticket-list__action col-md-4 sorting" tabindex="0"
+                                            aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Action
+                                                        : activate to sort column ascending" style="width: 81px;">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productTableBody">
+                                    {{#each tickets as |ticketvalue ticketkey|}}
+                                        <tr class="table__row odd" role="row">
+                                            <td class="table__cell ticket-list__number col-md-1 sorting_1">
+                                                <a href="#">{{id}}</a>
+                                            </td>
+                                            <td class="table__cell ticket-list__title col-md-2">
+                                                <div>
+                                                    {{title}}
+                                                </div>
+                                            </td>
+                                            <td class="table__cell ticket-list__product col-md-1">
+                                            {{product.name}}
+                                            </td>
+                                            <td class="table__cell ticket-list__department col-md-1">
+                                                {{department}}
+                                            </td>
+                                            <td class="table__cell ticket-list__status col-md-1">
+                                                {{status}}
+                                            </td>
+                                            <td class="table__cell ticket-list__date col-md-2">31
+                                                {{time date 'D MMMM  YYYY'}}
+                                            </td>
+                                            <td class="table__cell ticket-list__action col-md-4">
+                                                <a href="/productSupport/Ticket/delete/{{id}}" class="btn btn-danger">مسح</a>
+                                                {{#ifEquals status 'open'}}
+                                                    <button type="button" class="btn btn-info" data-toggle="modal"
+                                                        data-target="#editModal{{id}}">تعديل
+                                                    </button>
+                                                    <div id="editModal{{id}}" class="modal fade" role="dialog">
+                                                        <div class="modal-dialog">
+                                                            <form method="post" action="/productSupport/Ticket/update/{{id}}">
+                                                                <!-- Modal content-->
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal">&times;</button>
+                                                                        <h4 class="modal-title">add Product</h4>
+                                                                    </div>
 
-                            </form>
+                                                                    <div class="form-group">
+                                                                        <label for="email">Email address:</label>
+                                                                        <input type="email" class="form-control" id="email" name="email"
+                                                                            value="{{email}}">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="name">Name:</label>
+                                                                        <input type="text" class="form-control" id="name" name="name"
+                                                                            value="{{userName}}">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="title">Title:</label>
+                                                                        <input type="text" class="form-control" id="title" name="title"
+                                                                            value="{{title}}">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="parentCat">Product:</label>
+                                                                        <select name="product" id="parentCat">
+                                                                            {{#each ../products}}
+                                                                            <option {{#ifEquals ticketvalue.product.id this.id }}
+                                                                                selected {{/ifEquals}} value="{{id}}">{{name}}</option>
+                                                                            {{/each}}
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="department">Departments:</label>
+                                                                        <select name="department" id="department">
+                                                                            {{#each ../departments}}
+                                                                            <option {{#ifEquals ticketvalue.department this }} selected
+                                                                                {{/ifEquals}} value="{{this}}">{{this}} </option>
+                                                                            {{/each}}
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editor{{id}}">Content:</label>
+                                                                        <textarea type="text" class="form-control editor"
+                                                                            id="editor{{id}}" name="content"> {{content}} </textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                </div>
+
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                {{/ifEquals}}
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                            <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+                            <script>
+                                $(function () {
+                                    $('.editor').each(function (e) {
+                                        CKEDITOR.replace(this.id, {
+                                            filebrowserUploadUrl: '/uploader/upload'
+                                        });
+                                    });
+                                });
+                            </script>
+                            <div class="dataTables_info" id="tickets_info" role="status" aria-live="polite">Showing 1 to
+                                2 of 2 entries
+                            </div>
+                            <div class="dataTables_paginate paging_simple_numbers" id="tickets_paginate"><a
+                                    class="paginate_button previous disabled" aria-controls="tickets" data-dt-idx="0"
+                                    tabindex="0" id="tickets_previous">Previous</a><span><a
+                                        class="paginate_button current" aria-controls="tickets" data-dt-idx="1"
+                                        tabindex="0">1</a></span><a class="paginate_button next disabled"
+                                    aria-controls="tickets" data-dt-idx="2" tabindex="0" id="tickets_next">Next</a>
+                            </div>
                         </div>
                     </div>
-                {{/ifEquals}}
-                </td>
-            </tr>
-        {{/each}}
-        </tbody>
-
-    </table>
-    <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-    <script>
-        $(function(){
-            $('.editor').each(function(e){
-        CKEDITOR.replace(this.id, {
-            filebrowserUploadUrl: '/uploader/upload'
-        });
-            });
-        });
-    </script>
-</div>
+                </div>
+            </div>
+        </div>
+    </div>
