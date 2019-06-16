@@ -14234,3 +14234,6 @@ body {
     background-color: #d55;
     color: white;
 }
+.select.input__text {
+    width: 40% !important;
+}
