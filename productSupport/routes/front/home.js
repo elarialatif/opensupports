@@ -7,7 +7,8 @@ var UserController = require('../../controllers/userController');
 var User = require('../../models/User');
 var {reCAPTCHA} = require('../../config/security');
 var ticketController = require('../../controllers/TicketController')
-var auth = require('../../helper/authentication')
+var auth = require('../../Middlewares/authentication')
+var userMiddleware = require('../../Middlewares/user')
 var Ticket = require('../../models/Ticket');
 var Product = require('../../models/Product');
 var helpers = require('../../helper/Departments');
@@ -104,7 +105,7 @@ router.get('/signIn', function (req, res, next) {
 router.post('/login', function (req, res, next) {
     UserController.userRedirect(req, res, next);
 });
-router.get('/userDashboard',auth.userAuthicated, function (req, res, next) {
+router.get('/userDashboard',userMiddleware.userAuthicated, function (req, res, next) {
     Ticket.find({}).populate('product').then(result => {
         Product.find({}).then(products => {
             res.render('frontUsers/dashboard', {
