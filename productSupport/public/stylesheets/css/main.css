@@ -14289,3 +14289,11 @@ body {
     opacity: 1;
     transform: translateY(0px);
 }
+#EditProfile .form_inputs {
+    padding: 0 2rem;
+}
+/* =========================================================Admin============================================================ */
+.AdminDashboard .last_activities {
+    margin-top: 0px; 
+    opacity: 1;
+}
