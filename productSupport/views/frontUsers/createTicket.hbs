@@ -181,6 +181,7 @@
                                                 <textarea id="editor" name="content">
                                                                             Describe Here!!
                                                                         </textarea>
+                                                <input name="image" type="file" id="upload" class="hidden" onchange="">
 
                                             </div>
                                         </div>
@@ -211,43 +212,41 @@
             <!--filebrowserUploadUrl: '/uploader/upload'-->
         <!--});-->
     <!--</script>-->
-    
-    <script src="https://cdn.ckeditor.com/ckeditor5/12.2.0/classic/ckeditor.js"></script>
-        <script>
-            ClassicEditor
-                    .create( document.querySelector( '#editor' ) ,{
-                        cloudServices: {
-                            tokenUrl: 'https://40261.cke-cs.com/token/dev/LG6pV20LrNybxoeXFYQq1jGPHwQwHmk15LTDhUYIqnzyQ6h0iA0Y1JPaLuL2',
-                            uploadUrl: 'https://40261.cke-cs.com/easyimage/upload/'
-                        }
+
+<link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+
+<!-- Include JS file. -->
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/js/froala_editor.pkgd.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.0/js/plugins/image.min.js"></script>
+<script>
+    var editor = new FroalaEditor('#editor',{
+        imageUploadURL: '/productSupport/uploadeImageFromEditor',
+        events: {
+        'image.removed': function ($img) {
+            $.ajax({
+                // Request method.
+                method: 'POST',
+
+                // Request URL.
+                url: '/productSupport/delete_file',
+
+                // Request params.
+                data: {
+                    src: $img.attr('src')
+                }
+            })
+                    .done (function (data) {
+                        console.log ('Image was deleted');
                     })
-                    .then( editor => {
-                        console.log( editor );
-                    } )
-                    .catch( error => {
-                        console.error( error );
-                    } );
-        </script>
-
-
-
-    <!--<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>-->
-    <!--<script>-->
-        <!--CKEDITOR.replace('editor', {-->
-            <!--filebrowserUploadUrl: '/uploader/upload'-->
-        <!--});-->
-    <!--</script>-->
-
-
-
-
-
-
-
-
-
-
-
+                    .fail (function (err) {
+                        console.log ('Image delete problem: ' + JSON.stringify(err));
+                    })
+        }
+    }
+       // imageManagerDeleteURL: '/productSupport/delete_file'
+    });
+console.log(editor.opts.events)
+  </script>
 
 
 
