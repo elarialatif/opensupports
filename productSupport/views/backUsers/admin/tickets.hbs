@@ -1,38 +1,51 @@
+<div class="adminTickets row">
+    <div class="myTickets__content col-md-12">
+        <div class="widget col-md-12" title="">
+            {{!--  --}}
+            <div class="ticket-list tab-content current" id="tab-1">
+                <div class="header">
+                    <h2 class="header__title">vnkjhnlkjo</h2>
+                </div>
+            </div>
+            {{!--  --}}
+            <div class="ticket-list tab-content" id="tab-2">
+                <div class="header">
+                    <h2 class="header__title">vnkjhnlkjo</h2>
+                </div>
+                <div class="ticket-list__filters"></div>
+                <div class="table__wrapper">
+                    <div id="tickets_wrapper" class="dataTables_wrapper no-footer">
 
+                        <table class="table table-responsive dataTable no-footer">
+                            <thead>
+                                <tr class="table__header" role="row">
+                                    <th class="table__header-column">Number</th>
+                                    <th class="table__header-column">Name</th>
+                                    <th class="table__header-column">Status</th>
+                                    <th class="table__header-column">Department</th>
+                                    <th class="table__header-column">Product</th>
+                                    <th class="table__header-column">Author</th>
+                                    <th class="table__header-column">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                                {{#each tickets as |ticketvalue ticketkey|}}
+                                <tr class="table__row odd" role="row">
+                                    <td class="table__cell"><a href="/admin/ticket/view/{{id}}">{{id}}</a></td>
+                                    <td class="table__cell">{{title}}</td>
+                                    <td class="table__cell">{{status}}</td>
+                                    <td class="table__cell">{{department}}</td>
+                                    <td class="table__cell">{{product.name}}</td>
+                                    <td class="table__cell">{{userName}}</td>
+                                    <td class="table__cell">{{time date 'D MMMM  YYYY'}}</td>
 
-
-<div class="container">
-
-    <br>
-    <br>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Code</th>
-            <th>title</th>
-            <th>الحالة</th>
-            <th>department</th>
-            <th>product</th>
-
-            <th>Date</th>
-
-        </tr>
-        </thead>
-        <tbody id="productTableBody">
-        {{#each tickets as |ticketvalue ticketkey|}}
-            <tr>
-                <td><a href="/admin/ticket/view/{{id}}">{{id}}</a></td>
-                <td>{{title}}</td>
-                <td>{{status}}</td>
-                <td>{{department}}</td>
-                <td>{{product.name}}</td>
-                <td>{{time date 'D MMMM  YYYY'}}</td>
-
-            </tr>
-        {{/each}}
-        </tbody>
-
-    </table>
-
-
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

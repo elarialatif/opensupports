@@ -2,7 +2,7 @@
     <div class="main-layout-header__login-links AdminTabs">
         Welcome,
         <span class="main-layout-header__user-name">
-            Ahmed
+            {{user.name}}
         </span>
     </div>
     <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
@@ -20,13 +20,14 @@
             <div class="col-md-3">
                 <div class="admin-panel-staff-widget">
                     <div class="admin-panel-staff-widget__user-data">
-                        <div class="admin-panel-staff-widget__name">Ahmed</div>
+                        <div class="admin-panel-staff-widget__name">{{user.name}}</div>
                         <div class="admin-panel-staff-widget__actions">
                             <button class="button button_link button_large admin-panel-staff-widget__action">
                                 My Account
                             </button>
                             <span class="admin-panel-staff-widget__action-separator">|</span>
-                            <button class="button button_link button_large admin-panel-staff-widget__action">
+                            <button class="button button_link button_large admin-panel-staff-widget__action"
+                                onclick="location.href='/productSupport/logout'">
                                 Close session
                             </button>
                         </div>
@@ -56,41 +57,54 @@
                                 <span class="fa fa-ticket fa-lg menu__icon" aria-hidden="true"></span>
                                 <span class="admin-panel-menu__item-text">Tickets</span>
                             </li>
+                            {{!-- <li id="settings_Tab" class="menu__list-item" onclick="location.href='/admin/settings'">
+                                <span class="fa fa-cogs fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Settings</span>
+                            </li> --}}
                         </ul>
                     </div>
                     <div class="menu menu_horizontal-list undefined">
-                        <ul class="menu__list 1">
-                            <li class="menu__list-item" tabindex="0">
+                        <ul class="menu__list 1 tabs">
+                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1">
                                 Statistics
                             </li>
-                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                            <li class="menu__list-item" data-tab="tab-2">
                                 Last Activity
                             </li>
                         </ul>
                         {{!--  --}}
-                        <ul class="menu__list 2">
-                            <li class="menu__list-item" tabindex="0">
+                        <ul class="menu__list 2 tabs">
+                            <li class="menu__list-item  menu__list-item_selected" data-tab="tab-1">
                                 fr
                             </li>
-                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
-                              gh
+                            <li class="menu__list-item" data-tab="tab-2">
+                                gh
                             </li>
                         </ul>
                         {{!--  --}}
-                        <ul class="menu__list 3">
-                            <li class="menu__list-item" tabindex="0">
+                        <ul class="menu__list 3 tabs">
+                            <li class="menu__list-item  menu__list-item_selected" data-tab="tab-1">
                                 cv
                             </li>
-                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                            <li class="menu__list-item" data-tab="tab-2">
                                 Activity
                             </li>
                         </ul>
                         {{!--  --}}
-                        <ul class="menu__list 4">
-                            <li class="menu__list-item" tabindex="0">
+                        <ul class="menu__list 4 tabs">
+                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1">
                                 uy7ik
                             </li>
-                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                            <li class="menu__list-item" data-tab="tab-2">
+                                Luyik8uyio
+                            </li>
+                        </ul>
+                        {{!--  --}}
+                        <ul class="menu__list 5 tabs">
+                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1">
+                                uy7ik
+                            </li>
+                            <li class="menu__list-item" data-tab="tab-2">
                                 Luyik8uyio
                             </li>
                         </ul>
@@ -99,28 +113,29 @@
             </div>
         </div>
 
-    <script>
+        <script>
+            var pathName = window.location.pathname;
+            switch (pathName) {
+                case '/admin/adminDashboard':
+                    $('#dash_Tab').addClass('menu__list-item_selected');
+                    $('.menu.menu_horizontal-list .menu__list.1').attr('id', 'dashMenuList');
+                    break;
+                case '/admin/allUsers':
+                    $('#users_Tab').addClass('menu__list-item_selected');
+                    $('.menu.menu_horizontal-list .menu__list.2').attr('id', 'usersMenuList');
+                    break;
+                case '/admin/products':
+                    $('#products_Tab').addClass('menu__list-item_selected');
+                    $('.menu.menu_horizontal-list .menu__list.3').attr('id', 'productsMenuList');
+                    break;
+                case '/admin/tickets/all':
+                    $('#tickets_Tab').addClass('menu__list-item_selected');
+                    $('.menu.menu_horizontal-list .menu__list.4').attr('id', 'ticketsMenuList');
+                    break;
+                case '/admin/settings':
+                    $('#settings_Tab').addClass('menu__list-item_selected');
+                    $('.menu.menu_horizontal-list .menu__list.5').attr('id', 'settingsMenuList');
+                    break;
 
-    var pathName=window.location.pathname;
-    switch (pathName){
-        case '/admin/adminDashboard':
-        $('#dash_Tab').addClass('menu__list-item_selected');
-        $('.menu.menu_horizontal-list .menu__list.1').attr('id', 'dashMenuList');
-        break;
-        case '/admin/allUsers':
-        $('#users_Tab').addClass('menu__list-item_selected');
-        $('.menu.menu_horizontal-list .menu__list.2').attr('id', 'usersMenuList');
-        break;
-        case '/admin/products':
-        $('#products_Tab').addClass('menu__list-item_selected');
-        $('.menu.menu_horizontal-list .menu__list.3').attr('id', 'productsMenuList');
-        break;
-        case '/admin/tickets/all':
-        $('#tickets_Tab').addClass('menu__list-item_selected');
-        $('.menu.menu_horizontal-list .menu__list.4').attr('id', 'ticketsMenuList');
-        break;
-        
-    }
-
-
-    </script>
+            }
+        </script>

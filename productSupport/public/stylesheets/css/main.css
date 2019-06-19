@@ -14313,7 +14313,8 @@ body {
 }
 .AdminDashboard .last_activities {
     margin-top: 0px; 
-    opacity: 1;
+    /* opacity: 1; */
+    display: none;
 }
 .allUser_modal .signup-widget__inputs {
     display: block;
@@ -14347,6 +14348,92 @@ body {
 #dashMenuList,
 #usersMenuList,
 #productsMenuList,
-#ticketsMenuList {
+#ticketsMenuList,
+#settingsMenuList {
     display: block;
+}
+#loadmore {
+    display: block;
+    text-decoration: none;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#top {
+    border: solid transparent;
+    border-radius: 4px;
+    color: white;
+    height: 60px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+#top span {
+    display: block;
+    padding: 0.5rem 0;
+}
+.tab-content{
+    display: none;
+}
+.tab-content.current{
+    display: inherit;
+}
+@import "compass/css3";
+.chart {
+    display:table;
+    table-layout: fixed;   
+    width:60%;
+    max-width:700px;
+    height:200px;
+    margin:0 auto;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0) 2%);
+    background-size: 100% 50px;
+    background-position: left top;
+}
+    
+.chart   li{
+    position:relative;
+    display:table-cell;
+    vertical-align:bottom;
+    height:200px;
+}
+    
+.chart span{
+    margin:0 1em;
+    display: block;
+    background: rgba(209, 236, 250, 0.75);
+    animation: draw 1s ease-in-out;
+}
+      
+.chart span:before{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom: auto;
+    top:0;
+    padding:5px 1em 0;
+    display:block;
+    text-align:center;
+    content:attr(title);
+    word-wrap: break-word;
+}
+.chart span.ratio:before{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom: 0;
+    top:auto;
+    padding:5px 1em 0;
+    display:block;
+    text-align:center;
+    content:attr(title);
+    word-wrap: break-word;
+    color: #FB6362;
+}
+
+  
+@keyframes draw{
+    0% { 
+        height:0; 
+    } 
 }

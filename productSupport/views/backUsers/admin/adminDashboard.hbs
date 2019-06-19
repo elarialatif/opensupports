@@ -1,102 +1,646 @@
 <div class="row AdminDashboard">
     <div class="col-md-12 admin-panel-layout__content">
         <div title="" class="widget">
-            <div class="admin-panel-activity">
+            {{!-- Statistics --}}
+            <div class="admin-panel-activity tab-content current" id="tab-1">
                 <div class="header">
-                    <h2 class="header__title">Last Activity</h2>
+                    <h2 class="header__title">Statistics</h2>
                 </div>
-                <div class="menu menu_horizontal-list-bright admin-panel-activity__menu">
-                    <ul class="menu__list">
-                        <li class="menu__list-item menu__list-item_selected" tabindex="0">
-                            My notifications
+                <div class="graph">
+                    <ul class="chart">
+                        <li>
+                            <span style="height:5%" title="Tickets created"></span>
+                            <span class="ratio"  title="5%"></span>
                         </li>
-                        <li class="menu__list-item" tabindex="0">
-                            All notifications
+                        <li>
+                            <span style="height:70%" title="Tickets closed"></span>
+                            <span class="ratio" title="70%"></span>
+                        </li>
+                        <li>
+                            <span style="height:50%" title="Signsups"></span>
+                            <span class="ratio" title="50%"></span>
+                        </li>
+                        <li>
+                            <span style="height:15%" title="Replies"></span>
+                            <span class="ratio" title="15%"></span>
                         </li>
                     </ul>
                 </div>
+            </div>
+            {{!-- Last Activity --}}
+            <div class="admin-panel-activity tab-content" id="tab-2">
+                <div class="header">
+                    <h2 class="header__title">Last Activity</h2>
+                </div>
                 <div>
                     <div>
+                        {{!-- assigned tickets --}}
                         <div class="last_activities">
-                            <div class="activity-row"><span class="fa fa-user fa-lg activity-row__icon"
-                                    aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                        href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                        Palpatine
+                            <div class="activity-row">
+                                <span class="fa fa-user fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
                                     </a>
                                 </span>
                                 <span class="activity-row__message">
                                     assigned tickets
                                 </span>
                                 <span>
-                                    <a class="activity-row__ticket-link"
-                                        href="/demos/demo1/admin/panel/tickets/view-ticket/470268">
-                                        #
-                                        470268
-                                    </a>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
                                 </span>
                                 <span class="separator"></span>
                             </div>
                         </div>
+                        {{!-- changed department of ticket --}}
                         <div class="last_activities">
-                            <div class="activity-row"><span class="fa fa-user fa-lg activity-row__icon"
-                                    aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                        href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                        Palpatine</a></span><span class="activity-row__message">
-                                    assigned ticket
-                                </span><span><a class="activity-row__ticket-link"
-                                        href="/demos/demo1/admin/panel/tickets/view-ticket/549622">
-                                        #
-                                        549622
-                                    </a></span><span class="separator"></span></div>
-                        </div>
-                        <div class="last_activities">
-                            <div class="activity-row"><span class="fa fa-exchange fa-lg activity-row__icon"
-                                    aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                        href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                        Palpatine</a></span><span class="activity-row__message">
+                            <div class="activity-row">
+                                <span class="fa fa-exchange fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
                                     changed department of ticket
-                                </span><span><a class="activity-row__ticket-link"
-                                        href="/demos/demo1/admin/panel/tickets/view-ticket/549622">
-                                        #
-                                        549622
-                                    </a></span><span class="separator"></span></div>
-                        </div>
-                        <div class="last_activities">
-                            <div class="activity-row"><span class="fa fa-comment-o fa-lg activity-row__icon"
-                                    aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                        href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                        Palpatine</a></span><span class="activity-row__message">
-                                    commented ticket
-                                </span><span><a class="activity-row__ticket-link"
-                                        href="/demos/demo1/admin/panel/tickets/view-ticket/771982">
-                                        #
-                                        771982
-                                    </a>
-                                </span>
-                                <span class="separator"></span>
-                            </div>
-                        </div>
-                        <div class="last_activities">
-                            <div class="activity-row"><span class="fa fa-exclamation fa-lg activity-row__icon"
-                                    aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                        href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                        Palpatine</a></span><span class="activity-row__message">
-                                    changed priority of ticket
                                 </span>
                                 <span>
-                                    <a class="activity-row__ticket-link"
-                                        href="/demos/demo1/admin/panel/tickets/view-ticket/771982">
-                                        #
-                                        771982
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  commented ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-comment-o fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
                                     </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  changed priority of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exclamation fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  created ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-ticket fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  reopened ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-unlock-alt fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  closed ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-lock fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  unassigned ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user-times fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!-- ================================== --}}
+                        {{!-- assigned tickets --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    assigned tickets
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!-- changed department of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exchange fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  commented ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-comment-o fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  changed priority of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exclamation fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  created ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-ticket fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  reopened ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-unlock-alt fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  closed ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-lock fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  unassigned ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user-times fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!-- ================================== --}}
+                        {{!-- assigned tickets --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    assigned tickets
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!-- changed department of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exchange fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  commented ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-comment-o fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  changed priority of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exclamation fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  created ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-ticket fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  reopened ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-unlock-alt fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  closed ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-lock fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  unassigned ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user-times fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!-- ================================== --}}
+                        {{!-- assigned tickets --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    assigned tickets
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!-- changed department of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exchange fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  commented ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-comment-o fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  changed priority of ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-exclamation fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  created ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-ticket fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  reopened ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-unlock-alt fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  closed ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-lock fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
+                                </span>
+                                <span class="separator"></span>
+                            </div>
+                        </div>
+                        {{!--  unassigned ticket --}}
+                        <div class="last_activities">
+                            <div class="activity-row">
+                                <span class="fa fa-user-times fa-lg activity-row__icon" aria-hidden="true"> </span>
+                                <span>
+                                    <a class="activity-row__name-link" href="">
+                                        Chancellor Palpatine
+                                    </a>
+                                </span>
+                                <span class="activity-row__message">
+                                    changed department of ticket
+                                </span>
+                                <span>
+                                    <a class="activity-row__ticket-link" href="">#470268</a>
                                 </span>
                                 <span class="separator"></span>
                             </div>
                         </div>
                     </div>
-                    <button class="button button_secondary button_large submit-button">Load More</button>
+                    <button id="loadMore" class="button button_secondary button_large submit-button">Load More</button>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
+{{!-- Load More --}}
+<script>
+    $(function () {
+        "use strict";
+        $('div.last_activities').slice(0, 6).show();
+        $('#loadMore').on('click', function (e) {
+            e.preventDefault();
+            $('div.last_activities:hidden').slice(0, 8).slideDown();
+            if ($('div.last_activities:hidden').length === 0) {
+                $('#loadMore').replaceWith(
+                    "<button onclick='goToTop();' id='top' class='button  button_large btn-warning '><span>No More</span>Go To Top </button>"
+                );
+            }
+        });
+
+
+    });
+
+    function goToTop() {
+        window.scrollTo(0, 0);
+    }
+</script>
+{{!-- #Load More --}}
