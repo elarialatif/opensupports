@@ -92,4 +92,7 @@ router.get('/logout', function (req, res, next) {
     req.logout();
     res.redirect('/');
 });
+router.get('/email', function (req, res, next) {
+    res.render('frontUsers/email');
+});
 module.exports = router;
