@@ -13640,7 +13640,7 @@ body {
 
 /* line 13, src/app/main/main-home/main-home-page-login-widget.scss */
 .login-widget__forgot-password {
-    margin-top: 20px
+    margin-top: 0;
 }
 
 /* line 17, src/app/main/main-home/main-home-page-login-widget.scss */
@@ -14291,6 +14291,18 @@ body {
 }
 #EditProfile .form_inputs {
     padding: 0 2rem;
+}
+.checkbox, .radio {
+    display: inline-block !important;
+}
+.main-home-page-portal__card {
+    padding: 0 0.2rem !important;
+}
+.modal#previousTickets  .input__text {
+    width: 70%;
+}
+.modal#previousTickets .form-group {
+    margin: 0;
 }
 /* =========================================================Admin============================================================ */
 .AdminTabs button {
