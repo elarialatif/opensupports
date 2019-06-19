@@ -62,4 +62,9 @@ router.get('/adminDashboard', function (req, res, next) {
     res.render('backUsers/admin/adminDashboard');
 
 });
+router.get('/myAccount', function (req, res, next) {
+
+    res.render('backUsers/admin/myAccount');
+
+});
 module.exports = router;
