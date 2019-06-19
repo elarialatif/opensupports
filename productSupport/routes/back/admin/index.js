@@ -5,9 +5,10 @@ var Ticket = require('../../../models/Ticket');
 var Product = require('../../../models/Product');
 var User = require('../../../models/User');
 var helpers = require('../../../helper/Departments');
-var auth = require('../../../helper/authentication')
+var auth = require('../../../Middlewares/authentication')
+var AdminAuth = require('../../../Middlewares/admin')
 /* GET home page. */
-router.all('/*',auth.userAuthicated, (req, res, next) => {
+router.all('/*', AdminAuth.AdminAuthicated, (req, res, next) => {
     next();
 });
 router.get('/products', function (req, res, next) {
@@ -57,7 +58,7 @@ router.get('/allUsers', function (req, res, next) {
 });
 router.get('/adminDashboard', function (req, res, next) {
 
-        res.render('backUsers/admin/adminDashboard');
+    res.render('backUsers/admin/adminDashboard');
 
 });
 module.exports = router;
