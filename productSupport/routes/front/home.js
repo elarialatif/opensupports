@@ -48,13 +48,26 @@ router.post('/Ticket/create', function (req, res, next) {
     //     });
 
 });
-router.get('/Ticket/all', function (req, res, next) {
-    Ticket.find({}).populate('product').then(result => {
-        Product.find({}).then(products => {
+router.post('/Ticket/all', function (req, res, next) {
+    console.log(req.body);
+    if (req.body.email || req.user) {
+        userEmail = req.body.email || req.user.email;
+        Ticket.find({email: userEmail}).populate('product').then(result => {
+            Product.find({}).then(products => {
 
-            res.render('frontUsers/myTickets', {tickets: result, departments: helpers.departments, products: products});
+                res.render('frontUsers/myTickets', {
+                    tickets: result,
+                    departments: helpers.departments,
+                    products: products
+                });
+            })
         })
-    })
+    }
+    else {
+        res.redirect('/');
+    }
+
+
 });
 router.post('/Ticket/update/:id', function (req, res, next) {
     var val;
@@ -76,7 +89,7 @@ router.post('/Ticket/update/:id', function (req, res, next) {
     }
     Ticket.findByIdAndUpdate({_id: req.params.id}, {
         $set:
-            val
+        val
 
     }).then(result => {
         res.redirect('back');
@@ -86,10 +99,10 @@ router.get('/Ticket/delete/:id', function (req, res, next) {
 
     Ticket.findByIdAndDelete({_id: req.params.id}).then(result => {
 
-        if(req.user.role==='admin'){
+        if (req.user.role === 'admin') {
             res.redirect('/admin/tickets/all');
         }
-        else{
+        else {
             res.redirect('/productSupport/Ticket/all');
         }
 
@@ -108,7 +121,7 @@ router.get('/signIn', function (req, res, next) {
 router.post('/login', function (req, res, next) {
     UserController.userRedirect(req, res, next);
 });
-router.get('/userDashboard',userMiddleware.userAuthicated, function (req, res, next) {
+router.get('/userDashboard', userMiddleware.userAuthicated, function (req, res, next) {
     Ticket.find({}).populate('product').then(result => {
         Product.find({}).then(products => {
             res.render('frontUsers/dashboard', {

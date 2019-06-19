@@ -6,7 +6,11 @@
     <div class="main-layout-header__login-links">
         Welcome,
         <span class="main-layout-header__user-name">
-            Ahmed
+            {{#if user}}
+                {{user.name}}
+                {{else}}
+                Gust
+            {{/if}}
         </span>
     </div>
     <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
