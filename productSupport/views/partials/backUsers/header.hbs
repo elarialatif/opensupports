@@ -1,0 +1,126 @@
+<div class="main-layout-header">
+    <div class="main-layout-header__login-links AdminTabs">
+        Welcome,
+        <span class="main-layout-header__user-name">
+            Ahmed
+        </span>
+    </div>
+    <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
+        <div aria-expanded="false" aria-autocomplete="list" aria-owns="drop-down-menu_1"
+            aria-activedescendant="drop-down-menu_1__0" class="drop-down__current-item" role="combobox" tabindex="0">
+            <div><img class="drop-down__current-item-icon"
+                    src="https://www.opensupports.com/demos/demo1/images/icons/us.png" aria-hidden="true">English
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-layout--content row">
+    <div class="admin-panel-layout">
+        <div class="row admin-panel-layout__header">
+            <div class="col-md-3">
+                <div class="admin-panel-staff-widget">
+                    <div class="admin-panel-staff-widget__user-data">
+                        <div class="admin-panel-staff-widget__name">Ahmed</div>
+                        <div class="admin-panel-staff-widget__actions">
+                            <button class="button button_link button_large admin-panel-staff-widget__action">
+                                My Account
+                            </button>
+                            <span class="admin-panel-staff-widget__action-separator">|</span>
+                            <button class="button button_link button_large admin-panel-staff-widget__action">
+                                Close session
+                            </button>
+                        </div>
+                    </div>
+                    <div class="admin-panel-staff-widget__profile-pic-wrapper">
+                        <img class="admin-panel-staff-widget__profile-pic" src="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 AdminTabs">
+                <div class="admin-panel-menu">
+                    <div class="menu menu_horizontal undefined">
+                        <ul class="menu__list">
+                            <li id="dash_Tab" class="menu__list-item" onclick="location.href='/admin/adminDashboard'">
+                                <span class="fa fa-tachometer fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Dashboard</span>
+                            </li>
+                            <li id="users_Tab" class="menu__list-item" onclick="location.href='/admin/allUsers'">
+                                <span class="fa fa-user fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Users</span>
+                            </li>
+                            <li id="products_Tab" class="menu__list-item" onclick="location.href='/admin/products'">
+                                <span class="fa fa-th-list fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Products</span>
+                            </li>
+                            <li id="tickets_Tab" class="menu__list-item" onclick="location.href='/admin/tickets/all'">
+                                <span class="fa fa-ticket fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Tickets</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu menu_horizontal-list undefined">
+                        <ul class="menu__list 1">
+                            <li class="menu__list-item" tabindex="0">
+                                Statistics
+                            </li>
+                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                                Last Activity
+                            </li>
+                        </ul>
+                        {{!--  --}}
+                        <ul class="menu__list 2">
+                            <li class="menu__list-item" tabindex="0">
+                                fr
+                            </li>
+                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                              gh
+                            </li>
+                        </ul>
+                        {{!--  --}}
+                        <ul class="menu__list 3">
+                            <li class="menu__list-item" tabindex="0">
+                                cv
+                            </li>
+                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                                Activity
+                            </li>
+                        </ul>
+                        {{!--  --}}
+                        <ul class="menu__list 4">
+                            <li class="menu__list-item" tabindex="0">
+                                uy7ik
+                            </li>
+                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                                Luyik8uyio
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+
+    var pathName=window.location.pathname;
+    switch (pathName){
+        case '/admin/adminDashboard':
+        $('#dash_Tab').addClass('menu__list-item_selected');
+        $('.menu.menu_horizontal-list .menu__list.1').attr('id', 'dashMenuList');
+        break;
+        case '/admin/allUsers':
+        $('#users_Tab').addClass('menu__list-item_selected');
+        $('.menu.menu_horizontal-list .menu__list.2').attr('id', 'usersMenuList');
+        break;
+        case '/admin/products':
+        $('#products_Tab').addClass('menu__list-item_selected');
+        $('.menu.menu_horizontal-list .menu__list.3').attr('id', 'productsMenuList');
+        break;
+        case '/admin/tickets/all':
+        $('#tickets_Tab').addClass('menu__list-item_selected');
+        $('.menu.menu_horizontal-list .menu__list.4').attr('id', 'ticketsMenuList');
+        break;
+        
+    }
+
+
+    </script>

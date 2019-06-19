@@ -9,6 +9,7 @@ var auth = require('../../../Middlewares/authentication')
 var AdminAuth = require('../../../Middlewares/admin')
 /* GET home page. */
 router.all('/*', AdminAuth.AdminAuthicated, (req, res, next) => {
+    req.app.locals.layout = 'layouts/backUsers/app';
     next();
 });
 router.get('/products', function (req, res, next) {

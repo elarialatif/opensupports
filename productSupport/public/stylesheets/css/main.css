@@ -14304,6 +14304,9 @@ body {
 .modal#previousTickets .form-group {
     margin: 0;
 }
+.dashboard .nav-tabs>li {
+    float: none;
+}
 /* =========================================================Admin============================================================ */
 .AdminTabs button {
     text-transform: uppercase;
@@ -14311,4 +14314,39 @@ body {
 .AdminDashboard .last_activities {
     margin-top: 0px; 
     opacity: 1;
+}
+.allUser_modal .signup-widget__inputs {
+    display: block;
+    width: 100%;
+}
+.allUser_modal .input_medium {
+    width: 60%;
+    margin: auto;
+    display: inline-block;
+}
+.allUser_modal .form-field__label {
+    display: inline-block;
+    width: 30%;
+}
+.allUser_modal .modal-title {
+    display: inline-block;
+    text-transform: uppercase;
+}
+.myProducts .modal label {
+    color: #000;
+}
+.add_product_modal label {
+    float: left;
+}
+.add_product_modal .modal-title {
+    text-align: left;
+}
+.menu.menu_horizontal-list .menu__list {
+    display: none;
+}
+#dashMenuList,
+#usersMenuList,
+#productsMenuList,
+#ticketsMenuList {
+    display: block;
 }
