@@ -9,6 +9,7 @@ var {reCAPTCHA} = require('../../config/security');
 var ticketController = require('../../controllers/TicketController')
 var auth = require('../../Middlewares/authentication')
 var userMiddleware = require('../../Middlewares/user')
+var adminMiddleware = require('../../Middlewares/admin')
 var Ticket = require('../../models/Ticket');
 var Product = require('../../models/Product');
 var helpers = require('../../helper/Departments');
@@ -108,7 +109,7 @@ router.get('/Ticket/delete/:id', function (req, res, next) {
 
     })
 });
-router.get('/signIn', function (req, res, next) {
+router.get('/signIn', adminMiddleware.AdminAuthicated, function (req, res, next) {
     Product.find({}).then(products => {
         res.render('frontUsers/signIn', {
             roles: Userhelper.userTypes,
@@ -135,9 +136,57 @@ router.get('/userDashboard', userMiddleware.userAuthicated, function (req, res, 
     })
 });
 router.post('/signIn', function (req, res, next) {
-    console.log(req.body)
-    UserController.adduser(req.body.name, req.body.email, req.body.password, req.body.role, req.body.products, req.body.departments);
-    res.redirect('/');
+    var errors = {};
+    if (req.body.email) {
+        User.findOne({email: req.body.email}).then(user => {
+            if (user) {
+                errors.user = 'الاميل موجود من قبل ';
+            }
+        })
+    }
+    if (!req.body.name) {
+        errors.Name = 'الاسم مطلوب';
+    }
+    if (!req.body.email) {
+        errors.email = 'الاميل  مطلوب';
+    }
+    if (!req.body.role) {
+        errors.role = 'الصلاحية مطلوبة';
+    }
+    if (!req.body.products) {
+        errors.products = 'المشروع  مطلوب';
+    }
+    if (!req.body.departments) {
+        errors.departments = 'القسم مطلوب';
+    }
+    if (!req.body.password) {
+        errors.password = 'رقم السر  مطلوب';
+    }
+    if (req.body.password !== req.body.repeated_password) {
+        errors.repeated_password = 'كلمة السر غير متطابقة';
+    }
+    var form = {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+        departments: req.body.departments,
+    };
+    if (errors) {
+        Product.find({}).then(products => {
+            res.render('frontUsers/signIn', {
+                roles: Userhelper.userTypes,
+                products: products,
+                departments: helpers.departments,
+                errors: errors,
+                form: form,
+            });
+        })
+    }
+    else {
+        UserController.adduser(req.body.name, req.body.email, req.body.password, req.body.role, req.body.products, req.body.departments);
+        res.redirect('/');
+    }
+
 });
 router.get('/logout', function (req, res, next) {
     req.logout();

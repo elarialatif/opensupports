@@ -1,10 +1,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 
 <div class="main-layout-header">
     <div class="main-layout-header__login-links">
-        <button class="button button_clean button_large" onclick="location.href='/'">
-            Log in
+        <button class="button button_clean button_large" onclick="location.href='/admin/allUsers'">
+            allUsers
         </button>
     </div>
     <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
@@ -119,18 +118,21 @@
                     It is required to send tickets and see documentation.
                 </div>
             </div>
+            {{#if errors}}
+              {{>errors}}
+            {{/if}}
             <form class="form signup-widget__form" method="post" action="/productSupport/signIn">
                 <div class="signup-widget__inputs"><label
                         class="form-field signup-widget__input"><span class="form-field__label">
                                                 <!-- react-text: 455 -->Full name
                     <!-- /react-text --></span><span class="input input_medium"><input
                         type="text" name="name" aria-required="true" class="input__text"
-                        value=""></span></label><label
+                        value="{{form.name}}"></span></label><label
                         class="form-field signup-widget__input"><span class="form-field__label">
                                                 <!-- react-text: 460 -->Email
                     <!-- /react-text --></span><span class="input input_medium"><input
                         type="text" name="email" aria-required="true" class="input__text"
-                        value=""></span></label>
+                        value="{{form.email}}"></span></label>
                     <label
                             class="form-field signup-widget__input"><span class="form-field__label">
                                                 <!-- react-text: 460 -->Role
@@ -166,7 +168,7 @@
                             class="form-field signup-widget__input"><span class="form-field__label">
                                                 <!-- react-text: 470 -->Repeat password
                         <!-- /react-text --></span><span class="input input_medium"><input
-                            type="password" name="repeated-password" aria-required="true"
+                            type="password" name="repeated_password" aria-required="true"
                             class="input__text" value=""></span></label>
 
                     <div class="signup-widget__captcha">
@@ -193,7 +195,10 @@
     </div>
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <script>
     $('select').selectpicker();
 </script>
