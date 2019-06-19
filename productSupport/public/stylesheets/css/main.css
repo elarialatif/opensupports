@@ -14332,3 +14332,21 @@ body {
     display: inline-block;
     text-transform: uppercase;
 }
+.myProducts .modal label {
+    color: #000;
+}
+.add_product_modal label {
+    float: left;
+}
+.add_product_modal .modal-title {
+    text-align: left;
+}
+.menu.menu_horizontal-list .menu__list {
+    display: none;
+}
+#dashMenuList,
+#usersMenuList,
+#productsMenuList,
+#ticketsMenuList {
+    display: block;
+}

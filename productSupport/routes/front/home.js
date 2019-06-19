@@ -16,7 +16,10 @@ var Userhelper = require('../../helper/user');
 var path = require('path');
 UserController.login();
 
-
+router.all('/*', (req, res, next) => {
+    req.app.locals.layout = 'layouts/frontUsers/app';
+    next();
+});
 router.get('/Ticket/create', function (req, res, next) {
     Product.find({}).then(result => {
         res.render('frontUsers/createTicket', {
