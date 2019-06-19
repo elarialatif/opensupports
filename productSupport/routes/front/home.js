@@ -1,13 +1,21 @@
 var express = require('express');
+var FroalaEditor = require('wysiwyg-editor-node-sdk/lib/froalaEditor');
+const fs = require('fs');
+var passwordHash = require('password-hash');
 var router = express.Router();
 var UserController = require('../../controllers/userController');
+var User = require('../../models/User');
 var {reCAPTCHA} = require('../../config/security');
 var ticketController = require('../../controllers/TicketController')
 var auth = require('../../helper/authentication')
 var Ticket = require('../../models/Ticket');
 var Product = require('../../models/Product');
 var helpers = require('../../helper/Departments');
+var Userhelper = require('../../helper/user');
+var path = require('path');
 UserController.login();
+
+
 router.get('/Ticket/create', function (req, res, next) {
     Product.find({}).then(result => {
         res.render('frontUsers/createTicket', {
@@ -45,8 +53,9 @@ router.get('/Ticket/all', function (req, res, next) {
     })
 });
 router.post('/Ticket/update/:id', function (req, res, next) {
-    Ticket.findByIdAndUpdate({_id: req.params.id}, {
-        $set: {
+    var val;
+    if (req.body.email) {
+        val = {
             userName: req.body.name,
             email: req.body.email,
             title: req.body.title,
@@ -54,24 +63,48 @@ router.post('/Ticket/update/:id', function (req, res, next) {
             product: req.body.product,
             department: req.body.department,
         }
+    }
+    else {
+        val = {
+            status: req.body.status,
+            department: req.body.department,
+        }
+    }
+    Ticket.findByIdAndUpdate({_id: req.params.id}, {
+        $set:
+            val
+
     }).then(result => {
-        res.redirect('/productSupport/Ticket/all');
+        res.redirect('back');
     })
 });
 router.get('/Ticket/delete/:id', function (req, res, next) {
 
     Ticket.findByIdAndDelete({_id: req.params.id}).then(result => {
-        res.redirect('/productSupport/Ticket/all');
+
+        if(req.user.role==='admin'){
+            res.redirect('/admin/tickets/all');
+        }
+        else{
+            res.redirect('/productSupport/Ticket/all');
+        }
+
     })
 });
 router.get('/signIn', function (req, res, next) {
+    Product.find({}).then(products => {
+        res.render('frontUsers/signIn', {
+            roles: Userhelper.userTypes,
+            products: products,
+            departments: helpers.departments
+        });
+    })
 
-    res.render('frontUsers/signIn');
 });
 router.post('/login', function (req, res, next) {
     UserController.userRedirect(req, res, next);
 });
-router.get('/userDashboard', auth.userAuthicated, function (req, res, next) {
+router.get('/userDashboard',auth.userAuthicated, function (req, res, next) {
     Ticket.find({}).populate('product').then(result => {
         Product.find({}).then(products => {
             res.render('frontUsers/dashboard', {
@@ -85,11 +118,58 @@ router.get('/userDashboard', auth.userAuthicated, function (req, res, next) {
     })
 });
 router.post('/signIn', function (req, res, next) {
-    UserController.adduser(req.body.name, req.body.email, req.body.password);
+    console.log(req.body)
+    UserController.adduser(req.body.name, req.body.email, req.body.password, req.body.role, req.body.products, req.body.departments);
     res.redirect('/');
 });
 router.get('/logout', function (req, res, next) {
     req.logout();
     res.redirect('/');
+});
+router.post('/uploadeImageFromEditor', function (req, res, next) {
+    // Store image.
+
+    FroalaEditor.Image.upload(req, '../public/images/uploads/', function (err, data) {
+        // Return data.
+        if (err) {
+            res.send(JSON.stringify(err));
+        }
+        var link = data.link.replace('../public', '');
+        newdata = {link: link};
+        res.send(newdata);
+    });
+});
+router.post('/delete_file', function (req, res, next) {
+    // Do delete.
+    fs.unlink(path.join(__dirname, '../../public/' + req.body.src), function (err) {
+        console.log(err)
+        if (err) {
+            res.status(404).end(JSON.stringify(err));
+        }
+
+        return res.end();
+    });
+});
+router.post('/editProfile', function (req, res, next) {
+    User.findOne({email: req.user.email}).then(user => {
+        if (req.body.newEmail) {
+            user.email = req.body.newEmail;
+        } else {
+            if (passwordHash.verify(req.body.oldPassword, user.password) && req.body.password === req.body.repeatNewPassword) {
+                user.password = passwordHash.generate(req.body.password);
+            }
+            else {
+                res.redirect('back')
+            }
+
+        }
+        user.save().then(done => {
+            res.redirect('/productSupport/logout');
+        });
+
+    }).catch(err => {
+        console.log(err);
+    });
+
 });
 module.exports = router;

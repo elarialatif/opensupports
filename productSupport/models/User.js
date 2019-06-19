@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var schema = mongoose.Schema({
+const Schema = mongoose.Schema;
+var userschema = mongoose.Schema({
     name: {
         type: String,
         required: {
@@ -31,10 +32,17 @@ var schema = mongoose.Schema({
         type: String,
         default: 'user'
     },
+    products: [{
+        type: Schema.Types.ObjectId,
+        ref: 'products'
+    }],
+    departments: [{
+        type: String,
+    }],
     date: {
         type: Date,
         default: Date.now()
     }
 });
-const User = mongoose.model('users', schema);
+const User = mongoose.model('users', userschema);
 module.exports = User;

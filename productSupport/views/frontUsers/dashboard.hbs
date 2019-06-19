@@ -452,7 +452,8 @@
                                             </div>
                                         </form>
                                         <div class="edit-profile-page__title">Edit email</div>
-                                        <form class="form"><label class="form-field"><span
+                                        <form class="form" method="post" action="/productSupport/editProfile">
+                                            <label class="form-field"><span
                                                 class="form-field__label">
                                                         <!-- react-text: 984 -->New email
                                             <!-- /react-text --></span><span
@@ -461,12 +462,12 @@
                                                                                  class="input__text"
                                                                                  value=""></span></label>
                                             <button
-                                                    class="button button_primary button_large submit-button">Change
+                                                    class="button button_primary button_large submit-button" type="submit">Change
                                                 email
                                             </button>
                                         </form>
                                         <div class="edit-profile-page__title">Edit password</div>
-                                        <form class="form"><label class="form-field"><span
+                                        <form class="form" method="post" action="/productSupport/editProfile"><label class="form-field"><span
                                                 class="form-field__label">
                                                         <!-- react-text: 992 -->Old password
                                             <!-- /react-text --></span><span
@@ -492,7 +493,7 @@
                                                                                  class="input__text"
                                                                                  value=""></span></label>
                                             <button
-                                                    class="button button_primary button_large submit-button">Change
+                                                    class="button button_primary button_large submit-button" type="submit">Change
                                                 password
                                             </button>
                                         </form>
@@ -514,9 +515,37 @@
     });
 </script>
 
-<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('editor', {
-        filebrowserUploadUrl: '/uploader/upload'
-    });
-</script>
+                <link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+
+                <!-- Include JS file. -->
+                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/js/froala_editor.pkgd.min.js'></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.0/js/plugins/image.min.js"></script>
+                <script>
+                    var editor = new FroalaEditor('#editor',{
+                        imageUploadURL: '/productSupport/uploadeImageFromEditor',
+                        events: {
+                            'image.removed': function ($img) {
+                                $.ajax({
+                                    // Request method.
+                                    method: 'POST',
+
+                                    // Request URL.
+                                    url: '/productSupport/delete_file',
+
+                                    // Request params.
+                                    data: {
+                                        src: $img.attr('src')
+                                    }
+                                })
+                                        .done (function (data) {
+                                            console.log ('Image was deleted');
+                                        })
+                                        .fail (function (err) {
+                                            console.log ('Image delete problem: ' + JSON.stringify(err));
+                                        })
+                            }
+                        }
+                        // imageManagerDeleteURL: '/productSupport/delete_file'
+                    });
+                    console.log(editor.opts.events)
+                </script>
