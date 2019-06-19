@@ -11,5 +11,5 @@ $(document).ready(function () {
 		$(this).addClass('current menu__list-item_selected');
 		$("#"+tab_id).addClass('current');
 	})
-    
+	// 
 });

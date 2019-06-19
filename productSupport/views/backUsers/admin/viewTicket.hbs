@@ -1,64 +1,50 @@
-<div class="main-layout-header">
-    <div class="main-layout-header__login-links">
+<div class="view_ticket row">
+    <div class="myTickets__content col-md-12">
+        <div class="widget col-md-12" title="">
 
-        <button class="button button_clean button_large" onclick="location.href='/admin/allUsers'">
-            users
-        </button>
-        <button class="button button_clean button_large" onclick="location.href='/admin/products'">
-            products
-        </button>
-        <button class="button button_clean button_large" onclick="location.href='/admin/tickets/all'">
-            tickets
-        </button>
-    </div>
-    <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
-        <div aria-expanded="false" aria-autocomplete="list" aria-owns="drop-down-menu_1"
-             aria-activedescendant="drop-down-menu_1__0" class="drop-down__current-item"
-             role="combobox" tabindex="0">
-            <div><img class="drop-down__current-item-icon"
-                      src="https://www.opensupports.com/demos/demo1/images/icons/us.png"
-                      aria-hidden="true"><!-- react-text: 12 -->English
-                <!-- /react-text -->
-            </div>
+
+            <form method="post" action="/productSupport/Ticket/update/{{ticket.id}}">
+                <div class="form-group">
+                    <label class="form-field__label" for="title">title : </label>
+                    <span class="label_value">{{ticket.title}}</span> 
+                </div>
+                <div class="form-group">
+                    <label class="form-field__label" for="department">department :</label>
+                    <select id="department" name="department" class="label_value input__text">
+                        {{#each departments }}
+                        <option {{#ifEquals ../ticket.department this}} selected {{/ifEquals}}>{{this}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-field__label" for="product">product : </label>
+                    <span class="label_value">{{ticket.product.name}}</span>
+                </div>
+                <div class="form-group">
+                    <label class="form-field__label"  for="status">status  :</label>
+                    <select id="status" name="status" class="label_value input__text">
+                        <option {{#ifEquals ticket.status 'open'}} selected {{/ifEquals}} value="open">open</option>
+                        <option {{#ifEquals ticket.status 'closed'}} selected {{/ifEquals}} value="closed">closed
+                        </option>
+
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label class="form-field__label" for="content">content  :</label>
+                    <span class="label_value">{{{ticket.content}}}</span> 
+                </div>
+                <div class="form-group btns">
+                    <button type="submit" class="btn btn-info">Edit
+                    </button>
+                    <a href="/productSupport/Ticket/delete/{{ticket.id}}" class="btn btn-danger">Delete</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-
-<form method="post" action="/productSupport/Ticket/update/{{ticket.id}}">
-<div>
-    <label for="title">title : </label>  {{ticket.title}}
-</div>
-<div>
-    <label for="department">department</label>
-    <select id="department" name="department">
-
-        {{#each departments }}
-            <option {{#ifEquals ../ticket.department this}} selected {{/ifEquals}}>{{this}}</option>
-        {{/each}}
-    </select>
-</div>
-<div>
-    <label for="product">product : </label>  {{ticket.product.name}}
-</div>
-<div>
-    <label for="status">status</label>
-    <select id="status" name="status">
-
-
-            <option {{#ifEquals ticket.status 'open'}} selected {{/ifEquals}} value="open">open</option>
-            <option {{#ifEquals ticket.status 'closed'}} selected {{/ifEquals}} value="closed">closed</option>
-
-    </select>
-
-</div>
-<div>
-    <label for="content">content</label>
-    {{{ticket.content}}}
-</div>
-<div>
-    <a href="/productSupport/Ticket/delete/{{ticket.id}}" class="btn btn-danger">مسح</a>
-        <button type="submit" class="btn btn-info" >تعديل
-        </button>
-
-</div>
-    </form>
+<script>
+    $('#tickets_Tab').addClass('menu__list-item_selected');
+ 
+               
+</script>

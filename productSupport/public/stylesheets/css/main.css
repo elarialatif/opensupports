@@ -14403,6 +14403,7 @@ body {
     display: block;
     background: rgba(209, 236, 250, 0.75);
     animation: draw 1s ease-in-out;
+    max-height: 100%;
 }
       
 .chart span:before{
@@ -14436,4 +14437,17 @@ body {
     0% { 
         height:0; 
     } 
+}
+.view_ticket .form-field__label {
+    text-transform: uppercase;
+    display: inline-block;
+    width: 15%;
+}
+.view_ticket .label_value {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
+}
+.view_ticket .btns {
+    text-align: right;
 }
