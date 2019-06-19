@@ -14293,6 +14293,9 @@ body {
     padding: 0 2rem;
 }
 /* =========================================================Admin============================================================ */
+.AdminTabs button {
+    text-transform: uppercase;
+}
 .AdminDashboard .last_activities {
     margin-top: 0px; 
     opacity: 1;

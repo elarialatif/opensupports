@@ -1,17 +1,6 @@
 <div class="main-layout-header">
-    <div class="main-layout-header__login-links">
-        <button class="button button_clean button_large" onclick="location.href='/admin/adminDashboard'">
-            Dashboard
-        </button>
-        <button class="button button_clean button_large" onclick="location.href='/admin/allUsers'">
-            users
-        </button>
-        <button class="button button_clean button_large" onclick="location.href='/admin/products'">
-            products
-        </button>
-        <button class="button button_clean button_large" onclick="location.href='/admin/tickets/all'">
-            tickets
-        </button>
+    <div class="main-layout-header__login-links AdminTabs">
+        
     </div>
     <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
         <div aria-expanded="false" aria-autocomplete="list" aria-owns="drop-down-menu_1"
@@ -23,103 +12,162 @@
     </div>
 </div>
 <div class="main-layout--content row">
-    <div class="row AdminDashboard">
-        <div class="col-md-12 admin-panel-layout__content">
-            <div title="" class="widget">
-                <div class="admin-panel-activity">
-                    <div class="header">
-                        <h2 class="header__title">Last Activity</h2>
+    <div class="admin-panel-layout">
+        <div class="row admin-panel-layout__header">
+            <div class="col-md-3">
+                <div class="admin-panel-staff-widget">
+                    <div class="admin-panel-staff-widget__user-data">
+                        <div class="admin-panel-staff-widget__name">Ahmed</div>
+                        <div class="admin-panel-staff-widget__actions">
+                            <button class="button button_link button_large admin-panel-staff-widget__action">
+                                My Account
+                            </button>
+                            <span class="admin-panel-staff-widget__action-separator">|</span>
+                            <button class="button button_link button_large admin-panel-staff-widget__action">
+                                Close session
+                            </button>
+                        </div>
                     </div>
-                    <div class="menu menu_horizontal-list-bright admin-panel-activity__menu">
+                    <div class="admin-panel-staff-widget__profile-pic-wrapper">
+                        <img class="admin-panel-staff-widget__profile-pic" src="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 AdminTabs">
+                <div class="admin-panel-menu">
+                    <div class="menu menu_horizontal undefined">
                         <ul class="menu__list">
-                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
-                                My notifications
+                            <li class="menu__list-item menu__list-item_selected"  onclick="location.href='/admin/adminDashboard'">
+                                <span class="fa fa-tachometer fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Dashboard</span>
                             </li>
-                            <li class="menu__list-item" tabindex="0">
-                                All notifications
+                            <li class="menu__list-item"  onclick="location.href='/admin/allUsers'">
+                                <span class="fa fa-user fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Users</span>
+                            </li>
+                            <li class="menu__list-item"  onclick="location.href='/admin/products'">
+                                <span class="fa fa-th-list fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Products</span>
+                            </li>
+                            <li class="menu__list-item"  onclick="location.href='/admin/tickets/all'">
+                                <span class="fa fa-ticket fa-lg menu__icon" aria-hidden="true"></span>
+                                <span class="admin-panel-menu__item-text">Tickets</span>
                             </li>
                         </ul>
                     </div>
-                    <div>
-                        <div>
-                            <div class="last_activities" >
-                                <div class="activity-row"><span class="fa fa-user fa-lg activity-row__icon"
-                                        aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                            href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                            Palpatine
-                                        </a>
-                                    </span>
-                                    <span class="activity-row__message">
-                                        assigned tickets
-                                    </span>
-                                    <span>
-                                        <a class="activity-row__ticket-link"
-                                            href="/demos/demo1/admin/panel/tickets/view-ticket/470268">
-                                            #
-                                            470268
-                                        </a>
-                                    </span>
-                                    <span class="separator"></span>
-                                </div>
-                            </div>
-                            <div class="last_activities">
-                                <div class="activity-row"><span class="fa fa-user fa-lg activity-row__icon"
-                                        aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                            href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                            Palpatine</a></span><span class="activity-row__message">
-                                        assigned ticket
-                                    </span><span><a class="activity-row__ticket-link"
-                                            href="/demos/demo1/admin/panel/tickets/view-ticket/549622">
-                                            #
-                                            549622
-                                        </a></span><span class="separator"></span></div>
-                            </div>
-                            <div class="last_activities">
-                                <div class="activity-row"><span class="fa fa-exchange fa-lg activity-row__icon"
-                                        aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                            href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                            Palpatine</a></span><span class="activity-row__message">
-                                        changed department of ticket
-                                    </span><span><a class="activity-row__ticket-link"
-                                            href="/demos/demo1/admin/panel/tickets/view-ticket/549622">
-                                            #
-                                            549622
-                                        </a></span><span class="separator"></span></div>
-                            </div>
-                            <div class="last_activities">
-                                <div class="activity-row"><span class="fa fa-comment-o fa-lg activity-row__icon"
-                                        aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                            href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                            Palpatine</a></span><span class="activity-row__message">
-                                        commented ticket
-                                    </span><span><a class="activity-row__ticket-link"
-                                            href="/demos/demo1/admin/panel/tickets/view-ticket/771982">
-                                            #
-                                            771982
-                                        </a>
-                                    </span>
-                                    <span class="separator"></span>
-                                </div>
-                            </div>
-                            <div class="last_activities" >
-                                <div class="activity-row"><span class="fa fa-exclamation fa-lg activity-row__icon"
-                                        aria-hidden="true"></span><span><a class="activity-row__name-link"
-                                            href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
-                                            Palpatine</a></span><span class="activity-row__message">
-                                        changed priority of ticket
-                                    </span>
-                                    <span>
-                                        <a class="activity-row__ticket-link"
-                                            href="/demos/demo1/admin/panel/tickets/view-ticket/771982">
-                                            #
-                                            771982
-                                        </a>
-                                    </span>
-                                    <span class="separator"></span>
-                                </div>
-                            </div>
+                    <div class="menu menu_horizontal-list undefined">
+                        <ul class="menu__list">
+                            <li class="menu__list-item" tabindex="0">
+                                <!-- react-text: 134 -->Statistics
+                                <!-- /react-text -->
+                            </li>
+                            <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                                <!-- react-text: 136 -->Last Activity
+                                <!-- /react-text -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row AdminDashboard">
+            <div class="col-md-12 admin-panel-layout__content">
+                <div title="" class="widget">
+                    <div class="admin-panel-activity">
+                        <div class="header">
+                            <h2 class="header__title">Last Activity</h2>
                         </div>
-                        <button class="button button_secondary button_large submit-button">Load More</button>
+                        <div class="menu menu_horizontal-list-bright admin-panel-activity__menu">
+                            <ul class="menu__list">
+                                <li class="menu__list-item menu__list-item_selected" tabindex="0">
+                                    My notifications
+                                </li>
+                                <li class="menu__list-item" tabindex="0">
+                                    All notifications
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div>
+                                <div class="last_activities">
+                                    <div class="activity-row"><span class="fa fa-user fa-lg activity-row__icon"
+                                            aria-hidden="true"></span><span><a class="activity-row__name-link"
+                                                href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
+                                                Palpatine
+                                            </a>
+                                        </span>
+                                        <span class="activity-row__message">
+                                            assigned tickets
+                                        </span>
+                                        <span>
+                                            <a class="activity-row__ticket-link"
+                                                href="/demos/demo1/admin/panel/tickets/view-ticket/470268">
+                                                #
+                                                470268
+                                            </a>
+                                        </span>
+                                        <span class="separator"></span>
+                                    </div>
+                                </div>
+                                <div class="last_activities">
+                                    <div class="activity-row"><span class="fa fa-user fa-lg activity-row__icon"
+                                            aria-hidden="true"></span><span><a class="activity-row__name-link"
+                                                href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
+                                                Palpatine</a></span><span class="activity-row__message">
+                                            assigned ticket
+                                        </span><span><a class="activity-row__ticket-link"
+                                                href="/demos/demo1/admin/panel/tickets/view-ticket/549622">
+                                                #
+                                                549622
+                                            </a></span><span class="separator"></span></div>
+                                </div>
+                                <div class="last_activities">
+                                    <div class="activity-row"><span class="fa fa-exchange fa-lg activity-row__icon"
+                                            aria-hidden="true"></span><span><a class="activity-row__name-link"
+                                                href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
+                                                Palpatine</a></span><span class="activity-row__message">
+                                            changed department of ticket
+                                        </span><span><a class="activity-row__ticket-link"
+                                                href="/demos/demo1/admin/panel/tickets/view-ticket/549622">
+                                                #
+                                                549622
+                                            </a></span><span class="separator"></span></div>
+                                </div>
+                                <div class="last_activities">
+                                    <div class="activity-row"><span class="fa fa-comment-o fa-lg activity-row__icon"
+                                            aria-hidden="true"></span><span><a class="activity-row__name-link"
+                                                href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
+                                                Palpatine</a></span><span class="activity-row__message">
+                                            commented ticket
+                                        </span><span><a class="activity-row__ticket-link"
+                                                href="/demos/demo1/admin/panel/tickets/view-ticket/771982">
+                                                #
+                                                771982
+                                            </a>
+                                        </span>
+                                        <span class="separator"></span>
+                                    </div>
+                                </div>
+                                <div class="last_activities">
+                                    <div class="activity-row"><span class="fa fa-exclamation fa-lg activity-row__icon"
+                                            aria-hidden="true"></span><span><a class="activity-row__name-link"
+                                                href="/demos/demo1/admin/panel/staff/view-staff/1">Chancellor
+                                                Palpatine</a></span><span class="activity-row__message">
+                                            changed priority of ticket
+                                        </span>
+                                        <span>
+                                            <a class="activity-row__ticket-link"
+                                                href="/demos/demo1/admin/panel/tickets/view-ticket/771982">
+                                                #
+                                                771982
+                                            </a>
+                                        </span>
+                                        <span class="separator"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button button_secondary button_large submit-button">Load More</button>
+                        </div>
                     </div>
                 </div>
             </div>
