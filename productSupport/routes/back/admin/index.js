@@ -58,8 +58,19 @@ router.get('/allUsers', function (req, res, next) {
     })
 });
 router.get('/adminDashboard', function (req, res, next) {
+    Ticket.find({}).then(tickets => {
+        Ticket.find({status: 'closed'}).then(closedTickets => {
+            User.find({}).then(users => {
+                res.render('backUsers/admin/adminDashboard', {
+                    allTickets: Object.keys(tickets).length,
+                    closedTickets: Object.keys(closedTickets).length,
+                    users: Object.keys(users).length,
+                });
+            });
 
-    res.render('backUsers/admin/adminDashboard');
+        })
+    })
+
 
 });
 router.get('/myAccount', function (req, res, next) {
