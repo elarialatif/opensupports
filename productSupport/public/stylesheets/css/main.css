@@ -14539,7 +14539,10 @@ body {
     width: 30%;
     text-align: left;
 }
-
+.view_ticket select {
+    display: inline-block;
+    width: auto;
+}
 .view_ticket .btns {
     text-align: right;
 }
@@ -14592,3 +14595,158 @@ body {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
+.detailBox {
+    width: 100%;
+    border:1px solid #bbb;
+    margin: auto;
+}
+.titleBox {
+    background-color:#fdfdfd;
+    padding:10px;
+}
+.titleBox label{
+  color:#444;
+  margin:0;
+  display:inline-block;
+}
+
+.commentBox {
+    padding:10px;
+    border-top:1px dotted #bbb;
+}
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width:80%;
+}
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width:18%;
+}
+.actionBox .form-group * {
+}
+.actionBox .form-group button{
+    width: 20%;
+    color: #fff;
+    background-color: #82ca9c;
+    border-color: #82ca9c;
+    padding: 1rem 0;
+    text-transform: uppercase;
+}
+.taskDescription {
+    margin-top:10px 0;
+}
+.commentList {
+    padding:0;
+    list-style:none;
+    max-height:200px;
+    overflow:auto;
+}
+.commentList li {
+    margin:0;
+    margin-top:10px;
+}
+.commentList li > div {
+    display:table-cell;
+}
+.commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenterImage img {
+    width:100%;
+    border-radius:50%;
+}
+.commentText p {
+    margin:0;
+}
+.sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}
+.actionBox {
+    border-top:1px dotted #bbb;
+    padding:10px;
+}
+.onoffswitch {
+    position: relative;
+    width: 120px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #414A59;
+    border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Open!";
+    padding-left: 1rem;
+    background-color: #82CA9C;
+    color: #FFFFFF;
+    padding-right: 0rem;
+}
+.onoffswitch-inner:after {
+    content: "Closed!";
+    padding-right: 10px;
+    background-color: #d43f3a;
+    color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block;
+    width: 46px;
+    margin: 2px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 70px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+.view_ticket .toggle {
+    display: inline-block;
+    width: auto;
+    position: relative;
+    top: 1.5rem;
+}
+.view_ticket form {
+    text-align: left;
+}
+.view_ticket .commentinput {
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 50% !important;
+}
+.view_ticket .commentinput input {padding-bottom: 8rem;}
