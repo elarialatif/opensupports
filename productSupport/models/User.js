@@ -21,6 +21,9 @@ var userschema = mongoose.Schema({
         },
 
     },
+    img: {
+        type: String
+    },
     password: {
         type: String,
         required: {

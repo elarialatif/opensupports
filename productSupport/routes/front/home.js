@@ -91,7 +91,7 @@ router.post('/Ticket/update/:id', function (req, res, next) {
         }
 
         val = {
-            status:status,
+            status: status,
             department: req.body.department,
         }
     }
@@ -228,11 +228,28 @@ router.post('/delete_file', function (req, res, next) {
         return res.end();
     });
 });
-router.post('/editProfile', function (req, res, next) {
+router.post('/editProfile',function (req, res, next) {
+    console.log(req.files);
     User.findOne({email: req.user.email}).then(user => {
-        if (req.body.newEmail) {
+
+        if (req.files) {
+            if (user.img) {
+                fs.unlink('../public/images/profileImages/' + user.img, (err) => {
+                    console.log(err)
+                });
+            }
+            let fileName = Date.now() + '_' + req.files.img.name;
+            req.files.img.mv(`../public/images/profileImages/${fileName}`, err => {
+                if (err) throw  err;
+            });
+            user.img = fileName;
+            res.redirect('back')
+        }
+        if (req.body.email) {
             user.email = req.body.newEmail;
-        } else {
+        }
+
+        if(req.body.password) {
             if (passwordHash.verify(req.body.oldPassword, user.password) && req.body.password === req.body.repeatNewPassword) {
                 user.password = passwordHash.generate(req.body.password);
             }

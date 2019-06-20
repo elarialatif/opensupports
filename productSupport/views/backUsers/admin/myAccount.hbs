@@ -8,10 +8,13 @@
                 </div>
                 <div class="staff-editor">
                     <div class="row">
+                        <form method="post" action="/productSupport/editProfile" enctype="multipart/form-data">
                         <div class="col-md-4">
                             <div class="staff-editor__card">
                                 <div class="staff-editor__card-data">
                                     <div class="staff-editor__card-name">Chancellor Palpatine</div>
+
+                                    <button  type="submit" class="btn btn-success">edit </button>
                                     <div class="staff-editor__card-info">
                                         <div class="staff-editor__card-badge"><span
                                                 class="staff-editor__card-badge-blue">3</span><span
@@ -26,24 +29,37 @@
                                 </div><label class="staff-editor__card-pic-wrapper">
                                     <div class="staff-editor__card-pic-background"></div><img
                                         class="staff-editor__card-pic"
-                                        src="https://www.opensupports.com/demos/demo1/api/system/download?file=p_194388_emperor_palpatine_by_the_deadliest_doge-d8c2ifl.jpg"><span
+                                        src="/images/profileImages/{{user.img}}"><span
                                         class="fa fa-upload fa-4x staff-editor__card-pic-icon"
-                                        aria-hidden="true"></span><input type="file"
-                                        class="staff-editor__image-uploader" accept="image/x-png,image/gif,image/jpeg">
+                                        aria-hidden="true"></span>
+
+                                    <input type="file" id="imgInp"
+                                           class="staff-editor__image-uploader" accept="image/x-png,image/gif,image/jpeg" name="img" >
+
+
+
                                 </label>
+
                             </div>
+
                         </div>
+                        </form>
                         <div class="col-md-8">
                             <div class="staff-editor__form">
-                                <form class="form staff-editor__update-email"><label class="form-field"><span
+                                <form class="form staff-editor__update-email" method="post" action="/productSupport/editProfile"><label class="form-field"><span
                                             class="form-field__label">
                                             <!-- react-text: 2748 -->Email
                                             <!-- /react-text --></span><span class="input input_large"><input
-                                                type="text" name="email" value="demo@opensupports.com"
+                                                type="text" name="email" value="{{user.email}}"
                                                 aria-required="true" class="input__text"></span></label><button
                                         class="button button_primary button_medium submit-button staff-editor__submit-button">Update
                                         email</button></form><span class="separator staff-editor__separator"></span>
-                                <form class="form staff-editor__update-password"><label class="form-field"><span
+                                <form class="form staff-editor__update-password" method="post" action="/productSupport/editProfile"><label class="form-field"><span
+                                            class="form-field__label">
+                                            <!-- react-text: 2756 -->oldPassword
+                                            <!-- /react-text --></span><span class="input input_large"><input
+                                                type="password" name="oldPassword" aria-required="true" class="input__text"
+                                                value=""></span></label><label class="form-field"><span
                                             class="form-field__label">
                                             <!-- react-text: 2756 -->Password
                                             <!-- /react-text --></span><span class="input input_large"><input
@@ -52,7 +68,7 @@
                                             class="form-field__label">
                                             <!-- react-text: 2761 -->Repeat password
                                             <!-- /react-text --></span><span class="input input_large"><input
-                                                type="password" name="rpassword" aria-required="true"
+                                                type="password" name="repeatNewPassword" aria-required="true"
                                                 class="input__text" value=""></span></label><button
                                         class="button button_primary button_medium submit-button staff-editor__submit-button">Update
                                         password</button></form>
@@ -76,30 +92,16 @@
                                     <div class="form-field">
                                         <span class="form-field__label"></span>
                                         <ul class="checkbox-group">
-                                            <li class="checkbox-group__item">
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Dep1">
-                                                    <label for="Dep1">Dep1</label>
-                                                </div>
-                                            </li>
-                                            <li class="checkbox-group__item">
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Dep2">
-                                                    <label for="Dep2">Dep2</label>
-                                                </div>
-                                            </li>
-                                            <li class="checkbox-group__item">
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Dep3">
-                                                    <label for="Dep3">Dep3</label>
-                                                </div>
-                                            </li>
-                                            <li class="checkbox-group__item">
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Dep4">
-                                                    <label for="Dep4">Dep4</label>
-                                                </div>
-                                            </li>
+                                            {{#each user.departments}}
+                                                <li class="checkbox-group__item">
+                                                    <div class="form-group">
+                                                        <input type="checkbox" id="Dep1{{this}}" checked>
+                                                        <label for="Dep1{{this}}">{{this}}</label>
+                                                    </div>
+                                                </li>
+                                            {{/each}}
+
+
                                         </ul>
                                     </div>
                                 </form>
@@ -203,3 +205,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.staff-editor__card-pic').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function() {
+        readURL(this);
+    });</script>
