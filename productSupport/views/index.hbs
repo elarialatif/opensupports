@@ -104,14 +104,13 @@
                                         value=""></span></label><label class="form-field login-widget__input"><span
                                     class="form-field__label"></span><span class="input input_small"><input
                                         type="password" name="password" placeholder="password" aria-required="true"
-                                        class="input__text" value=""></span></label><label
-                                class="form-field form-field_checkbox login-widget__input"><span class="checkbox"><span
-                                        aria-checked="false" class="checkbox__icon" role="checkbox" tabindex="0"><i
-                                            class="fa fa-square fa-lg"></i></span><input type="checkbox" name="remember"
-                                        aria-hidden="true" class="checkbox__box" value="on"></span><span
-                                    class="form-field__label">
-                                    <!-- react-text: 201 -->Remember me
-                                    <!-- /react-text --></span></label></div>
+                                        class="input__text" value=""></span></label>
+                            
+                            <div class="form-group Remember">
+                                <input type="checkbox" id="Remember">
+                                <label for="Remember">Remember me</label>
+                            </div>
+                        </div>
                         <div class="login-widget__submit-button">
                             <button class="button button_primary button_large submit-button"
                                 onclick="location.href='dashboard.html'">Log
@@ -157,8 +156,8 @@
                             </div>
                         </div>
                     </a>
-                    <div class="main-home-page-portal__card col-md-4" >
-                        <div type="button" class="card card_green" data-toggle="modal"  data-target="#previousTickets" >
+                    <div class="main-home-page-portal__card col-md-4">
+                        <div type="button" class="card card_green" data-toggle="modal" data-target="#previousTickets">
                             <div class="card__icon">
                                 <span class="fa fa-hand-o-left fa-5x undefined" aria-hidden="true"></span>
                             </div>
@@ -174,13 +173,13 @@
                         <div class="modal fade" id="previousTickets" role="dialog">
                             <div class="modal-dialog">
                                 <form method="post" action="/productSupport/Ticket/all">
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Type Your Email</h4>
-                                    </div>
-                                    <div class="modal-body">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Type Your Email</h4>
+                                        </div>
+                                        <div class="modal-body">
 
                                             <div class="form-group">
                                                 <label for="email">Email address:</label>
@@ -188,12 +187,13 @@
                                                     value="">
                                             </div>
 
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success">Save</button>
+                                            <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Save</button>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-                                    </div>
-                                </div>
                                 </form>
                             </div>
                         </div>

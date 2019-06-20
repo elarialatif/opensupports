@@ -14544,7 +14544,8 @@ body {
     text-align: right;
 }
 
-.my_account .form-group input {
+.my_account .form-group input,
+.Remember.form-group input {
     padding: 0;
     height: initial;
     width: initial;
@@ -14553,12 +14554,14 @@ body {
     cursor: pointer;
 }
 
-.my_account .form-group label {
+.my_account .form-group label,
+.Remember.form-group label {
     position: relative;
     cursor: pointer;
 }
 
-.my_account .form-group label:before {
+.my_account .form-group label:before,
+.Remember.form-group label:before {
     content: '';
     -webkit-appearance: none;
     background-color: #eee;
@@ -14571,11 +14574,13 @@ body {
     cursor: pointer;
     margin-right: 5px;
 }
-.my_account .form-group input:checked+label:before {
+.my_account .form-group input:checked+label:before,
+.Remember.form-group input:checked+label:before {
     background-color: #d55;
     border: 1px solid #d55;
 }
-.my_account .form-group input:checked+label:after {
+.my_account .form-group input:checked+label:after,
+.Remember.form-group input:checked+label:after {
     content: '';
     display: block;
     position: absolute;
