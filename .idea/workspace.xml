@@ -3,18 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8db37e54-ad80-472e-8897-b6e96d9b6069" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/productSupport/controllers/TicketController.js" afterPath="$PROJECT_DIR$/productSupport/controllers/TicketController.js" />
-      <change beforePath="$PROJECT_DIR$/productSupport/controllers/productController.js" afterPath="$PROJECT_DIR$/productSupport/controllers/productController.js" />
-      <change beforePath="$PROJECT_DIR$/productSupport/controllers/userController.js" afterPath="$PROJECT_DIR$/productSupport/controllers/userController.js" />
-      <change beforePath="$PROJECT_DIR$/productSupport/routes/back/admin/index.js" afterPath="$PROJECT_DIR$/productSupport/routes/back/admin/index.js" />
-      <change beforePath="$PROJECT_DIR$/productSupport/routes/front/home.js" afterPath="$PROJECT_DIR$/productSupport/routes/front/home.js" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/backUsers/admin/adminDashboard.hbs" afterPath="$PROJECT_DIR$/productSupport/views/backUsers/admin/adminDashboard.hbs" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/backUsers/admin/products.hbs" afterPath="$PROJECT_DIR$/productSupport/views/backUsers/admin/products.hbs" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/backUsers/admin/users.hbs" afterPath="$PROJECT_DIR$/productSupport/views/backUsers/admin/users.hbs" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/frontUsers/dashboard.hbs" afterPath="$PROJECT_DIR$/productSupport/views/frontUsers/dashboard.hbs" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/partials/backUsers/footer.hbs" afterPath="$PROJECT_DIR$/productSupport/views/partials/backUsers/footer.hbs" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/partials/backUsers/header.hbs" afterPath="$PROJECT_DIR$/productSupport/views/partials/backUsers/header.hbs" />
-      <change beforePath="$PROJECT_DIR$/productSupport/views/partials/frontUsers/footer.hbs" afterPath="$PROJECT_DIR$/productSupport/views/partials/frontUsers/footer.hbs" />
+      <change beforePath="$PROJECT_DIR$/productSupport/public/stylesheets/css/main.css" afterPath="$PROJECT_DIR$/productSupport/public/stylesheets/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/productSupport/views/layouts/backUsers/app.hbs" afterPath="$PROJECT_DIR$/productSupport/views/layouts/backUsers/app.hbs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -55,21 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="adminDashboard.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productSupport/views/backUsers/admin/adminDashboard.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.hbs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/productSupport/views/backUsers/admin/users.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="253" column="73" lean-forward="false" selection-start-line="253" selection-start-column="73" selection-end-line="253" selection-end-column="73" />
+            <state relative-caret-position="309">
+              <caret line="374" column="40" lean-forward="false" selection-start-line="374" selection-start-column="40" selection-end-line="374" selection-end-column="40" />
               <folding>
                 <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -82,12 +62,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productSupport/views/frontUsers/dashboard.hbs">
+      <file leaf-file-name="head.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productSupport/views/partials/frontUsers/head.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="380" column="0" lean-forward="false" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+            <state relative-caret-position="276">
+              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="60" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/productSupport/public/stylesheets/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="605">
+              <caret line="14474" column="18" lean-forward="true" selection-start-line="14474" selection-start-column="18" selection-end-line="14474" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productSupport/public/javascripts/js/ui.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <folding>
+                <element signature="e#273#524#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,8 +97,18 @@
       <file leaf-file-name="header.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/productSupport/views/partials/backUsers/header.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productSupport/views/layouts/backUsers/app.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -142,26 +154,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productSupport/views/partials/frontUsers/footer.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="86" lean-forward="false" selection-start-line="21" selection-start-column="86" selection-end-line="21" selection-end-column="86" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.hbs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/productSupport/views/partials/backUsers/head.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="100" lean-forward="true" selection-start-line="16" selection-start-column="100" selection-end-line="16" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -171,6 +163,12 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tabs</find>
+      <find>tab-c</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -183,7 +181,6 @@
         <option value="$PROJECT_DIR$/productSupport/helper/authentication.js" />
         <option value="$PROJECT_DIR$/productSupport/views/backUsers/admin/viewTicket.hbs" />
         <option value="$PROJECT_DIR$/productSupport/views/backUsers/admin/tickets.hbs" />
-        <option value="$PROJECT_DIR$/productSupport/views/partials/frontUsers/head.hbs" />
         <option value="$PROJECT_DIR$/productSupport/Middlewares/user.js" />
         <option value="$PROJECT_DIR$/productSupport/Middlewares/admin.js" />
         <option value="$PROJECT_DIR$/productSupport/Middlewares/stuff.js" />
@@ -210,6 +207,10 @@
         <option value="$PROJECT_DIR$/productSupport/views/backUsers/admin/products.hbs" />
         <option value="$PROJECT_DIR$/productSupport/views/partials/backUsers/header.hbs" />
         <option value="$PROJECT_DIR$/productSupport/views/backUsers/admin/users.hbs" />
+        <option value="$PROJECT_DIR$/productSupport/views/partials/frontUsers/head.hbs" />
+        <option value="$PROJECT_DIR$/productSupport/public/javascripts/js/ui.js" />
+        <option value="$PROJECT_DIR$/productSupport/views/layouts/backUsers/app.hbs" />
+        <option value="$PROJECT_DIR$/productSupport/public/stylesheets/css/main.css" />
       </list>
     </option>
   </component>
@@ -269,35 +270,37 @@
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="helper" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="javascripts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="back" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="javascripts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="back" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="stylesheets" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="front" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="stylesheets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
@@ -310,6 +313,14 @@
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="backUsers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -317,30 +328,7 @@
               <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backUsers" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="admin" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="frontUsers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="opensupports-master" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="productSupport" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="frontUsers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="opensupports-master" type="b2602c69:ProjectViewProjectNode" />
@@ -402,12 +390,12 @@
       <workItem from="1560766311864" duration="727000" />
       <workItem from="1560839242877" duration="13349000" />
       <workItem from="1560925056281" duration="23948000" />
-      <workItem from="1561012109890" duration="3622000" />
+      <workItem from="1561012109890" duration="4849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80922000" />
+    <option name="totallyTimeSpent" value="82149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -447,36 +435,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/productSupport/views/frontUsers/myTickets.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6302">
-          <caret line="274" column="7" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="275" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productSupport/views/backUsers/admin/users.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#22068#22075#1#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productSupport/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="43" column="54" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productSupport/routes/front/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1127">
@@ -667,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productSupport/views/partials/frontUsers/head.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="91" lean-forward="true" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productSupport/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="463">
@@ -817,8 +768,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/productSupport/views/backUsers/admin/adminDashboard.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state relative-caret-position="334">
+          <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -826,7 +777,7 @@
     <entry file="file://$PROJECT_DIR$/productSupport/views/partials/backUsers/head.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="16" column="100" lean-forward="true" selection-start-line="16" selection-start-column="100" selection-end-line="16" selection-end-column="100" />
+          <caret line="16" column="100" lean-forward="false" selection-start-line="16" selection-start-column="100" selection-end-line="16" selection-end-column="100" />
           <folding />
         </state>
       </provider>
@@ -879,18 +830,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/productSupport/views/partials/backUsers/header.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/productSupport/views/backUsers/admin/users.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="253" column="73" lean-forward="false" selection-start-line="253" selection-start-column="73" selection-end-line="253" selection-end-column="73" />
+        <state relative-caret-position="309">
+          <caret line="374" column="40" lean-forward="false" selection-start-line="374" selection-start-column="40" selection-end-line="374" selection-end-column="40" />
           <folding>
             <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -899,6 +842,48 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productSupport/views/partials/frontUsers/head.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productSupport/public/javascripts/js/ui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#273#524#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productSupport/views/partials/backUsers/header.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productSupport/views/layouts/backUsers/app.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productSupport/public/stylesheets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="14474" column="18" lean-forward="true" selection-start-line="14474" selection-start-column="18" selection-end-line="14474" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

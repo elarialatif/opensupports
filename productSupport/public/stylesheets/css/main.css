@@ -14457,11 +14457,11 @@ body {
     padding: 0.5rem 0;
 }
 
-.tab-content {
+#AdminPanal .tab-content {
     display: none;
 }
 
-.tab-content.current {
+#AdminPanal .tab-content.current {
     display: inherit;
 }
 
