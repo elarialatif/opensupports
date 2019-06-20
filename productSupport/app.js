@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var frontHomeRouter = require('./routes/front/home');
 var adminRouter = require('./routes/back/admin/index');
+var stuffRouter = require('./routes/back/staff/index');
 var exphbs = require('express-handlebars');
 var connectTodataBase = require('./config/database');
 var helpers = require('./helper/handlebars');
@@ -24,7 +25,7 @@ app.engine('hbs', exphbs({
     extname: 'hbs',
     defaultLayout: 'layouts/frontUsers/app',
     layoutsDir: __dirname + '/views/',
-    helpers: {time: helpers.time, ifEquals: helpers.ifEquals}
+    helpers: {time: helpers.time, ifEquals: helpers.ifEquals,division:helpers.division}
 }));
 app.set('view engine', 'hbs');
 app.use(session({
@@ -51,12 +52,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(fileUpload({ limits: { fileSize: 50 * 1024 * 1024 }}));
+app.use(fileUpload({limits: {fileSize: 50 * 1024 * 1024}}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productSupport', frontHomeRouter);
 app.use('/admin', adminRouter);
+app.use('/stuff', stuffRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

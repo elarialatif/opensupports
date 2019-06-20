@@ -12,4 +12,8 @@ module.exports = {
     time: function (date, format) {
         return moment(date).format(format);
     },
+    division: function (pram1, pram2) {
+        if (pram2 === 0) return 0;
+        else return Math.round(pram1 / pram2)
+    },
 };

@@ -23,7 +23,7 @@ var Ticket = mongoose.model('tickets', {
         type: String,
         require: true,
     },
-    owner: {
+    workedBy: {
         type: Schema.Types.ObjectId,
         ref: 'users'
     },

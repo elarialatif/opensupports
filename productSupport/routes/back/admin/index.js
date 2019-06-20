@@ -58,7 +58,7 @@ router.get('/tickets/all', function (req, res, next) {
     });
 });
 router.get('/ticket/view/:id', function (req, res, next) {
-    Ticket.findById({_id: req.params.id}).populate('product').then(ticket => {
+    Ticket.findById({_id: req.params.id}).populate('product').populate('workedBy').then(ticket => {
         Comment.find({ticket: req.params.id}).populate('user').then(comments => {
             res.render('backUsers/admin/viewTicket', {
                 ticket: ticket,
@@ -100,8 +100,20 @@ router.get('/adminDashboard', function (req, res, next) {
 
 });
 router.get('/myAccount', function (req, res, next) {
+    Ticket.find({workedBy: req.user.id}).populate('product').then(myTickets => {
+        Ticket.find({$and: [{workedBy: req.user.id}, {status: 'closed'}]}).then(closedTickets => {
+            Ticket.find({}).then(allTickets => {
+                res.render('backUsers/admin/myAccount', {
+                    allTickets: Object.keys(allTickets).length,
+                    myTickets: Object.keys(myTickets).length,
+                    closedTickets: Object.keys(closedTickets).length,
+                    tickets: myTickets,
+                });
+            })
+        })
+    })
 
-    res.render('backUsers/admin/myAccount');
 
 });
+
 module.exports = router;

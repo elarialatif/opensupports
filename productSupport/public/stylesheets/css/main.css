@@ -12596,10 +12596,10 @@ body {
     background-color: #d55;
     position: relative;
     width: 100%;
-    height: 355px;
+    height: 400px;
     text-align: center;
     border: 2px solid #E7E7E7;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 /* line 18, src/app/admin/panel/staff/staff-editor.scss */
@@ -12639,7 +12639,7 @@ body {
     transition: opacity 0.2s ease;
     background-color: white;
     position: absolute;
-    top: 20px;
+    top: 10%;
     border: 4px solid #E7E7E7;
     border-radius: 50%;
     width: 200px;
@@ -12648,7 +12648,7 @@ body {
     text-align: center;
     left: 50%;
     transform: translate(-50%, 0);
-    opacity: 1
+    opacity: 1;
 }
 
 /* line 61, src/app/admin/panel/staff/staff-editor.scss */
@@ -12683,8 +12683,8 @@ body {
     background-color: white;
     bottom: 0;
     width: 100%;
-    height: 175px;
-    padding-top: 50px
+    height: 200px;
+    padding-top: 50px;
 }
 
 /* line 91, src/app/admin/panel/staff/staff-editor.scss */
@@ -14757,3 +14757,11 @@ body {
     width: 50% !important;
 }
 .view_ticket .commentinput input {padding-bottom: 8rem;}
+.view_ticket span.role {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 2px 13px;
+    border-radius: 30px;
+    background-color: #414A59;
+    color: white;
+    margin-left: 1rem;
+}
