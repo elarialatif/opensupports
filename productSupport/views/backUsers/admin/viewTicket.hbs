@@ -53,25 +53,20 @@
 
             </form>
             <div class="detailBox">
-                <div class="titleBox">
-                    <label>Comment Here!!</label>
-
-                </div>
-                <div class="commentBox">
-
-                    <p class="taskDescription"></p>
-                </div>
                 <div class="actionBox">
                     <ul class="commentList">
                         {{#each comments}}
                             <li>
                                 <div class="commenterImage">
-                                    {{this.user.name}}
+                                    <img src="https://www.opensupports.com/demos/demo1/api/system/download?file=p_194388_emperor_palpatine_by_the_deadliest_doge-d8c2ifl.jpg" alt="">
+                                    
                                 </div>
                                 <div class="commentText">
-                                    <p class="">{{this.comment}}</p> <span class="date sub-text">{{time date
-                                                                                                        'MMMM D YYYY'}}</span>
-
+                                    <h3>{{this.user.name}}</h3>
+                                    <span class="date sub-text">
+                                        {{time date  'MMMM D YYYY'}}
+                                    </span>
+                                    <p class="">{{this.comment}}</p> 
                                 </div>
                             </li>
 
