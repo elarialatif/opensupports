@@ -10,6 +10,7 @@ var AdminAuth = require('../../../Middlewares/admin')
 var logController = require('../../../controllers/logController');
 var logAction = require('../../../helper/LogActions');
 var Log = require('../../../models/Log');
+var Comment = require('../../../models/Comment')
 /* GET home page. */
 router.all('/*', AdminAuth.AdminAuthicated, (req, res, next) => {
     req.app.locals.layout = 'layouts/backUsers/app';
@@ -58,8 +59,14 @@ router.get('/tickets/all', function (req, res, next) {
 });
 router.get('/ticket/view/:id', function (req, res, next) {
     Ticket.findById({_id: req.params.id}).populate('product').then(ticket => {
+        Comment.find({ticket: req.params.id}).then(comments => {
+            res.render('backUsers/admin/viewTicket', {
+                ticket: ticket,
+                departments: helpers.departments,
+                comments: comments
+            });
+        })
 
-        res.render('backUsers/admin/viewTicket', {ticket: ticket, departments: helpers.departments});
     });
 });
 router.get('/allUsers', function (req, res, next) {
@@ -72,13 +79,17 @@ router.get('/adminDashboard', function (req, res, next) {
         Ticket.find({status: 'closed'}).then(closedTickets => {
             User.find({}).then(users => {
                 Log.find({}).then(logs => {
-                    res.render('backUsers/admin/adminDashboard', {
-                        allTickets: Object.keys(tickets).length,
-                        closedTickets: Object.keys(closedTickets).length,
-                        users: Object.keys(users).length,
-                        logs: logs,
-                        logAction: logAction
-                    });
+                    Comment.find({}).then(comments => {
+                        res.render('backUsers/admin/adminDashboard', {
+                            allTickets: Object.keys(tickets).length,
+                            closedTickets: Object.keys(closedTickets).length,
+                            users: Object.keys(users).length,
+                            comments: Object.keys(comments).length,
+                            logs: logs,
+                            logAction: logAction
+                        });
+                    })
+
                 });
 
             });
