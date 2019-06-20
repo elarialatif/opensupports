@@ -4,64 +4,60 @@
             {{!--  --}}
             <div class="ticket-list tab-content current" id="tab-1">
                 <div class="header">
-                    <h2 class="header__title">vnkjhnlkjo</h2>
-                </div>
-                
-            </div>
-            {{!--  --}}
-            <div class="ticket-list tab-content" id="tab-2">
-                <div class="header">
-                    <h2 class="header__title">dgvsg</h2>
+                    <h2 class="header__title">users who solve tickets </h2>
                 </div>
                 <div class="ticket-list__filters"></div>
                 <div class="table__wrapper">
                     <div id="tickets_wrapper" class="dataTables_wrapper no-footer">
 
                         <table class="table table-responsive dataTable no-footer" id="tickets" role="grid"
-                            aria-describedby="tickets_info">
+                               aria-describedby="tickets_info">
                             <thead>
-                                <tr class="table__header" role="row">
-                                    <th class="table__header-column ticket-list__number col-md-1 sorting_asc"
-                                        tabindex="0" aria-controls="tickets" rowspan="1" colspan="1"
-                                        aria-sort="ascending" aria-label="
+                            <tr class="table__header" role="row">
+                                <th class="table__header-column ticket-list__number col-md-1 sorting_asc"
+                                    tabindex="0" aria-controls="tickets" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="
                                                             Number
                                                         : activate to sort column descending" style="width: 185px;">
-                                        Number
-                                    </th>
-                                    <th class="table__header-column ticket-list__title col-md-2 sorting" tabindex="0"
-                                        aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                    Number
+                                </th>
+                                <th class="table__header-column ticket-list__title col-md-2 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Title
                                                         : activate to sort column ascending" style="width: 78px;">
-                                        Name
-                                    </th>
-                                    <th class="table__header-column ticket-list__product col-md-1 sorting" tabindex="0"
-                                        aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                    Name
+                                </th>
+                                <th class="table__header-column ticket-list__product col-md-1 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Product
                                                         : activate to sort column ascending" style="width: 127px;">
-                                        Email
-                                    </th>
-                                    <th class="table__header-column ticket-list__department col-md-1 sorting"
-                                        tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                    Email
+                                </th>
+                                <th class="table__header-column ticket-list__department col-md-1 sorting"
+                                    tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Department
                                                         : activate to sort column ascending" style="width: 136px;">
-                                        Role
-                                    </th>
-                                    <th class="table__header-column ticket-list__date col-md-2 sorting" tabindex="0"
-                                        aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                    Role
+                                </th>
+                                <th class="table__header-column ticket-list__date col-md-2 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Date
                                                         : activate to sort column ascending" style="width: 81px;">
-                                        Date
-                                    </th>
-                                    <th class="table__header-column ticket-list__action col-md-4 sorting" tabindex="0"
-                                        aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                    Date
+                                </th>
+                                <th class="table__header-column ticket-list__action col-md-4 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Action
                                                         : activate to sort column ascending" style="width: 81px;">
-                                        Action
-                                    </th>
-                                </tr>
+                                    Action
+                                </th>
+                            </tr>
                             </thead>
                             <tbody id="productTableBody">
-                                {{#each users}}
+                            {{#each users}}
+                            {{#ifEquals role 'user'}}
+
+                            {{else}}
                                 <tr class="table__row odd" role="row">
                                     <td class="table__cell ticket-list__number col-md-1 sorting_1">
                                         <a href="#">{{id}}</a>
@@ -83,85 +79,86 @@
                                     </td>
                                     <td class="table__cell ticket-list__action col-md-4">
                                         <button type="button" class="btn btn-info" data-toggle="modal"
-                                            data-target="#editModal{{id}}">Edit
+                                                data-target="#editModal{{id}}">Edit
                                         </button>
                                         <a href="#" class="btn btn-danger">Delete</a>
                                         <div class="modal fade allUser_modal" id="editModal{{id}}" tabindex="-1"
-                                            role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                             role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">{{name}}
                                                         </h5>
                                                         <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close">
+                                                                aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <form class="form signup-widget__form" method="post"
-                                                            action="/productSupport/signIn">
+                                                              action="/productSupport/signIn">
                                                             <div class="signup-widget__inputs"><label
                                                                     class="form-field signup-widget__input"><span
-                                                                        class="form-field__label">
+                                                                    class="form-field__label">
                                                                         <!-- react-text: 455 -->Full name
-                                                                        <!-- /react-text --></span><span
-                                                                        class="input input_medium"><input type="text"
-                                                                            name="name" aria-required="true"
-                                                                            class="input__text"
-                                                                            value=""></span></label><label
+                                                                <!-- /react-text --></span><span
+                                                                    class="input input_medium"><input type="text"
+                                                                                                      name="name"
+                                                                                                      aria-required="true"
+                                                                                                      class="input__text"
+                                                                                                      value=""></span></label><label
                                                                     class="form-field signup-widget__input"><span
-                                                                        class="form-field__label">
+                                                                    class="form-field__label">
                                                                         Email
                                                                     </span><span class="input input_medium"><input
-                                                                            type="text" name="email"
-                                                                            aria-required="true" class="input__text"
-                                                                            value=""></span></label>
+                                                                    type="text" name="email"
+                                                                    aria-required="true" class="input__text"
+                                                                    value=""></span></label>
                                                                 <label class="form-field signup-widget__input"><span
                                                                         class="form-field__label">
                                                                         Role
                                                                     </span><span class="input input_medium">
                                                                         <select class="input__text" id="role"
-                                                                            name="role">
+                                                                                name="role">
                                                                             {{#each roles}}
-                                                                            <option class="input input_medium"
-                                                                                value="{{this}}">{{this}}
-                                                                            </option>
+                                                                                <option class="input input_medium"
+                                                                                        value="{{this}}">{{this}}
+                                                                                </option>
                                                                             {{/each}}
                                                                         </select></span></label><label
-                                                                    class="form-field signup-widget__input"><span
+                                                                        class="form-field signup-widget__input"><span
                                                                         class="form-field__label">
                                                                         <!-- react-text: 465 -->Password
-                                                                        <!-- /react-text --></span><span
+                                                                    <!-- /react-text --></span><span
                                                                         class="input input_medium"><input
-                                                                            type="password" name="password"
-                                                                            aria-required="true" class="input__text"
-                                                                            value=""></span></label><label
-                                                                    class="form-field signup-widget__input"><span
+                                                                        type="password" name="password"
+                                                                        aria-required="true" class="input__text"
+                                                                        value=""></span></label><label
+                                                                        class="form-field signup-widget__input"><span
                                                                         class="form-field__label">
                                                                         <!-- react-text: 470 -->Repeat password
-                                                                        <!-- /react-text --></span><span
+                                                                    <!-- /react-text --></span><span
                                                                         class="input input_medium"><input
-                                                                            type="password" name="repeated-password"
-                                                                            aria-required="true" class="input__text"
-                                                                            value=""></span></label>
+                                                                        type="password" name="repeated-password"
+                                                                        aria-required="true" class="input__text"
+                                                                        value=""></span></label>
 
                                                                 <div class="signup-widget__captcha">
                                                                     <div tabindex="0">
                                                                         <div style="width: 304px; height: 78px;">
                                                                             <div>
                                                                                 <iframe
-                                                                                    src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LenJmYUAAAAABxxo7IJ4MitAXIIiZhHubX_nMxn&amp;co=aHR0cHM6Ly93d3cub3BlbnN1cHBvcnRzLmNvbTo0NDM.&amp;hl=en&amp;type=image&amp;v=v1559543665173&amp;theme=light&amp;size=normal&amp;cb=9gwlikfp9no"
-                                                                                    width="304" height="78"
-                                                                                    role="presentation"
-                                                                                    name="a-wi3pg07dttkc"
-                                                                                    frameborder="0" scrolling="no"
-                                                                                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                                                                                        src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LenJmYUAAAAABxxo7IJ4MitAXIIiZhHubX_nMxn&amp;co=aHR0cHM6Ly93d3cub3BlbnN1cHBvcnRzLmNvbTo0NDM.&amp;hl=en&amp;type=image&amp;v=v1559543665173&amp;theme=light&amp;size=normal&amp;cb=9gwlikfp9no"
+                                                                                        width="304" height="78"
+                                                                                        role="presentation"
+                                                                                        name="a-wi3pg07dttkc"
+                                                                                        frameborder="0" scrolling="no"
+                                                                                        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
                                                                             </div>
                                                                             <textarea id="g-recaptcha-response-3"
-                                                                                name="g-recaptcha-response"
-                                                                                class="g-recaptcha-response"
-                                                                                style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                                                                      name="g-recaptcha-response"
+                                                                                      class="g-recaptcha-response"
+                                                                                      style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -173,7 +170,7 @@
                                                             Save changes
                                                         </button>
                                                         <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close
+                                                                data-dismiss="modal">Close
                                                         </button>
                                                     </div>
                                                 </div>
@@ -182,25 +179,213 @@
 
                                     </td>
                                 </tr>
+
+                            {{/ifEquals}}
                                 {{/each}}
                             </tbody>
                         </table>
                         <div style="text-align: right; margin-top: 10px;">
-                            <button class="button button_secondary button_medium" onclick="location.href='/productSupport/signIn'">
+                            <button class="button button_secondary button_medium"
+                                    onclick="location.href='/productSupport/signIn'">
                                 <span class="fa fa-plus fa-sm undefined" aria-hidden="true"></span>
                                 Add user
                             </button>
                         </div>
-                        <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
-                        <script>
-                            $(function () {
-                                $('.editor').each(function (e) {
-                                    CKEDITOR.replace(this.id, {
-                                        filebrowserUploadUrl: '/uploader/upload'
-                                    });
-                                });
-                            });
-                        </script>
+
+
+                    </div>
+                </div>
+            </div>
+            {{!--  --}}
+            <div class="ticket-list tab-content" id="tab-2">
+                <div class="header">
+                    <h2 class="header__title">users who made tickets</h2>
+                </div>
+                <div class="ticket-list__filters"></div>
+                <div class="table__wrapper">
+                    <div id="tickets_wrapper" class="dataTables_wrapper no-footer">
+
+                        <table class="table table-responsive dataTable no-footer" id="tickets" role="grid"
+                               aria-describedby="tickets_info">
+                            <thead>
+                            <tr class="table__header" role="row">
+                                <th class="table__header-column ticket-list__number col-md-1 sorting_asc"
+                                    tabindex="0" aria-controls="tickets" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="
+                                                            Number
+                                                        : activate to sort column descending" style="width: 185px;">
+                                    Number
+                                </th>
+                                <th class="table__header-column ticket-list__title col-md-2 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Title
+                                                        : activate to sort column ascending" style="width: 78px;">
+                                    Name
+                                </th>
+                                <th class="table__header-column ticket-list__product col-md-1 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Product
+                                                        : activate to sort column ascending" style="width: 127px;">
+                                    Email
+                                </th>
+                                <th class="table__header-column ticket-list__department col-md-1 sorting"
+                                    tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Department
+                                                        : activate to sort column ascending" style="width: 136px;">
+                                    Role
+                                </th>
+                                <th class="table__header-column ticket-list__date col-md-2 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Date
+                                                        : activate to sort column ascending" style="width: 81px;">
+                                    Date
+                                </th>
+                                <th class="table__header-column ticket-list__action col-md-4 sorting" tabindex="0"
+                                    aria-controls="tickets" rowspan="1" colspan="1" aria-label="
+                                                            Action
+                                                        : activate to sort column ascending" style="width: 81px;">
+                                    Action
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                            {{#each users}}
+                                {{#ifEquals role 'user'}}
+                                    <tr class="table__row odd" role="row">
+                                        <td class="table__cell ticket-list__number col-md-1 sorting_1">
+                                            <a href="#">{{id}}</a>
+                                        </td>
+                                        <td class="table__cell ticket-list__title col-md-2">
+                                            <div>
+                                                {{name}}
+                                            </div>
+                                        </td>
+                                        <td class="table__cell ticket-list__product col-md-1">
+                                            {{email}}
+                                        </td>
+                                        <td class="table__cell ticket-list__department col-md-1">
+                                            {{role}}
+                                        </td>
+
+                                        <td class="table__cell ticket-list__date col-md-2">
+                                            {{time date 'D MMMM  YYYY'}}
+                                        </td>
+                                        <td class="table__cell ticket-list__action col-md-4">
+                                            <button type="button" class="btn btn-info" data-toggle="modal"
+                                                    data-target="#editModal{{id}}">Edit
+                                            </button>
+                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <div class="modal fade allUser_modal" id="editModal{{id}}" tabindex="-1"
+                                                 role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">{{name}}
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form class="form signup-widget__form" method="post"
+                                                                  action="/productSupport/signIn">
+                                                                <div class="signup-widget__inputs"><label
+                                                                        class="form-field signup-widget__input"><span
+                                                                        class="form-field__label">
+                                                                        <!-- react-text: 455 -->Full name
+                                                                    <!-- /react-text --></span><span
+                                                                        class="input input_medium"><input type="text"
+                                                                                                          name="name"
+                                                                                                          aria-required="true"
+                                                                                                          class="input__text"
+                                                                                                          value=""></span></label><label
+                                                                        class="form-field signup-widget__input"><span
+                                                                        class="form-field__label">
+                                                                        Email
+                                                                    </span><span class="input input_medium"><input
+                                                                        type="text" name="email"
+                                                                        aria-required="true" class="input__text"
+                                                                        value=""></span></label>
+                                                                    <label class="form-field signup-widget__input"><span
+                                                                            class="form-field__label">
+                                                                        Role
+                                                                    </span><span class="input input_medium">
+                                                                        <select class="input__text" id="role"
+                                                                                name="role">
+                                                                            {{#each roles}}
+                                                                                <option class="input input_medium"
+                                                                                        value="{{this}}">{{this}}
+                                                                                </option>
+                                                                            {{/each}}
+                                                                        </select></span></label><label
+                                                                            class="form-field signup-widget__input"><span
+                                                                            class="form-field__label">
+                                                                        <!-- react-text: 465 -->Password
+                                                                        <!-- /react-text --></span><span
+                                                                            class="input input_medium"><input
+                                                                            type="password" name="password"
+                                                                            aria-required="true" class="input__text"
+                                                                            value=""></span></label><label
+                                                                            class="form-field signup-widget__input"><span
+                                                                            class="form-field__label">
+                                                                        <!-- react-text: 470 -->Repeat password
+                                                                        <!-- /react-text --></span><span
+                                                                            class="input input_medium"><input
+                                                                            type="password" name="repeated-password"
+                                                                            aria-required="true" class="input__text"
+                                                                            value=""></span></label>
+
+                                                                    <div class="signup-widget__captcha">
+                                                                        <div tabindex="0">
+                                                                            <div style="width: 304px; height: 78px;">
+                                                                                <div>
+                                                                                    <iframe
+                                                                                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LenJmYUAAAAABxxo7IJ4MitAXIIiZhHubX_nMxn&amp;co=aHR0cHM6Ly93d3cub3BlbnN1cHBvcnRzLmNvbTo0NDM.&amp;hl=en&amp;type=image&amp;v=v1559543665173&amp;theme=light&amp;size=normal&amp;cb=9gwlikfp9no"
+                                                                                            width="304" height="78"
+                                                                                            role="presentation"
+                                                                                            name="a-wi3pg07dttkc"
+                                                                                            frameborder="0" scrolling="no"
+                                                                                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+                                                                                </div>
+                                                                                <textarea id="g-recaptcha-response-3"
+                                                                                          name="g-recaptcha-response"
+                                                                                          class="g-recaptcha-response"
+                                                                                          style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                            </form>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-info">
+                                                                Save changes
+                                                            </button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                {{else}}
+
+
+                                {{/ifEquals}}        {{/each}}
+                            </tbody>
+                        </table>
+                        <div style="text-align: right; margin-top: 10px;">
+                            <button class="button button_secondary button_medium"
+                                    onclick="location.href='/productSupport/signIn'">
+                                <span class="fa fa-plus fa-sm undefined" aria-hidden="true"></span>
+                                Add user
+                            </button>
+                        </div>
+
 
                     </div>
                 </div>
@@ -208,12 +393,3 @@
         </div>
     </div>
 </div>
-
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#tickets').DataTable({
-            "iDisplayLength": 2
-        });
-    });
-</script>

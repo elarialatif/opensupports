@@ -2,8 +2,10 @@ var User = require('../models/User');
 var passwordHash = require('password-hash');
 var passport = require('passport');
 var passportLocal = require('passport-local').Strategy;
+var logController = require('./logController');
+var logAction = require('../helper/LogActions');
 module.exports = {
-    adduser: function (name, email, password,role,products,departments) {
+    adduser: function (name, email, password, role, products, departments, authUser) {
         newuser = new User();
         newuser.name = name;
         newuser.email = email;
@@ -12,7 +14,9 @@ module.exports = {
         newuser.departments = departments;
         newuser.password = passwordHash.generate(password);
         newuser.save().then(user => {
-
+            let LogName = 'تم اضافة المستخدم رقم ';
+            let Model = 'User';
+            logController.addLog(LogName, authUser.name, Model, user.id, logAction.create);
         })
     },
     login: function () {
@@ -60,13 +64,13 @@ module.exports = {
 
             failureRedirect: '/',
             failureFlash: true,
-        })(req, res, next=>{
-         if(req.user.role==='user'){
-             res.redirect('/productSupport/userDashboard')
-         }
-         else if (req.user.role==='admin'){
-             res.redirect('/admin/adminDashboard')
-         }
+        })(req, res, next => {
+            if (req.user.role === 'user') {
+                res.redirect('/productSupport/userDashboard')
+            }
+            else if (req.user.role === 'admin') {
+                res.redirect('/admin/adminDashboard')
+            }
         })
     }
 }
