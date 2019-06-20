@@ -20,3 +20,11 @@
 <script type="text/javascript" src="/javascripts/js/main.js"></script>
 <script type="text/javascript" src="/javascripts/js/ui.js"></script>
 <!-- #Scripts -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.table').DataTable({
+            "iDisplayLength": 2
+        });
+    });
+</script>

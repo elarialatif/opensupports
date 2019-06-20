@@ -14,6 +14,8 @@ var Ticket = require('../../models/Ticket');
 var Product = require('../../models/Product');
 var helpers = require('../../helper/Departments');
 var Userhelper = require('../../helper/user');
+var logController = require('../../controllers/logController');
+var logAction = require('../../helper/LogActions')
 var path = require('path');
 UserController.login();
 
@@ -93,13 +95,18 @@ router.post('/Ticket/update/:id', function (req, res, next) {
         val
 
     }).then(result => {
+        let LogName = 'تم تعديل  المشكلة  رقم ';
+        let Model = 'Ticket';
+        logController.addLog(LogName, req.user.name, Model, result.id, logAction.edit);
         res.redirect('back');
     })
 });
 router.get('/Ticket/delete/:id', function (req, res, next) {
 
     Ticket.findByIdAndDelete({_id: req.params.id}).then(result => {
-
+        let LogName = 'تم مسح  المشكلة  رقم ';
+        let Model = 'Ticket';
+        logController.addLog(LogName, req.user.name, Model, result.id, logAction.delete);
         if (req.user.role === 'admin') {
             res.redirect('/admin/tickets/all');
         }
@@ -171,7 +178,7 @@ router.post('/signIn', function (req, res, next) {
         role: req.body.role,
         departments: req.body.departments,
     };
-    if (errors) {
+    if (Object.keys(errors).length !== 0) {
         Product.find({}).then(products => {
             res.render('frontUsers/signIn', {
                 roles: Userhelper.userTypes,
@@ -183,7 +190,7 @@ router.post('/signIn', function (req, res, next) {
         })
     }
     else {
-        UserController.adduser(req.body.name, req.body.email, req.body.password, req.body.role, req.body.products, req.body.departments);
+        UserController.adduser(req.body.name, req.body.email, req.body.password, req.body.role, req.body.products, req.body.departments, req.user);
         res.redirect('/');
     }
 

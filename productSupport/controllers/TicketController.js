@@ -1,7 +1,8 @@
 var {transporter} = require('../config/email');
 var emailExistence = require('email-existence');
 var Ticket = require('../models/Ticket')
-
+var logController = require('./logController');
+var logAction = require('../helper/LogActions');
 module.exports = {
     addTicket: function (Email, name, Title,Content,product,department) {
         newTicket = new Ticket();
@@ -20,6 +21,9 @@ module.exports = {
             html: '<h1 style="color: red"> ticket created sucessfuly with no :  </h1> ' +
             '<h4>'+ res.id +'</h4>'
         };
+            let LogName = 'تم اضافة المشكلة رقم ';
+            let Model = 'Ticket';
+            logController.addLog(LogName, name, Model, res.id,logAction.create);
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);
