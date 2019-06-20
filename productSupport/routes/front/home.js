@@ -85,8 +85,13 @@ router.post('/Ticket/update/:id', function (req, res, next) {
         }
     }
     else {
+        let status = 'closed';
+        if (req.body.status) {
+            status = req.body.status;
+        }
+
         val = {
-            status: req.body.status,
+            status:status,
             department: req.body.department,
         }
     }

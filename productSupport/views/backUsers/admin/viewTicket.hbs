@@ -9,11 +9,15 @@
                     <span class="label_value">{{ticket.title}}</span>
                 </div>
                 <div class="form-group">
+                    <label class="form-field__label" for="title">author : </label>
+                    <span class="label_value">{{ticket.userName}}</span>
+                </div>
+                <div class="form-group">
                     <label class="form-field__label" for="department">department :</label>
-                    <span class="label_value">{{ticket.department}} ---- Change department</span>
+                    <span class="label_value">{{ticket.department}}</span>
                     <select id="department" name="department" class="input__text">
                         {{#each departments }}
-                        <option {{#ifEquals ../ticket.department this}} selected {{/ifEquals}}>{{this}}</option>
+                            <option {{#ifEquals ../ticket.department this}} selected {{/ifEquals}}>{{this}}</option>
                         {{/each}}
                     </select>
                 </div>
@@ -26,8 +30,9 @@
                     <span class="label_value">{{ticket.status}}</span>
                     <div class="toggle">
                         <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-                                checked>
+                            <input type="checkbox" name="status" value="open" class="onoffswitch-checkbox"
+                                   id="myonoffswitch"
+                                {{#ifEquals ticket.status 'open' }}checked {{/ifEquals}}>
                             <label class="onoffswitch-label" for="myonoffswitch">
                                 <span class="onoffswitch-inner"></span>
                                 <span class="onoffswitch-switch"></span>
@@ -45,64 +50,75 @@
                     </button>
                     <a href="/productSupport/Ticket/delete/{{ticket.id}}" class="btn btn-danger">Delete</a>
                 </div>
-                <div class="detailBox">
-                    <div class="titleBox">
-                        <label>Comment Here!!</label>
 
-                    </div>
-                    <div class="commentBox">
-
-                        <p class="taskDescription">Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry.</p>
-                    </div>
-                    <div class="actionBox">
-                        <ul class="commentList">
-                            <li>
-                                <div class="commenterImage">
-                                    <img src="http://placekitten.com/50/50" />
-                                </div>
-                                <div class="commentText">
-                                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March
-                                        5th, 2014</span>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div class="commenterImage">
-                                    <img src="http://placekitten.com/45/45" />
-                                </div>
-                                <div class="commentText">
-                                    <p class="">Hello this is a test comment and this comment is particularly very long
-                                        and it goes on and on and on.</p> <span class="date sub-text">on March 5th,
-                                        2014</span>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div class="commenterImage">
-                                    <img src="http://placekitten.com/40/40" />
-                                </div>
-                                <div class="commentText">
-                                    <p class="">Hello this is a test comment.</p> <span class="date sub-text">on March
-                                        5th, 2014</span>
-
-                                </div>
-                            </li>
-                        </ul>
-                        <form class="form-inline" role="form">
-                            <div class="form-group commentinput">
-                                <input class=" input__text" type="text" placeholder="Your comments" />
-                            </div>
-                            <div class="form-group" style="text-align: center;">
-                                <button class="btn btn-default">Add</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </form>
+            <div class="detailBox">
+                <div class="titleBox">
+                    <label>Comment Here!!</label>
+
+                </div>
+                <div class="commentBox">
+
+                    <p class="taskDescription"></p>
+                </div>
+                <div class="actionBox">
+                    <ul class="commentList">
+                        {{#each comments}}
+                            <li>
+                                <div class="commenterImage">
+                                    {{this.user.name}}
+                                </div>
+                                <div class="commentText">
+                                    <p class="">{{this.comment}}</p> <span class="date sub-text">{{time date
+                                                                                                        'MMMM D YYYY'}}</span>
+
+                                </div>
+                            </li>
+
+                        {{/each}}
+                    </ul>
+                    <!--<form class="form-inline" role="form">-->
+                    <div class="form-group commentinput">
+                        <input class=" input__text" type="text" placeholder="Your comments" name="comment"
+                               id="comment"/>
+                        <input class=" " type="hidden" name="ticket_id" id="ticket_id" value="{{ticket.id}}"/>
+                    </div>
+                    <div class="form-group" style="text-align: center;">
+                        <button type="button" class="btn btn-default" onclick="addComment()">Add</button>
+                    </div>
+                    <!--</form>-->
+                </div>
+            </div>
         </div>
     </div>
 </div>
 <script>
     $('#tickets_Tab').addClass('menu__list-item_selected');
+</script>
+<script>
+    function addComment() {
+        $.ajax({
+            url: "/addComment",
+            type: 'post',
+            data: {
+                comment: $('#comment').val(),
+                ticket_id: $('#ticket_id').val()
+            },
+            cache: false,
+            success: function (comment) {
+
+                $(".commentList").append('<li>\n' +
+                        '<div class="commenterImage">\n' +
+                        '' + comment.comment.user.name + '\n' +
+                        '</div>\n' +
+                        ' <div class="commentText">\n' +
+                        '  <p class="">' + comment.comment.comment + '</p> <span class="date sub-text">{{time
+                                comment.date
+                                'MMMM D YYYY'}} </span>\n' +
+
+                        '   </div>\n' +
+                        ' </li>\n');
+            }
+        });
+    }
 </script>

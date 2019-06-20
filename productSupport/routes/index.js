@@ -12,18 +12,23 @@ router.get('/', function (req, res, next) {
     }
 
 });
-router.post('/addComment', auth.userAuthicated(), function (req, res, next) {
+router.post('/addComment', auth.userAuthicated, function (req, res, next) {
+    console.log(req.body)
     let comment = new Comment();
     comment.comment = req.body.comment;
     comment.user = req.user.id;
     comment.ticket = req.body.ticket_id;
-    comment.save().then(comment => {
-        res.send({comment: comment});
+    comment.save().then(result => {
+        Comment.findById({_id: result.id}).populate('user').then(comment=>{
+            res.send({comment: comment});
+        })
+
     }).catch(err => {
+        console.log(err)
         res.send({err: 'an error happened please try again '});
     })
 });
-router.get('/deleteComment/:id', auth.userAuthicated(), function (req, res, next) {
+router.get('/deleteComment/:id', auth.userAuthicated, function (req, res, next) {
     Comment.findByIdAndDelete({_id: req.params.id}).then(comment => {
         res.redirect('back');
     })

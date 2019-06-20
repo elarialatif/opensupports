@@ -59,7 +59,7 @@ router.get('/tickets/all', function (req, res, next) {
 });
 router.get('/ticket/view/:id', function (req, res, next) {
     Ticket.findById({_id: req.params.id}).populate('product').then(ticket => {
-        Comment.find({ticket: req.params.id}).then(comments => {
+        Comment.find({ticket: req.params.id}).populate('user').then(comments => {
             res.render('backUsers/admin/viewTicket', {
                 ticket: ticket,
                 departments: helpers.departments,

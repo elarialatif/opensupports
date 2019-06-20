@@ -14605,9 +14605,9 @@ body {
     padding:10px;
 }
 .titleBox label{
-  color:#444;
-  margin:0;
-  display:inline-block;
+    color:#444;
+    margin:0;
+    display:inline-block;
 }
 
 .commentBox {
@@ -14636,7 +14636,7 @@ body {
 .commentList {
     padding:0;
     list-style:none;
-    max-height:200px;
+    height: auto;
     overflow:auto;
 }
 .commentList li {
@@ -14733,7 +14733,7 @@ body {
     margin-left: 0;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px; 
+    right: 0px;
 }
 .view_ticket .toggle {
     display: inline-block;
