@@ -285,37 +285,22 @@
                                 your email or your password.
                             </div>
                         </div>
-                        <div class="edit-profile-page__title">Additonal Fields</div>
-                            <div class="edit-profile-page__custom-fields">
-                                <div class="edit-profile-page__custom-field">
-                                    <label class="form-field form-field_select">
-                                            <input type="checkbox" id="buttonDeprtDropDown">
-                                            <span class="form-field__label">
-                                                Department
-                                                <div class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
-                                                    <select name="department" id="department">
-                                                        <option class="dropOption" value="support">support</option>
-                                                        <option class="dropOption" value="developments">developments
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                            </span>
-                                    </label>
-                                    <label class="form-field form-field_select">
-                                        <input type="checkbox" id="buttonDeprtDropDown">
-                                        <span class="form-field__label">
-                                            Product
-                                            <div class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
-                                                <select name="department" id="department">
-                                                    <option class="dropOption" value="support">Product1</option>
-                                                    <option class="dropOption" value="developments">Product2</option>
-                                                </select>
-                                            </div>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
+
                             <div class="row form_inputs">
+                                <form class="form staff-editor__update-email" method="post"
+                                      action="/productSupport/editProfile"><label class="form-field"><span
+                                        class="form-field__label">
+                                            <!-- react-text: 2748 -->Email
+                                    <!-- /react-text --></span><span class="input input_large"><input
+                                        type="text" name="email" value="{{user.email}}"
+                                        aria-required="true" class="input__text"></span></label>
+                                    <button
+                                            class="button button_primary button_medium submit-button staff-editor__submit-button">
+                                        Update
+                                        email
+                                    </button>
+                                </form>
+                                <span class="separator staff-editor__separator"></span>
                                 <div class="edit-profile-page__title">Edit password</div>
                                 <form class="form" method="post" action="/productSupport/editProfile"><label class="form-field"><span
                                         class="form-field__label">

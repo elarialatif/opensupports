@@ -14,6 +14,6 @@ module.exports = {
     },
     division: function (pram1, pram2) {
         if (pram2 === 0) return 0;
-        else return Math.round(pram1 / pram2)
+        else return (Math.round(pram1 / pram2) * 100);
     },
 };

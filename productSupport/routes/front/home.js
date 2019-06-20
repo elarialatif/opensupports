@@ -229,7 +229,6 @@ router.post('/delete_file', function (req, res, next) {
     });
 });
 router.post('/editProfile',function (req, res, next) {
-    console.log(req.files);
     User.findOne({email: req.user.email}).then(user => {
 
         if (req.files) {
