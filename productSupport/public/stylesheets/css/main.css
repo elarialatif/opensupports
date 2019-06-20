@@ -14642,9 +14642,11 @@ body {
 .commentList li {
     margin:0;
     margin-top:10px;
+    border-bottom: 1px solid #bbb;
 }
 .commentList li > div {
     display:table-cell;
+    text-align: left;
 }
 .commenterImage {
     width:30px;
@@ -14656,7 +14658,12 @@ body {
     width:100%;
     border-radius:50%;
 }
-.commentText p {
+.commentText {
+    text-align: left;
+    padding-left: 2rem;
+}
+.commentText p,
+.commentText h3 {
     margin:0;
 }
 .sub-text {
