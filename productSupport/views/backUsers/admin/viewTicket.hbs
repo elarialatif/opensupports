@@ -58,15 +58,15 @@
                         {{#each comments}}
                             <li>
                                 <div class="commenterImage">
-                                    <img src="https://www.opensupports.com/demos/demo1/api/system/download?file=p_194388_emperor_palpatine_by_the_deadliest_doge-d8c2ifl.jpg" alt="">
-                                    
+                                    <img src="/images/profileImages/{{user.img}}" alt="">
+
                                 </div>
                                 <div class="commentText">
                                     <h3>{{this.user.name}}</h3>
                                     <span class="date sub-text">
                                         {{time date  'MMMM D YYYY'}}
                                     </span>
-                                    <p class="">{{this.comment}}</p> 
+                                    <p class="">{{this.comment}}</p>
                                 </div>
                             </li>
 
@@ -101,18 +101,20 @@
             },
             cache: false,
             success: function (comment) {
-
-                $(".commentList").append('<li>\n' +
-                        '<div class="commenterImage">\n' +
-                        '' + comment.comment.user.name + '\n' +
-                        '</div>\n' +
-                        ' <div class="commentText">\n' +
-                        '  <p class="">' + comment.comment.comment + '</p> <span class="date sub-text">{{time
-                                comment.date
-                                'MMMM D YYYY'}} </span>\n' +
-
-                        '   </div>\n' +
-                        ' </li>\n');
+                $('.commentList').append('   <li>\n' +
+                        '                                <div class="commenterImage">\n' +
+                        '                                    <img src="/images/profileImages/' + comment.comment.user.img + '" alt="">\n' +
+                        '                                    \n' +
+                        '                                </div>\n' +
+                        '                                <div class="commentText">\n' +
+                        '                                    <h3>' + comment.comment.user.name + '</h3>\n' +
+                        '                                    <span class="date sub-text">\n' +
+                        '                                        {{time date  'MMMM D YYYY'}}\n' +
+                        '                                    </span>\n' +
+                        '                                    <p class="">' + comment.comment.comment + '</p> \n' +
+                        '                                </div>\n' +
+                        '                            </li>\n');
+              
             }
         });
     }
