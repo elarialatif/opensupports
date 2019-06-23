@@ -10,7 +10,8 @@
                 </div>
                 <div class="form-group">
                     <label class="form-field__label" for="title">workedBy : </label>
-                    <span class="label_value">{{ticket.workedBy.name}} <span class="role">{{ticket.workedBy.role}}</span></span>
+                    <span class="label_value">{{ticket.workedBy.name}} <span
+                            class="role">{{ticket.workedBy.role}}</span></span>
                 </div>
                 <div class="form-group">
                     <label class="form-field__label" for="title">author : </label>
@@ -124,8 +125,13 @@
                         '                                    <p class="">' + comment.comment.comment + '</p> \n' +
                         '                                </div>\n' +
                         '                            </li>\n');
+                var socket2 = io();
+                console.log(comment.message)
+                socket2.emit('adminComment', comment.message);
 
             }
+
         });
+
     }
 </script>

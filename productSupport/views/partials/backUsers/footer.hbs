@@ -1,9 +1,11 @@
 <div class="main-layout-footer">
     <div class="main-layout-footer__powered">
         Powered by
-        <a class="main-layout-footer__os-link" id="output" href="http://www.opensupports.com/"
-           target="_blank">AlmotahidaEducationGroup</a><span>
+
+        <a class="main-layout-footer__os-link" id="output" href="http://www.opensupports.com/" data-translatable
+           target="_blank">AlmotahidaEducationGroup // المتحدة</a><span>
         </span>
+
     </div>
 </div>
 <!-- Scripts -->
@@ -27,34 +29,18 @@
         });
     });
 </script>
+<div id="note" style="display: none">
+    You smell good
+</div>
+<script src="/socket.io/socket.io.js"></script>
+
 <script>
-
-  /*  $(document).ready(function () {
-
-        i18next.init({
-            lng: 'ar',
-            debug: true,
-            resources: {
-                en: {
-                    translation: {
-                        "url": "hellodd world"
-                    }
-                },
-                ar: {
-                    translation: {
-                        "url": "المتحدة ايوكيشن"
-                    }
-                }
-            }
-        }, function (err, t) {
-            // init set content
-            updateContent();
-        });
+    var socket = io();
+    socket.on('adminCommentResponse', function (data) {
+        $('#note').css('display', 'block');
+        $('#note').html(data)
     });
-    i18next.changeLanguage('ar');
-  //  updateContent();
-    function updateContent() {
-        document.getElementById('output').innerHTML = i18next.t('url');
-    }*/
+
 </script>
+<script src="/javascripts/lang.js"></script>
 
