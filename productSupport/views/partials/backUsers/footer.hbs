@@ -1,15 +1,12 @@
 <div class="main-layout-footer">
     <div class="main-layout-footer__powered">
         Powered by
-        <a class="main-layout-footer__os-link" href="http://www.opensupports.com/"
-            target="_blank">AlmotahidaEducationGroup</a><span>
+        <a class="main-layout-footer__os-link" id="output" href="http://www.opensupports.com/"
+           target="_blank">AlmotahidaEducationGroup</a><span>
         </span>
     </div>
 </div>
 <!-- Scripts -->
-
-
-
 
 
 <script type="text/javascript" src="/javascripts/js/jquery.js"></script>
@@ -21,6 +18,7 @@
 <script type="text/javascript" src="/javascripts/js/ui.js"></script>
 <!-- #Scripts -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://unpkg.com/i18next/i18next.js"></script>
 <script>
     $(document).ready(function () {
         $('.table').DataTable({
@@ -28,3 +26,34 @@
         });
     });
 </script>
+<script>
+
+  /*  $(document).ready(function () {
+
+        i18next.init({
+            lng: 'ar',
+            debug: true,
+            resources: {
+                en: {
+                    translation: {
+                        "url": "hellodd world"
+                    }
+                },
+                ar: {
+                    translation: {
+                        "url": "المتحدة ايوكيشن"
+                    }
+                }
+            }
+        }, function (err, t) {
+            // init set content
+            updateContent();
+        });
+    });
+    i18next.changeLanguage('ar');
+  //  updateContent();
+    function updateContent() {
+        document.getElementById('output').innerHTML = i18next.t('url');
+    }*/
+</script>
+
