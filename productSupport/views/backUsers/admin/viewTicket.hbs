@@ -5,20 +5,20 @@
 
             <form method="post" action="/productSupport/Ticket/update/{{ticket.id}}">
                 <div class="form-group">
-                    <label class="form-field__label" for="title">title : </label>
+                    <label class="form-field__label" for="title"  data-translatable>title : // العنوان :</label>
                     <span class="label_value">{{ticket.title}}</span>
                 </div>
                 <div class="form-group">
-                    <label class="form-field__label" for="title">workedBy : </label>
+                    <label class="form-field__label" for="title"  data-translatable >workedBy : // تم العمل بواسطة </label>
                     <span class="label_value">{{ticket.workedBy.name}} <span
                             class="role">{{ticket.workedBy.role}}</span></span>
                 </div>
                 <div class="form-group">
-                    <label class="form-field__label" for="title">author : </label>
+                    <label class="form-field__label" for="title"  data-translatable>author : // المؤلف</label>
                     <span class="label_value">{{ticket.userName}}</span>
                 </div>
                 <div class="form-group">
-                    <label class="form-field__label" for="department">department :</label>
+                    <label class="form-field__label" for="department"  data-translatable>department : // القسم </label>
                     <span class="label_value">{{ticket.department}}</span>
                     <select id="department" name="department" class="input__text">
                         {{#each departments }}
@@ -27,11 +27,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-field__label" for="product">product : </label>
+                    <label class="form-field__label" for="product"  data-translatable >product : // المشروع </label>
                     <span class="label_value">{{ticket.product.name}}</span>
                 </div>
                 <div class="form-group">
-                    <label class="form-field__label" for="status">status :</label>
+                    <label class="form-field__label" for="status"  data-translatable >status : // الحالة </label>
                     <span class="label_value">{{ticket.status}}</span>
                     <div class="toggle">
                         <div class="onoffswitch">
@@ -47,17 +47,17 @@
 
                 </div>
                 <div class="form-group">
-                    <label class="form-field__label" for="content">content :</label>
+                    <label class="form-field__label" for="content"  data-translatable>content : // المحتوى </label>
                     <span class="label_value">{{{ticket.content}}}</span>
                 </div>
                 <div class="form-group btns">
                     {{#ifEquals user.role 'admin'}}
-                        <button type="submit" class="btn btn-info">Edit
+                        <button type="submit" class="btn btn-info"  data-translatable >Edit // تعديل
                         </button>
-                        <a href="/productSupport/Ticket/delete/{{ticket.id}}" class="btn btn-danger">Delete</a>
+                        <a href="/productSupport/Ticket/delete/{{ticket.id}}" class="btn btn-danger"  data-translatable>Delete // مسح </a>
                     {{/ifEquals}}
                     {{#unless ticket.workedBy}}
-                        <a href="/stuff/assign/{{ticket.id}}" class="btn btn-primary">Assign</a>
+                        <a href="/stuff/assign/{{ticket.id}}" class="btn btn-primary"  data-translatable>Assign // العمل عليها </a>
                     {{/unless}}
 
                 </div>
@@ -90,7 +90,7 @@
                         <input class=" " type="hidden" name="ticket_id" id="ticket_id" value="{{ticket.id}}"/>
                     </div>
                     <div class="form-group" style="text-align: center;">
-                        <button type="button" class="btn btn-default" onclick="addComment()">Add</button>
+                        <button type="button" class="btn btn-default" onclick="addComment()"  data-translatable>Add // حفظ </button>
                     </div>
                     <!--</form>-->
                 </div>

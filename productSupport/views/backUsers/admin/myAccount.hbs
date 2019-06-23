@@ -1,11 +1,12 @@
-
 <div class="my_account row">
     <div class="myAccount__content col-md-12">
         <div class="widget col-md-12" title="">
             <div class="admin-panel-view-staff">
                 <div class="header">
-                    <h2 class="header__title">My Account</h2>
-                    <div class="header__description">Here you can edit information about you.</div>
+                    <h2 class="header__title" data-translatable>My Account // حسابى </h2>
+                    <div class="header__description" data-translatable>Here you can edit information about you. // هنا
+                        يمكنك تعديل البيانات الخاصة بك
+                    </div>
                 </div>
                 <div class="staff-editor">
                     <div class="row">
@@ -13,28 +14,30 @@
                             <div class="col-md-4">
                                 <div class="staff-editor__card">
                                     <div class="staff-editor__card-data">
-                                        <div class="staff-editor__card-name">Chancellor Palpatine</div>
+                                        <div class="staff-editor__card-name">{{user.name}}</div>
 
-                                        <button type="submit" class="btn btn-success">edit</button>
+                                        <button type="submit" class="btn btn-success" data-translatable>edit // تعديل </button>
                                         <div class="staff-editor__card-info">
 
                                             <div class="staff-editor__card-badge"><span
                                                     class="staff-editor__card-badge-green">{{myTickets}}</span><span
-                                                    class="staff-editor__card-badge-text">Assigned</span></div>
+                                                    class="staff-editor__card-badge-text" data-translatable>Assigned // الخاصك بك </span>
+                                            </div>
                                             <div class="staff-editor__card-badge"><span
                                                     class="staff-editor__card-badge-red">{{closedTickets}}</span><span
-                                                    class="staff-editor__card-badge-text">Closed</span></div>
+                                                    class="staff-editor__card-badge-text" data-translatable>Closed // تم الانتهاء </span>
+                                            </div>
                                         </div>
                                     </div>
                                     <label class="staff-editor__card-pic-wrapper">
                                         <div class="staff-editor__card-pic-background"></div>
                                         <img class="staff-editor__card-pic"
-                                            src="/images/profileImages/{{user.img}}"><span
+                                             src="/images/profileImages/{{user.img}}"><span
                                             class="fa fa-upload fa-4x staff-editor__card-pic-icon"
                                             aria-hidden="true"></span>
 
                                         <input type="file" id="imgInp" class="staff-editor__image-uploader"
-                                            accept="image/x-png,image/gif,image/jpeg" name="img">
+                                               accept="image/x-png,image/gif,image/jpeg" name="img">
 
 
                                     </label>
@@ -46,40 +49,43 @@
                         <div class="col-md-8">
                             <div class="staff-editor__form">
                                 <form class="form staff-editor__update-email" method="post"
-                                    action="/productSupport/editProfile"><label class="form-field"><span
-                                            class="form-field__label">
-                                            <!-- react-text: 2748 -->Email
-                                            <!-- /react-text --></span><span class="input input_large"><input
-                                                type="text" name="email" value="{{user.email}}" aria-required="true"
-                                                class="input__text"></span></label>
-                                    <button
-                                        class="button button_primary button_medium submit-button staff-editor__submit-button">
+                                      action="/productSupport/editProfile"><label class="form-field"><span
+                                        data-translatable
+                                        class="form-field__label">
+                                            <!-- react-text: 2748 -->Email // الاميل
+                                    <!-- /react-text --></span><span class="input input_large"><input
+                                        type="text" name="email" value="{{user.email}}" aria-required="true"
+                                        class="input__text"></span></label>
+                                    <button data-translatable
+                                            class="button button_primary button_medium submit-button staff-editor__submit-button">
                                         Update
-                                        email
+                                        email // حفظ
                                     </button>
                                 </form>
                                 <span class="separator staff-editor__separator"></span>
                                 <form class="form staff-editor__update-password" method="post"
-                                    action="/productSupport/editProfile"><label class="form-field"><span
-                                            class="form-field__label">
-                                            <!-- react-text: 2756 -->oldPassword
-                                            <!-- /react-text --></span><span class="input input_large"><input
-                                                type="password" name="oldPassword" aria-required="true"
-                                                class="input__text" value=""></span></label><label
-                                        class="form-field"><span class="form-field__label">
-                                            <!-- react-text: 2756 -->Password
-                                            <!-- /react-text --></span><span class="input input_large"><input
-                                                type="password" name="password" aria-required="true" class="input__text"
-                                                value=""></span></label><label class="form-field"><span
-                                            class="form-field__label">
-                                            <!-- react-text: 2761 -->Repeat password
-                                            <!-- /react-text --></span><span class="input input_large"><input
-                                                type="password" name="repeatNewPassword" aria-required="true"
-                                                class="input__text" value=""></span></label>
+                                      action="/productSupport/editProfile"><label class="form-field"><span
+                                        data-translatable
+                                        class="form-field__label">
+                                            <!-- react-text: 2756 -->oldPassword // كلمة المررو القديمة
+                                    <!-- /react-text --></span><span class="input input_large"><input
+                                        type="password" name="oldPassword" aria-required="true"
+                                        class="input__text" value=""></span></label><label
+                                        class="form-field"><span class="form-field__label" data-translatable>
+                                            <!-- react-text: 2756 -->Password // كلمة المرور
+                                    <!-- /react-text --></span><span class="input input_large"><input
+                                        type="password" name="password" aria-required="true" class="input__text"
+                                        value=""></span></label><label class="form-field"><span data-translatable
+                                                                                                class="form-field__label">
+                                            <!-- react-text: 2761 -->Repeat password // اعادة كلمة المرور
+                                    <!-- /react-text --></span><span class="input input_large"><input
+                                        type="password" name="repeatNewPassword" aria-required="true"
+                                        class="input__text" value=""></span></label>
                                     <button
-                                        class="button button_primary button_medium submit-button staff-editor__submit-button">
+                                            class="button button_primary button_medium submit-button staff-editor__submit-button"
+                                            data-translatable>
                                         Update
-                                        password
+                                        password // حفظ
                                     </button>
                                 </form>
 
@@ -90,18 +96,19 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="staff-editor__departments">
-                                <div class="staff-editor__departments-title">Departments</div>
+                                <div class="staff-editor__departments-title" data-translatable>Departments // الاقسام
+                                </div>
                                 <form class="form">
                                     <div class="form-field">
                                         <span class="form-field__label"></span>
                                         <ul class="checkbox-group">
                                             {{#each user.departments}}
-                                            <li class="checkbox-group__item">
-                                                <div class="form-group">
-                                                    <input type="checkbox" id="Dep1{{this}}" checked>
-                                                    <label for="Dep1{{this}}">{{this}}</label>
-                                                </div>
-                                            </li>
+                                                <li class="checkbox-group__item">
+                                                    <div class="form-group">
+                                                        <input type="checkbox" id="Dep1{{this}}" checked>
+                                                        <label for="Dep1{{this}}">{{this}}</label>
+                                                    </div>
+                                                </li>
                                             {{/each}}
 
 
@@ -112,20 +119,20 @@
                         </div>
                         <div class="col-md-8">
                             <div class="staff-editor__activity">
-                                <div class="staff-editor__activity-title">Activity</div>
+                                <div class="staff-editor__activity-title" data-translatable>Activity // الاحداث</div>
                                 <div class="stats stats_staff">
                                     <div class="graph">
                                         <ul class="chart">
                                             <li>
                                                 <span style="height:{{division myTickets allTickets}}%"
-                                                    title="Assigned # {{myTickets}}"></span>
+                                                      title="Assigned # {{myTickets}}"></span>
                                                 <span class="ratio" title="{{division myTickets allTickets}}%"></span>
                                             </li>
                                             <li>
                                                 <span style="height:{{division closedTickets myTickets}}%"
-                                                    title="Tickets closed # {{closedTickets}}"></span>
+                                                      title="Tickets closed # {{closedTickets}}"></span>
                                                 <span class="ratio"
-                                                    title="{{division closedTickets myTickets}}%"></span>
+                                                      title="{{division closedTickets myTickets}}%"></span>
                                             </li>
 
                                         </ul>
@@ -136,17 +143,18 @@
                     </div>
                     <div><span class="separator"></span>
                         <div class="staff-editor__tickets">
-                            <div class="staff-editor__tickets-title">Tickets</div>
+                            <div class="staff-editor__tickets-title" data-translatable>Tickets البطاقات</div>
                             <div class="ticket-list">
                                 <div class="ticket-list__filters">
                                     <div class="ticket-list__department-selector">
 
                                         <div class="drop-down__list-container"
-                                            style="opacity: 0; transform: translateY(20px);">
+                                             style="opacity: 0; transform: translateY(20px);">
                                             <div class="menu undefined">
                                                 <ul id="drop-down-menu_16" role="listbox" class="menu__list">
-                                                    <li id="drop-down-menu_16__0" class="menu__list-item" role="option">
-                                                        <!-- react-text: 2852 -->All Departments
+                                                    <li id="drop-down-menu_16__0" class="menu__list-item" role="option"
+                                                        data-translatable>
+                                                        <!-- react-text: 2852 -->All Departments // الاقسام
                                                         <!-- /react-text -->
                                                     </li>
                                                     <li id="drop-down-menu_16__1"
@@ -163,41 +171,42 @@
                             <div class="table__wrapper">
                                 <table class="table table-responsive">
                                     <thead>
-                                        <tr class="table__header">
-                                            <th class="table__header-column ticket-list__number col-md-1">
-                                                <!-- react-text: 2860 -->Number
-                                                <!-- /react-text -->
-                                            </th>
-                                            <th class="table__header-column ticket-list__title col-md-4">
-                                                <!-- react-text: 2862 -->Title
-                                                <!-- /react-text -->
-                                            </th>
-                                            <th class="table__header-column ticket-list__priority col-md-1">
-                                                <!-- react-text: 2864 -->Priority
-                                                <!-- /react-text -->
-                                            </th>
-                                            <th class="table__header-column ticket-list__department col-md-2">
-                                                <!-- react-text: 2866 -->Department
-                                                <!-- /react-text -->
-                                            </th>
-                                            <th class="table__header-column ticket-list__department col-md-2">
-                                                <!-- react-text: 2866 -->Product
-                                                <!-- /react-text -->
-                                            </th>
-                                            <th class="table__header-column ticket-list__author col-md-2">
-                                                <!-- react-text: 2868 -->Author
-                                                <!-- /react-text -->
-                                            </th>
-                                            <th class="table__header-column ticket-list__date col-md-2">
-                                                <!-- react-text: 2870 -->Date
-                                                <!-- /react-text -->
-                                            </th>
-                                        </tr>
+                                    <tr class="table__header">
+                                        <th class="table__header-column ticket-list__number col-md-1" data-translatable>
+                                            <!-- react-text: 2860 -->Number // الرقم
+                                            <!-- /react-text -->
+                                        </th>
+                                        <th class="table__header-column ticket-list__title col-md-4" data-translatable>
+                                            <!-- react-text: 2862 -->Title // العنوان
+                                            <!-- /react-text -->
+                                        </th>
+                                        <th class="table__header-column ticket-list__priority col-md-1"
+                                            data-translatable>
+                                            <!-- react-text: 2864 -->Priority // الاهمية
+                                            <!-- /react-text -->
+                                        </th>
+                                        <th class="table__header-column ticket-list__department col-md-2"
+                                            data-translatable>
+                                            <!-- react-text: 2866 -->Department // القسم
+                                            <!-- /react-text -->
+                                        </th>
+                                        <th class="table__header-column ticket-list__department col-md-2"
+                                            data-translatable>
+                                            <!-- react-text: 2866 -->Product // المنتج
+                                            <!-- /react-text -->
+                                        </th>
+                                        <th class="table__header-column ticket-list__author col-md-2" data-translatable>
+                                            <!-- react-text: 2868 -->Author // المولف
+                                            <!-- /react-text -->
+                                        </th>
+                                        <th class="table__header-column ticket-list__date col-md-2" data-translatable>
+                                            <!-- react-text: 2870 -->Date // التاريخ
+                                            <!-- /react-text -->
+                                        </th>
+                                    </tr>
                                     </thead>
-                                    <tbody>
-
                                     <tbody id="productTableBody">
-                                        {{#each tickets as |ticketvalue ticketkey|}}
+                                    {{#each tickets as |ticketvalue ticketkey|}}
                                         <tr class="table__row odd" role="row">
                                             <td class="table__cell"><a href="/admin/ticket/view/{{id}}">{{id}}</a>
                                             </td>
@@ -209,8 +218,7 @@
                                             <td class="table__cell">{{time date 'D MMMM  YYYY'}}</td>
 
                                         </tr>
-                                        {{/each}}
-                                    </tbody>
+                                    {{/each}}
                                     </tbody>
                                 </table>
                             </div>

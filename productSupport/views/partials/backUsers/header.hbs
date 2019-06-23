@@ -1,8 +1,8 @@
 <div class="main-layout-header">
     <div class="main-layout-header__login-links AdminTabs">
-        Welcome,
+      <span data-translatable>   Welcome // مرحبا   </span>
         <span class="main-layout-header__user-name">
-            {{user.name}}
+            , {{user.name}}
         </span>
     </div>
     <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
@@ -28,14 +28,14 @@
                     <div class="admin-panel-staff-widget__user-data">
                         <div class="admin-panel-staff-widget__name">{{user.name}}</div>
                         <div class="admin-panel-staff-widget__actions">
-                            <button class="button button_link button_large admin-panel-staff-widget__action"
+                            <button class="button button_link button_large admin-panel-staff-widget__action" data-translatable
                                 onclick="location.href='/admin/myAccount'">
-                                My Account
+                                My Account // حسابى
                             </button>
                             <span class="admin-panel-staff-widget__action-separator">|</span>
                             <button class="button button_link button_large admin-panel-staff-widget__action"
-                                onclick="location.href='/productSupport/logout'">
-                                Close session
+                                onclick="location.href='/productSupport/logout'" data-translatable>
+                                Close session // تسجيل خروج
                             </button>
                         </div>
                     </div>
@@ -50,19 +50,19 @@
                         <ul class="menu__list">
                             <li id="dash_Tab" class="menu__list-item" onclick="location.href='/admin/adminDashboard'">
                                 <span class="fa fa-tachometer fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text">Dashboard</span>
+                                <span class="admin-panel-menu__item-text" data-translatable>Dashboard // الرئيسة</span>
                             </li>
                             <li id="users_Tab" class="menu__list-item" onclick="location.href='/admin/allUsers'">
                                 <span class="fa fa-user fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text">Users</span>
+                                <span class="admin-panel-menu__item-text" data-translatable>Users // المستخدمين</span>
                             </li>
                             <li id="products_Tab" class="menu__list-item" onclick="location.href='/admin/products'">
                                 <span class="fa fa-th-list fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text">Products</span>
+                                <span class="admin-panel-menu__item-text"data-translatable>Products // المشاريع</span>
                             </li>
                             <li id="tickets_Tab" class="menu__list-item" onclick="location.href='/admin/tickets/all'">
                                 <span class="fa fa-ticket fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text">Tickets</span>
+                                <span class="admin-panel-menu__item-text" data-translatable >Tickets // البطاقات</span>
                             </li>
                             {{!-- <li id="settings_Tab" class="menu__list-item" onclick="location.href='/admin/settings'">
                                 <span class="fa fa-cogs fa-lg menu__icon" aria-hidden="true"></span>
@@ -72,33 +72,33 @@
                     </div>
                     <div class="menu menu_horizontal-list undefined">
                         <ul class="menu__list 1 tabs">
-                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1">
-                                Statistics
+                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1" data-translatable>
+                                Statistics // الاحصائيات
                             </li>
-                            <li class="menu__list-item" data-tab="tab-2">
-                                Last Activity
+                            <li class="menu__list-item" data-tab="tab-2" data-translatable>
+                                Last Activity // أخر الاحداث
                             </li>
                         </ul>
                         {{!--  --}}
                         <ul class="menu__list 2 tabs">
-                            <li class="menu__list-item  menu__list-item_selected" data-tab="tab-1">
-                                stuff
+                            <li class="menu__list-item  menu__list-item_selected" data-tab="tab-1" data-translatable>
+                                stuff // فريق العمل
                             </li>
-                            <li class="menu__list-item" data-tab="tab-2">
-                                users
+                            <li class="menu__list-item" data-tab="tab-2" data-translatable>
+                                users // المستخدمين
                             </li>
                         </ul>
                         {{!--  --}}
                         <ul class="menu__list 3 tabs">
-                            <li class="menu__list-item  menu__list-item_selected" data-tab="tab-1">
-                                products
+                            <li class="menu__list-item  menu__list-item_selected" data-tab="tab-1" data-translatable>
+                                products // المشاريع
                             </li>
 
                         </ul>
                         {{!--  --}}
                         <ul class="menu__list 4 tabs">
-                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1">
-                                All Tickets
+                            <li class="menu__list-item menu__list-item_selected" data-tab="tab-1" data-translatable>
+                                All Tickets // كل البطاقات
                             </li>
 
                         </ul>

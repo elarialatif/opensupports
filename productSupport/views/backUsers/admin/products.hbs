@@ -5,7 +5,8 @@
 
             <div class="ticket-list tab-content current" id="tab-1">
                 <div class="header">
-                    <h2 class="header__title">all Projects that users can make a ticket on it </h2>
+                    <h2 class="header__title" data-translatable>all Projects that users can make a ticket on it // كل
+                        المشاريع التى يمكن للمستخدمين عمل بطاقات عليها </h2>
                 </div>
                 <div class="ticket-list__filters"></div>
                 <div class="table__wrapper">
@@ -14,16 +15,16 @@
 
                         <table class="table table-responsive dataTable no-footer">
                             <thead>
-                                <tr class="table__header" role="row">
-                                    <th class="table__header-column">Code</th>
-                                    <th class="table__header-column">Name</th>
-                                    <th class="table__header-column">CreatedBY</th>
-                                    <th class="table__header-column">Date</th>
-                                    <th class="table__header-column">Actions</th>
-                                </tr>
+                            <tr class="table__header" role="row">
+                                <th class="table__header-column" data-translatable>Code // الرقم</th>
+                                <th class="table__header-column" data-translatable>Name // الاسم</th>
+                                <th class="table__header-column" data-translatable>CreatedBY // المؤلف</th>
+                                <th class="table__header-column" data-translatable>Date // تاريخ الانشاء</th>
+                                <th class="table__header-column" data-translatable>Actions // الاحداث</th>
+                            </tr>
                             </thead>
                             <tbody id="productTableBody">
-                                {{#each products}}
+                            {{#each products}}
                                 <tr class="table__row odd" role="row">
                                     <td class="table__cell">{{id}}</td>
                                     <td class="table__cell">{{name}}</td>
@@ -31,7 +32,7 @@
                                     <td class="table__cell">{{time date 'D MMMM  YYYY'}}</td>
                                     <td class="table__cell">
                                         <button type="button" class="btn btn-info" data-toggle="modal"
-                                            data-target="#editModal{{id}}">Edit
+                                                data-target="#editModal{{id}}" data-translatable>Edit // تعديل
                                         </button>
                                         {{!-- Modal --}}
                                         <div class="modal fade" id="editModal{{id}}" role="dialog">
@@ -42,39 +43,46 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close"
-                                                                data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Edit Product Name</h4>
+                                                                    data-dismiss="modal">&times;
+                                                            </button>
+                                                            <h4 class="modal-title" data-translatable>Edit Product Name
+                                                                // تعديل اسم المشروع</h4>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="form-group">
-                                                                <label for="name">Name:</label>
+                                                                <label for="name" data-translatable>Name: // الاسم
+                                                                    : </label>
                                                                 <input type="text" class="input__text" id="name"
-                                                                    name="name" value="{{name}}">
+                                                                       name="name" value="{{name}}">
                                                             </div>
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-success">Save</button>
+                                                            <button type="submit" class="btn btn-success"
+                                                                    data-translatable>Save // حفظ
+                                                            </button>
                                                             <button type="button" class="btn btn-default"
-                                                                data-dismiss="modal">Close</button>
+                                                                    data-dismiss="modal" data-translatable>Close // غلق
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
 
                                         </div>
-                                        <a href="/admin/products/delete/{{id}}" class="btn btn-danger">Delete</a>
+                                        <a href="/admin/products/delete/{{id}}" class="btn btn-danger"
+                                           data-translatable>Delete // مسح </a>
                                     </td>
                                 </tr>
-                                {{/each}}
+                            {{/each}}
                             </tbody>
 
                         </table>
                         <div style="text-align: right; margin-top: 10px;">
                             <button class="button button_secondary button_medium" type="button" data-toggle="modal"
-                                data-target="#addModal">
+                                    data-target="#addModal">
                                 <span class="fa fa-plus fa-sm undefined" aria-hidden="true"></span>
-                                add Product
+                                <span data-translatable>add Product // حفظ </span>
                             </button>
                             <!-- Modal -->
                             <div id="addModal" class="modal fade add_product_modal" role="dialog">
@@ -84,19 +92,21 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close"
-                                                data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Add Product</h4>
+                                                    data-dismiss="modal">&times;
+                                            </button>
+                                            <h4 class="modal-title"  data-translatable>Add Product // حفظ </h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label for="productName">Name:</label>
+                                                <label for="productName"  data-translatable>Name: // الاسم :</label>
                                                 <input type="text" class="input__text" id="productName"
-                                                    name="name" value="{{productName}}">
+                                                       name="name" value="{{productName}}">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" id="addProduct" class="btn btn-success">Save</button>
-                                            <button type="button" class="btn btn-default"  data-dismiss="modal">Close</button>
+                                            <button type="submit" id="addProduct" class="btn btn-success"  data-translatable>Save // حفظ </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal"  data-translatable>Close // غلق
+                                            </button>
                                         </div>
                                     </div>
 
@@ -114,22 +124,21 @@
                                     },
                                     success: function (data) {
                                         $('#productTableBody').append(
-                                            '<tr style="background-color:#09090926">' +
-                                            '<td>' + data._id + '</td>' +
-                                            '<td>' + data.name + '</td>' +
-                                            '<td>' + 'admin' + '</td>' +
-                                            '<td>' + '{{time data.date  '
+                                                '<tr style="background-color:#09090926">' +
+                                                '<td>' + data._id + '</td>' +
+                                                '<td>' + data.name + '</td>' +
+                                                '<td>' + 'admin' + '</td>' +
+                                                '<td>' + '{{time data.date  '
                                             D MMMM YYYY '}}' + '</td>' +
-                                            '<td>' + '<a href="products/delete/' + data._id +
-                                            '" class="btn btn-danger">مسح</a>' + '</td>' +
-                                            '</tr>');
+                                                '<td>' + '<a href="products/delete/' + data._id +
+                                                '" class="btn btn-danger">مسح</a>' + '</td>' +
+                                                '</tr>');
                                         $('#addModal').modal('toggle');
                                     }
                                 });
                             });
 
 
-                      
                         </script>
                     </div>
                 </div>

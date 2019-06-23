@@ -4,7 +4,7 @@
             {{!--  --}}
             <div class="ticket-list tab-content current" id="tab-1">
                 <div class="header">
-                    <h2 class="header__title">users who solve tickets </h2>
+                    <h2 class="header__title" data-translatable >users who solve tickets // المستخدمين الذين يعملون على حل البطاقات  </h2>
                 </div>
                 <div class="ticket-list__filters"></div>
                 <div class="table__wrapper">
@@ -18,38 +18,38 @@
                                     tabindex="0" aria-controls="tickets" rowspan="1" colspan="1"
                                     aria-sort="ascending" aria-label="
                                                             Number
-                                                        : activate to sort column descending" style="width: 185px;">
-                                    Number
+                                                        : activate to sort column descending" style="width: 185px;" data-translatable>
+                                    Number // الرقم
                                 </th>
                                 <th class="table__header-column ticket-list__title col-md-2 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Title
-                                                        : activate to sort column ascending" style="width: 78px;">
-                                    Name
+                                                        : activate to sort column ascending" style="width: 78px;" data-translatable>
+                                    Name // الاسم
                                 </th>
                                 <th class="table__header-column ticket-list__product col-md-1 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Product
-                                                        : activate to sort column ascending" style="width: 127px;">
-                                    Email
+                                                        : activate to sort column ascending" style="width: 127px;" data-translatable>
+                                    Email // البريد الاكترونى
                                 </th>
                                 <th class="table__header-column ticket-list__department col-md-1 sorting"
                                     tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Department
-                                                        : activate to sort column ascending" style="width: 136px;">
-                                    Role
+                                                        : activate to sort column ascending" style="width: 136px;" data-translatable >
+                                    Role // الصلاحية
                                 </th>
                                 <th class="table__header-column ticket-list__date col-md-2 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Date
-                                                        : activate to sort column ascending" style="width: 81px;">
-                                    Date
+                                                        : activate to sort column ascending" style="width: 81px;" data-translatable>
+                                    Date // تاريخ الانشاء
                                 </th>
                                 <th class="table__header-column ticket-list__action col-md-4 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Action
-                                                        : activate to sort column ascending" style="width: 81px;">
-                                    Action
+                                                        : activate to sort column ascending" style="width: 81px;" data-translatable>
+                                    Action // الاحداث
                                 </th>
                             </tr>
                             </thead>
@@ -78,10 +78,10 @@
                                         {{time date 'D MMMM  YYYY'}}
                                     </td>
                                     <td class="table__cell ticket-list__action col-md-4">
-                                        <button type="button" class="btn btn-info" data-toggle="modal"
-                                                data-target="#editModal{{id}}">Edit
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-translatable
+                                                data-target="#editModal{{id}}">Edit  // تعديل
                                         </button>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                        <a href="#" class="btn btn-danger" data-translatable>Delete // مسح </a>
                                         <div class="modal fade allUser_modal" id="editModal{{id}}" tabindex="-1"
                                              role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -98,25 +98,25 @@
                                                         <form class="form signup-widget__form" method="post"
                                                               action="/productSupport/signIn">
                                                             <div class="signup-widget__inputs"><label
-                                                                    class="form-field signup-widget__input"><span
+                                                                    class="form-field signup-widget__input"><span data-translatable
                                                                     class="form-field__label">
-                                                                        <!-- react-text: 455 -->Full name
+                                                                        <!-- react-text: 455 -->Full name // الاسم
                                                                 <!-- /react-text --></span><span
                                                                     class="input input_medium"><input type="text"
                                                                                                       name="name"
                                                                                                       aria-required="true"
                                                                                                       class="input__text"
                                                                                                       value=""></span></label><label
-                                                                    class="form-field signup-widget__input"><span
+                                                                    class="form-field signup-widget__input"><span data-translatable
                                                                     class="form-field__label">
-                                                                        Email
+                                                                        Email // البريد الاكترونى
                                                                     </span><span class="input input_medium"><input
                                                                     type="text" name="email"
                                                                     aria-required="true" class="input__text"
                                                                     value=""></span></label>
-                                                                <label class="form-field signup-widget__input"><span
+                                                                <label class="form-field signup-widget__input"><span data-translatable
                                                                         class="form-field__label">
-                                                                        Role
+                                                                        Role // الصلاحية
                                                                     </span><span class="input input_medium">
                                                                         <select class="input__text" id="role"
                                                                                 name="role">
@@ -126,17 +126,17 @@
                                                                                 </option>
                                                                             {{/each}}
                                                                         </select></span></label><label
-                                                                        class="form-field signup-widget__input"><span
+                                                                        class="form-field signup-widget__input"><span data-translatable
                                                                         class="form-field__label">
-                                                                        <!-- react-text: 465 -->Password
+                                                                        <!-- react-text: 465 -->Password  // كلمة المرور
                                                                     <!-- /react-text --></span><span
                                                                         class="input input_medium"><input
                                                                         type="password" name="password"
                                                                         aria-required="true" class="input__text"
                                                                         value=""></span></label><label
-                                                                        class="form-field signup-widget__input"><span
+                                                                        class="form-field signup-widget__input"><span data-translatable
                                                                         class="form-field__label">
-                                                                        <!-- react-text: 470 -->Repeat password
+                                                                        <!-- react-text: 470 -->Repeat password // تاكيد كلمة المرور
                                                                     <!-- /react-text --></span><span
                                                                         class="input input_medium"><input
                                                                         type="password" name="repeated-password"
@@ -166,11 +166,11 @@
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-info">
-                                                            Save changes
+                                                        <button type="button" class="btn btn-info" data-translatable>
+                                                            Save changes // حفظ
                                                         </button>
-                                                        <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Close
+                                                        <button type="button" class="btn btn-secondary" data-translatable
+                                                                data-dismiss="modal">Close // غلق
                                                         </button>
                                                     </div>
                                                 </div>
@@ -186,9 +186,9 @@
                         </table>
                         <div style="text-align: right; margin-top: 10px;">
                             <button class="button button_secondary button_medium"
-                                    onclick="location.href='/productSupport/signIn'">
+                                    onclick="location.href='/productSupport/signIn'" >
                                 <span class="fa fa-plus fa-sm undefined" aria-hidden="true"></span>
-                                Add user
+                              <span data-translatable > Add user // اضافة مستخدم</span>
                             </button>
                         </div>
 
@@ -199,7 +199,7 @@
             {{!--  --}}
             <div class="ticket-list tab-content" id="tab-2">
                 <div class="header">
-                    <h2 class="header__title">users who made tickets</h2>
+                    <h2 class="header__title" data-translatable>users who made tickets // المستخدمين الذين ينشاءون البطاقات</h2>
                 </div>
                 <div class="ticket-list__filters"></div>
                 <div class="table__wrapper">
@@ -213,38 +213,38 @@
                                     tabindex="0" aria-controls="tickets" rowspan="1" colspan="1"
                                     aria-sort="ascending" aria-label="
                                                             Number
-                                                        : activate to sort column descending" style="width: 185px;">
-                                    Number
+                                                        : activate to sort column descending" style="width: 185px;" data-translatable>
+                                    Number // الرقم
                                 </th>
                                 <th class="table__header-column ticket-list__title col-md-2 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Title
-                                                        : activate to sort column ascending" style="width: 78px;">
-                                    Name
+                                                        : activate to sort column ascending" style="width: 78px;" data-translatable>
+                                    Name // الاسم
                                 </th>
                                 <th class="table__header-column ticket-list__product col-md-1 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Product
-                                                        : activate to sort column ascending" style="width: 127px;">
-                                    Email
+                                                        : activate to sort column ascending" style="width: 127px;" data-translatable>
+                                    Email // البريد الاكترونى
                                 </th>
                                 <th class="table__header-column ticket-list__department col-md-1 sorting"
                                     tabindex="0" aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Department
-                                                        : activate to sort column ascending" style="width: 136px;">
-                                    Role
+                                                        : activate to sort column ascending" style="width: 136px;" data-translatable >
+                                    Role // الصلاحية
                                 </th>
                                 <th class="table__header-column ticket-list__date col-md-2 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Date
-                                                        : activate to sort column ascending" style="width: 81px;">
-                                    Date
+                                                        : activate to sort column ascending" style="width: 81px;" data-translatable>
+                                    Date // تاريخ الانشاء
                                 </th>
                                 <th class="table__header-column ticket-list__action col-md-4 sorting" tabindex="0"
                                     aria-controls="tickets" rowspan="1" colspan="1" aria-label="
                                                             Action
-                                                        : activate to sort column ascending" style="width: 81px;">
-                                    Action
+                                                        : activate to sort column ascending" style="width: 81px;" data-translatable>
+                                    Action // الاحداث
                                 </th>
                             </tr>
                             </thead>
@@ -271,10 +271,10 @@
                                             {{time date 'D MMMM  YYYY'}}
                                         </td>
                                         <td class="table__cell ticket-list__action col-md-4">
-                                            <button type="button" class="btn btn-info" data-toggle="modal"
-                                                    data-target="#editModal{{id}}">Edit
+                                            <button type="button" class="btn btn-info" data-toggle="modal" data-translatable
+                                                    data-target="#editModal{{id}}">Edit // تعديل
                                             </button>
-                                            <a href="#" class="btn btn-danger">Delete</a>
+                                            <a href="#" class="btn btn-danger" data-translatable>Delete // مسح </a>
                                             <div class="modal fade allUser_modal" id="editModal{{id}}" tabindex="-1"
                                                  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
@@ -291,25 +291,25 @@
                                                             <form class="form signup-widget__form" method="post"
                                                                   action="/productSupport/signIn">
                                                                 <div class="signup-widget__inputs"><label
-                                                                        class="form-field signup-widget__input"><span
+                                                                        class="form-field signup-widget__input"><span data-translatable
                                                                         class="form-field__label">
-                                                                        <!-- react-text: 455 -->Full name
+                                                                        <!-- react-text: 455 -->Full name // الاسم
                                                                     <!-- /react-text --></span><span
                                                                         class="input input_medium"><input type="text"
                                                                                                           name="name"
                                                                                                           aria-required="true"
                                                                                                           class="input__text"
                                                                                                           value=""></span></label><label
-                                                                        class="form-field signup-widget__input"><span
+                                                                        class="form-field signup-widget__input"><span data-translatable
                                                                         class="form-field__label">
-                                                                        Email
+                                                                        Email // البريد الاكترونى
                                                                     </span><span class="input input_medium"><input
                                                                         type="text" name="email"
                                                                         aria-required="true" class="input__text"
                                                                         value=""></span></label>
-                                                                    <label class="form-field signup-widget__input"><span
+                                                                    <label class="form-field signup-widget__input"><span data-translatable
                                                                             class="form-field__label">
-                                                                        Role
+                                                                        Role // الصلاحية
                                                                     </span><span class="input input_medium">
                                                                         <select class="input__text" id="role"
                                                                                 name="role">
@@ -319,17 +319,17 @@
                                                                                 </option>
                                                                             {{/each}}
                                                                         </select></span></label><label
-                                                                            class="form-field signup-widget__input"><span
+                                                                            class="form-field signup-widget__input"><span data-translatable
                                                                             class="form-field__label">
-                                                                        <!-- react-text: 465 -->Password
+                                                                        <!-- react-text: 465 -->Password // كلمة المرور
                                                                         <!-- /react-text --></span><span
                                                                             class="input input_medium"><input
                                                                             type="password" name="password"
                                                                             aria-required="true" class="input__text"
                                                                             value=""></span></label><label
-                                                                            class="form-field signup-widget__input"><span
+                                                                            class="form-field signup-widget__input"><span data-translatable
                                                                             class="form-field__label">
-                                                                        <!-- react-text: 470 -->Repeat password
+                                                                        <!-- react-text: 470 -->Repeat password // تاكيد كلمة المرور
                                                                         <!-- /react-text --></span><span
                                                                             class="input input_medium"><input
                                                                             type="password" name="repeated-password"
@@ -359,11 +359,11 @@
 
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-info">
-                                                                Save changes
+                                                            <button type="button" class="btn btn-info" data-translatable >
+                                                                Save changes // حفظ
                                                             </button>
-                                                            <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal">Close
+                                                            <button type="button" class="btn btn-secondary" data-translatable
+                                                                    data-dismiss="modal">Close // غلق
                                                             </button>
                                                         </div>
                                                     </div>
@@ -381,8 +381,8 @@
                         <div style="text-align: right; margin-top: 10px;">
                             <button class="button button_secondary button_medium"
                                     onclick="location.href='/productSupport/signIn'">
-                                <span class="fa fa-plus fa-sm undefined" aria-hidden="true"></span>
-                                Add user
+                                <span class="fa fa-plus fa-sm undefined" aria-hidden="true" data-translatable>   </span>
+                                <span data-translatable > Add user // اضافة مستخدم</span>
                             </button>
                         </div>
 
