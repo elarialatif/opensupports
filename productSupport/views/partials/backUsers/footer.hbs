@@ -26,34 +26,43 @@
         });
     });
 </script>
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+    var socket = io();
+    socket.on('adminCommentResponse', function (data) {
+
+        alert(data)
+    });
+</script>
 <script>
 
-  /*  $(document).ready(function () {
+    /*  $(document).ready(function () {
 
-        i18next.init({
-            lng: 'ar',
-            debug: true,
-            resources: {
-                en: {
-                    translation: {
-                        "url": "hellodd world"
-                    }
-                },
-                ar: {
-                    translation: {
-                        "url": "المتحدة ايوكيشن"
-                    }
-                }
-            }
-        }, function (err, t) {
-            // init set content
-            updateContent();
-        });
-    });
-    i18next.changeLanguage('ar');
-  //  updateContent();
-    function updateContent() {
-        document.getElementById('output').innerHTML = i18next.t('url');
-    }*/
+          i18next.init({
+              lng: 'ar',
+              debug: true,
+              resources: {
+                  en: {
+                      translation: {
+                          "url": "hellodd world"
+                      }
+                  },
+                  ar: {
+                      translation: {
+                          "url": "المتحدة ايوكيشن"
+                      }
+                  }
+              }
+          }, function (err, t) {
+              // init set content
+              updateContent();
+          });
+      });
+      i18next.changeLanguage('ar');
+    //  updateContent();
+      function updateContent() {
+          document.getElementById('output').innerHTML = i18next.t('url');
+      }*/
 </script>
 
