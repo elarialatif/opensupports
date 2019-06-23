@@ -1,3 +1,6 @@
+<div id="note">
+    You smell good.</a>
+</div>
 <div class="my_account row">
     <div class="myAccount__content col-md-12">
         <div class="widget col-md-12" title="">
@@ -27,15 +30,13 @@
                                     </div>
                                     <label class="staff-editor__card-pic-wrapper">
                                         <div class="staff-editor__card-pic-background"></div>
-                                        <img
-                                                class="staff-editor__card-pic"
-                                                src="/images/profileImages/{{user.img}}"><span
+                                        <img class="staff-editor__card-pic"
+                                            src="/images/profileImages/{{user.img}}"><span
                                             class="fa fa-upload fa-4x staff-editor__card-pic-icon"
                                             aria-hidden="true"></span>
 
-                                        <input type="file" id="imgInp"
-                                               class="staff-editor__image-uploader"
-                                               accept="image/x-png,image/gif,image/jpeg" name="img">
+                                        <input type="file" id="imgInp" class="staff-editor__image-uploader"
+                                            accept="image/x-png,image/gif,image/jpeg" name="img">
 
 
                                     </label>
@@ -47,38 +48,38 @@
                         <div class="col-md-8">
                             <div class="staff-editor__form">
                                 <form class="form staff-editor__update-email" method="post"
-                                      action="/productSupport/editProfile"><label class="form-field"><span
-                                        class="form-field__label">
+                                    action="/productSupport/editProfile"><label class="form-field"><span
+                                            class="form-field__label">
                                             <!-- react-text: 2748 -->Email
-                                    <!-- /react-text --></span><span class="input input_large"><input
-                                        type="text" name="email" value="{{user.email}}"
-                                        aria-required="true" class="input__text"></span></label>
+                                            <!-- /react-text --></span><span class="input input_large"><input
+                                                type="text" name="email" value="{{user.email}}" aria-required="true"
+                                                class="input__text"></span></label>
                                     <button
-                                            class="button button_primary button_medium submit-button staff-editor__submit-button">
+                                        class="button button_primary button_medium submit-button staff-editor__submit-button">
                                         Update
                                         email
                                     </button>
                                 </form>
                                 <span class="separator staff-editor__separator"></span>
                                 <form class="form staff-editor__update-password" method="post"
-                                      action="/productSupport/editProfile"><label class="form-field"><span
-                                        class="form-field__label">
+                                    action="/productSupport/editProfile"><label class="form-field"><span
+                                            class="form-field__label">
                                             <!-- react-text: 2756 -->oldPassword
-                                    <!-- /react-text --></span><span class="input input_large"><input
-                                        type="password" name="oldPassword" aria-required="true" class="input__text"
-                                        value=""></span></label><label class="form-field"><span
-                                        class="form-field__label">
+                                            <!-- /react-text --></span><span class="input input_large"><input
+                                                type="password" name="oldPassword" aria-required="true"
+                                                class="input__text" value=""></span></label><label
+                                        class="form-field"><span class="form-field__label">
                                             <!-- react-text: 2756 -->Password
-                                    <!-- /react-text --></span><span class="input input_large"><input
-                                        type="password" name="password" aria-required="true" class="input__text"
-                                        value=""></span></label><label class="form-field"><span
-                                        class="form-field__label">
+                                            <!-- /react-text --></span><span class="input input_large"><input
+                                                type="password" name="password" aria-required="true" class="input__text"
+                                                value=""></span></label><label class="form-field"><span
+                                            class="form-field__label">
                                             <!-- react-text: 2761 -->Repeat password
-                                    <!-- /react-text --></span><span class="input input_large"><input
-                                        type="password" name="repeatNewPassword" aria-required="true"
-                                        class="input__text" value=""></span></label>
+                                            <!-- /react-text --></span><span class="input input_large"><input
+                                                type="password" name="repeatNewPassword" aria-required="true"
+                                                class="input__text" value=""></span></label>
                                     <button
-                                            class="button button_primary button_medium submit-button staff-editor__submit-button">
+                                        class="button button_primary button_medium submit-button staff-editor__submit-button">
                                         Update
                                         password
                                     </button>
@@ -97,12 +98,12 @@
                                         <span class="form-field__label"></span>
                                         <ul class="checkbox-group">
                                             {{#each user.departments}}
-                                                <li class="checkbox-group__item">
-                                                    <div class="form-group">
-                                                        <input type="checkbox" id="Dep1{{this}}" checked>
-                                                        <label for="Dep1{{this}}">{{this}}</label>
-                                                    </div>
-                                                </li>
+                                            <li class="checkbox-group__item">
+                                                <div class="form-group">
+                                                    <input type="checkbox" id="Dep1{{this}}" checked>
+                                                    <label for="Dep1{{this}}">{{this}}</label>
+                                                </div>
+                                            </li>
                                             {{/each}}
 
 
@@ -119,14 +120,14 @@
                                         <ul class="chart">
                                             <li>
                                                 <span style="height:{{division myTickets allTickets}}%"
-                                                      title="Assigned # {{myTickets}}"></span>
+                                                    title="Assigned # {{myTickets}}"></span>
                                                 <span class="ratio" title="{{division myTickets allTickets}}%"></span>
                                             </li>
                                             <li>
                                                 <span style="height:{{division closedTickets myTickets}}%"
-                                                      title="Tickets closed # {{closedTickets}}"></span>
+                                                    title="Tickets closed # {{closedTickets}}"></span>
                                                 <span class="ratio"
-                                                      title="{{division closedTickets myTickets}}%"></span>
+                                                    title="{{division closedTickets myTickets}}%"></span>
                                             </li>
 
                                         </ul>
@@ -142,30 +143,28 @@
                                 <div class="ticket-list__filters">
                                     <div class="ticket-list__department-selector">
 
-                                            <div class="drop-down__list-container"
-                                                 style="opacity: 0; transform: translateY(20px);">
-                                                <div class="menu undefined">
-                                                    <ul id="drop-down-menu_16" role="listbox" class="menu__list">
-                                                        <li id="drop-down-menu_16__0" class="menu__list-item"
-                                                            role="option">
-                                                            <!-- react-text: 2852 -->All Departments
-                                                            <!-- /react-text -->
-                                                        </li>
-                                                        <li id="drop-down-menu_16__1"
-                                                            class="menu__list-item menu__list-item_selected"
-                                                            role="option">
-                                                            <!-- react-text: 2854 -->Jedi Council
-                                                            <!-- /react-text -->
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                        <div class="drop-down__list-container"
+                                            style="opacity: 0; transform: translateY(20px);">
+                                            <div class="menu undefined">
+                                                <ul id="drop-down-menu_16" role="listbox" class="menu__list">
+                                                    <li id="drop-down-menu_16__0" class="menu__list-item" role="option">
+                                                        <!-- react-text: 2852 -->All Departments
+                                                        <!-- /react-text -->
+                                                    </li>
+                                                    <li id="drop-down-menu_16__1"
+                                                        class="menu__list-item menu__list-item_selected" role="option">
+                                                        <!-- react-text: 2854 -->Jedi Council
+                                                        <!-- /react-text -->
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="table__wrapper">
-                                    <table class="table table-responsive">
-                                        <thead>
+                            </div>
+                            <div class="table__wrapper">
+                                <table class="table table-responsive">
+                                    <thead>
                                         <tr class="table__header">
                                             <th class="table__header-column ticket-list__number col-md-1">
                                                 <!-- react-text: 2860 -->Number
@@ -196,27 +195,26 @@
                                                 <!-- /react-text -->
                                             </th>
                                         </tr>
-                                        </thead>
-                                        <tbody>
+                                    </thead>
+                                    <tbody>
 
-                                        <tbody id="productTableBody">
+                                    <tbody id="productTableBody">
                                         {{#each tickets as |ticketvalue ticketkey|}}
-                                            <tr class="table__row odd" role="row">
-                                                <td class="table__cell"><a href="/admin/ticket/view/{{id}}">{{id}}</a>
-                                                </td>
-                                                <td class="table__cell">{{title}}</td>
-                                                <td class="table__cell">{{status}}</td>
-                                                <td class="table__cell">{{department}}</td>
-                                                <td class="table__cell">{{product.name}}</td>
-                                                <td class="table__cell">{{userName}}</td>
-                                                <td class="table__cell">{{time date 'D MMMM  YYYY'}}</td>
+                                        <tr class="table__row odd" role="row">
+                                            <td class="table__cell"><a href="/admin/ticket/view/{{id}}">{{id}}</a>
+                                            </td>
+                                            <td class="table__cell">{{title}}</td>
+                                            <td class="table__cell">{{status}}</td>
+                                            <td class="table__cell">{{department}}</td>
+                                            <td class="table__cell">{{product.name}}</td>
+                                            <td class="table__cell">{{userName}}</td>
+                                            <td class="table__cell">{{time date 'D MMMM  YYYY'}}</td>
 
-                                            </tr>
+                                        </tr>
                                         {{/each}}
-                                        </tbody>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -224,6 +222,7 @@
             </div>
         </div>
     </div>
+</div>
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -239,4 +238,5 @@
 
     $("#imgInp").change(function () {
         readURL(this);
-    });</script>
+    });
+</script>

@@ -17,4 +17,10 @@ $(document).ready(function () {
 	$(".lang_change_en").on("click",function(){
 		$('html').attr('dir', 'ltr');
 	});
+	// Notification
+	close = document.getElementById("close");
+ 	close.addEventListener('click', function() {
+   note = document.getElementById("note");
+   note.style.display = 'none';
+ }, false);
 });
