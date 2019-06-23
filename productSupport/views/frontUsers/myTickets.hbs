@@ -95,28 +95,28 @@
                                                             <div class="modal-header">
                                                                 <button type="button" class="close"
                                                                     data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Add Product</h4>
+                                                                <h4 class="modal-title" data-translatable >Add Product // اضافة منتج</h4>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <form method="post"
                                                                     action="/productSupport/Ticket/update/{{id}}">
                                                                     <div class="form-group">
-                                                                        <label for="email">Email address:</label>
+                                                                        <label for="email" data-translatable >Email address: // البريد الإلكتروني:</label>
                                                                         <input type="email" class="input__text" id="email"
                                                                             name="email" value="{{email}}">
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="name">Name:</label>
+                                                                        <label for="name" data-translatable >Name: // الإسم:</label>
                                                                         <input type="text" class="input__text" id="name"
                                                                             name="name" value="{{userName}}">
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="title">Title:</label>
+                                                                        <label for="title" data-translatable >Title: // العنوان:</label>
                                                                         <input type="text" class="input__text" id="title"
                                                                             name="title" value="{{title}}">
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="parentCat">Product:</label>
+                                                                        <label for="parentCat" data-translatable >Product: // المنتج:</label>
                                                                         <select class="input__text" name="product" id="parentCat">
                                                                             {{#each ../products}}
                                                                             <option
@@ -128,7 +128,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="department">Departments:</label>
+                                                                        <label for="department" data-translatable >Departments: // القسم:</label>
                                                                         <select class="input__text" name="department" id="department">
                                                                             {{#each ../departments}}
                                                                             <option
@@ -140,7 +140,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editor{{id}}">Content:</label>
+                                                                        <label for="editor{{id}}" data-translatable>Content: // المحتوى:</label>
                                                                         <textarea type="text" class="input__text editor"
                                                                             id="editor{{id}}"
                                                                             name="content"> {{content}} </textarea>
@@ -148,9 +148,9 @@
                                                                 </form>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="submit" class="btn btn-success">Save</button>
+                                                                <button type="submit" class="btn btn-success" data-translatable >Save // حفظ </button>
                                                                 <button type="button" class="btn btn-default"
-                                                                    data-dismiss="modal">Close</button>
+                                                                    data-dismiss="modal" data-translatable>Close //إلغاء</button>
                                                             </div>
                                                         </div>
 
@@ -158,7 +158,7 @@
                                                 </div>
                                             {{/ifEquals}}
                                             <a href="/productSupport/Ticket/delete/{{id}}"
-                                                class="btn btn-danger">Delete</a>
+                                                class="btn btn-danger" data-translatable >Delete // مسح</a>
                                         </td>
                                     </tr>
                                     {{/each}}
