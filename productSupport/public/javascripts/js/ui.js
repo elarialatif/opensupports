@@ -1,6 +1,5 @@
 $(document).ready(function () {
     console.log("ready!");
-    jQuery("html[dir=rtl]").find("head").append('<link rel="stylesheet" href="assets/css/rtl.css">', '<link rel="stylesheet" href="assets/css/responsive-rtl.css">');
     // Tabs
     $('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
@@ -12,4 +11,16 @@ $(document).ready(function () {
 		$("#"+tab_id).addClass('current');
 	})
 	// 
+	$(".lang_change_ar").on("click",function(){
+		$('html').attr('dir', 'rtl');
+	});
+	$(".lang_change_en").on("click",function(){
+		$('html').attr('dir', 'ltr');
+	});
+	// Notification
+	close = document.getElementById("close");
+ 	close.addEventListener('click', function() {
+   note = document.getElementById("note");
+   note.style.display = 'none';
+ }, false);
 });

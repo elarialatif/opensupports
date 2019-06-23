@@ -1,36 +1,7 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
 
-<div class="main-layout-header">
-    <div class="main-layout-header__login-links">
-        Welcome,
-        <span class="main-layout-header__user-name">
-            {{user.name}}
-        </span>
-    </div>
-    <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
-        <div class="drop-down__current-item">
-            <div>
-                <img class="drop-down__current-item-icon flag"
-                    src="/images/img/us.png" aria-hidden="true">
-                English
-            </div>
-        </div>
-        <div class="drop-down__list-container">
-            <div class="menu undefined">
-                <ul id="drop-down-menu_1" role="listbox" class="menu__list">
-                    <li id="drop-down-menu_1__0" class="menu__list-item menu__list-item_selected" role="option">
-                        <img  class="menu__icon flag"
-                            src="/images/img/eg.png"
-                            aria-hidden="true">
-                        Arabic
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="main-layout--content row">
     <div class="dashboard">
         <div class="dashboard__menu col-md-3">
@@ -345,37 +316,37 @@
 
 
 
-                <link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+<link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
 
-                <!-- Include JS file. -->
-                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/js/froala_editor.pkgd.min.js'></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.0/js/plugins/image.min.js"></script>
-                <script>
-                    var editor = new FroalaEditor('#editor',{
-                        imageUploadURL: '/productSupport/uploadeImageFromEditor',
-                        events: {
-                            'image.removed': function ($img) {
-                                $.ajax({
-                                    // Request method.
-                                    method: 'POST',
+<!-- Include JS file. -->
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/js/froala_editor.pkgd.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.0/js/plugins/image.min.js"></script>
+<script>
+    var editor = new FroalaEditor('#editor',{
+        imageUploadURL: '/productSupport/uploadeImageFromEditor',
+        events: {
+            'image.removed': function ($img) {
+                $.ajax({
+                    // Request method.
+                    method: 'POST',
 
-                                    // Request URL.
-                                    url: '/productSupport/delete_file',
+                    // Request URL.
+                    url: '/productSupport/delete_file',
 
-                                    // Request params.
-                                    data: {
-                                        src: $img.attr('src')
-                                    }
-                                })
-                                        .done (function (data) {
-                                            console.log ('Image was deleted');
-                                        })
-                                        .fail (function (err) {
-                                            console.log ('Image delete problem: ' + JSON.stringify(err));
-                                        })
-                            }
-                        }
-                        // imageManagerDeleteURL: '/productSupport/delete_file'
-                    });
-                    console.log(editor.opts.events)
-                </script>
+                    // Request params.
+                    data: {
+                        src: $img.attr('src')
+                    }
+                })
+                        .done (function (data) {
+                            console.log ('Image was deleted');
+                        })
+                        .fail (function (err) {
+                            console.log ('Image delete problem: ' + JSON.stringify(err));
+                        })
+            }
+        }
+        // imageManagerDeleteURL: '/productSupport/delete_file'
+    });
+    console.log(editor.opts.events)
+</script>

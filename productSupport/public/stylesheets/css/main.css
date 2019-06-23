@@ -14765,3 +14765,57 @@ body {
     color: white;
     margin-left: 1rem;
 }
+/* ===========================Lang===================== */
+.lang_change_en {
+    display: none;
+}
+.lang_change_ar {
+    display: block;
+}
+/* ===========================notification===================== */
+#note {
+    position: absolute;
+    z-index: 6001;
+    top: 1rem;
+    bottom: auto;
+    left: auto;
+    right: 1rem;
+    background: rgba(209, 236, 250, 0.75);
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+    width: 300px;
+    height: 100px;
+}
+.cssanimations.csstransforms #note {
+    -webkit-transform: translateY(-150px);
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -moz-transform:    translateY(-50px);
+    -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+}
+
+#close {
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  text-indent: -9999px;
+  background: url(images/close.png);
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+.cssanimations.csstransforms #close {
+  display: none;
+}
+
+@-webkit-keyframes slideDown {
+    0%, 100% { -webkit-transform: translateY(-150px); }
+    10%, 90% { -webkit-transform: translateY(0px); }
+}
+@-moz-keyframes slideDown {
+    0%, 100% { -moz-transform: translateY(-50px); }
+    10%, 90% { -moz-transform: translateY(0px); }
+}
