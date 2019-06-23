@@ -6,36 +6,36 @@
     <div class="dashboard">
         <div class="dashboard__menu col-md-3">
             <div class="menu menu_secondary undefined">
-                <div class="menu__header">Dashboard</div>
+                <div class="menu__header" data-translatable >Dashboard // الرئيسية</div>
                 <ul class="menu__list nav nav-tabs">
                     <li class="menu__list-item active" tabindex="0">
-                        <a href="#TicketList" data-toggle="tab">
+                        <a href="#TicketList" data-toggle="tab" data-translatable>
                             <span class="fa fa-file-text-o fa-lg menu__icon" aria-hidden="true"></span>
-                            Ticket List
+                            Ticket List // عرض الكل
                         </a>
                     </li>
                     <li class="menu__list-item" tabindex="0">
-                        <a href="#CreateTicket" data-toggle="tab">
+                        <a href="#CreateTicket" data-toggle="tab" data-translatable >
                             <span class="fa fa-plus fa-lg menu__icon" aria-hidden="true"></span>
-                            Create Ticket
+                            Create Ticket // إنشاء
                         </a>
                     </li>
                     <li class="menu__list-item" tabindex="0">
-                        <a href="#ViewArticles" data-toggle="tab">
+                        <a href="#ViewArticles" data-toggle="tab" data-translatable >
                             <span class="fa fa-question fa-lg menu__icon" aria-hidden="true"></span>
-                            Help
+                            Help // مساعدة
                         </a>
                     </li>
                     <li class="menu__list-item" tabindex="0">
-                        <a href="#EditProfile" data-toggle="tab">
+                        <a href="#EditProfile" data-toggle="tab" data-translatable >
                             <span class="fa fa-pencil fa-lg menu__icon" aria-hidden="true"></span>
-                            Edit Profile
+                            Edit Profile // تعديل الملف الشخصي
                         </a>
                     </li>
                     <li class="menu__list-item" tabindex="0">
-                        <a href="/productSupport/logout">
+                        <a href="/productSupport/logout" data-translatable>
                             <span class="fa fa-lock fa-lg menu__icon" aria-hidden="true"></span>
-                            Close session
+                            Close session // خروج
                         </a>
                     </li>
                 </ul>
@@ -47,10 +47,12 @@
                     <!-- dashboard-ticket-list -->
                     <div class="tab-pane dashboard-ticket-list active" id="TicketList">
                         <div class="header">
-                            <h2 class="header__title">Ticket List</h2>
-                            <div class="header__description">Here you can find a list of all tickets
+                            <h2 class="header__title" data-translatable >Ticket List // عرض الكل</h2>
+                            <div class="header__description" data-translatable >Here you can find a list of all tickets
                                 you
                                 have sent to our support team.
+                                //
+
                             </div>
                         </div>
                         <div class="ticket-list">
@@ -60,23 +62,23 @@
                                 <table class="table table-responsive" id="tickets">
                                     <thead>
                                         <tr class="table__header">
-                                            <th class="table__header-column ticket-list__number col-md-1">
-                                                Number
+                                            <th class="table__header-column ticket-list__number col-md-1" data-translatable>
+                                                Number // الرقم
                                             </th>
-                                            <th class="table__header-column ticket-list__title col-md-2">
-                                                Title
+                                            <th class="table__header-column ticket-list__title col-md-2" data-translatable>
+                                                Title // العنوان
                                             </th>
-                                            <th class="table__header-column ticket-list__title col-md-3">
-                                                Product
+                                            <th class="table__header-column ticket-list__title col-md-3" data-translatable>
+                                                Product // المنتج
                                             </th>
-                                            <th class="table__header-column ticket-list__department col-md-3">
-                                                Department
+                                            <th class="table__header-column ticket-list__department col-md-3" data-translatable>
+                                                Department // القسم
                                             </th>
-                                            <th class="table__header-column ticket-list__department col-md-1">
-                                                Status
+                                            <th class="table__header-column ticket-list__department col-md-1" data-translatable>
+                                                Status // الحالة
                                             </th>
-                                            <th class="table__header-column ticket-list__date col-md-2">
-                                                Date
+                                            <th class="table__header-column ticket-list__date col-md-2" data-translatable>
+                                                Date // التاريخ
                                             </th>
                                         </tr>
                                     </thead>
@@ -117,12 +119,13 @@
                         <div>
                             <div class="create-ticket-form">
                                 <div class="header">
-                                    <h2 class="header__title">Create Ticket</h2>
-                                    <div class="header__description">This is a form for creating
+                                    <h2 class="header__title" data-translatable>Create Ticket // إنشاء </h2>
+                                    <div class="header__description" data-translatable>This is a form for creating
                                         tickets. Fill the form and send us your
                                         issues/doubts/suggestions. Our support system will answer it
                                         as
                                         soon as possible.
+                                        //
                                     </div>
                                 </div>
                                 <form class="form" action="/productSupport/Ticket/create" method="post">
@@ -141,8 +144,8 @@
                                         </span>
                                     </label>
                                     <label class="form-field">
-                                        <span class="form-field__label">
-                                            Title of the Problem
+                                        <span class="form-field__label" data-translatable>
+                                            Title of the Problem // عنوان المشكلة
                                         </span>
                                         <span class="input input_large">
                                             <input type="text" name="title" value="" aria-required="true"
@@ -152,8 +155,8 @@
                                     <div class="row">
                                         <label class="form-field form-field_select col-md-5">
                                             <input type="checkbox" id="buttonDeprtDropDown">
-                                            <span class="form-field__label" for="button">
-                                                Department
+                                            <span class="form-field__label" for="button" data-translatable>
+                                                Department // القسم
                                             </span>
                                             <div class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
 
@@ -167,8 +170,8 @@
                                         </label>
                                         <label class="form-field form-field_select col-md-5">
                                             <input type="checkbox" id="buttonProdDropDown">
-                                            <span class="form-field__label">
-                                                Product
+                                            <span class="form-field__label" data-translatable>
+                                                Product // المنتج
                                             </span>
                                             <div
                                                 class="drop-down drop-down_closed drop-down_medium language-selector __ProdDropDown">
@@ -184,14 +187,14 @@
                                         </label>
                                     </div>
                                     <div class="form-field">
-                                        <span class="form-field__label">
-                                            Problem Description
+                                        <span class="form-field__label" data-translatable>
+                                            Problem Description // وصف المشكلة
                                         </span>
                                         <div class="text-editor">
                                             <div class="quill text-editor__editor">
 
-                                                <textarea id="editor" name="content">
-                                                                            Describe Here!!
+                                                <textarea id="editor" name="content" data-translatable>
+                                                                            Describe Here!! // أوصف هنا
                                                                         </textarea>
 
                                             </div>
@@ -202,8 +205,8 @@
                                         <span class="msg-error error"></span>
                                         {{{reCAPTCHA}}}
                                     </div>
-                                    <button type="submit" class="button button_primary button_large submit-button">
-                                        Create Ticket
+                                    <button type="submit" class="button button_primary button_large submit-button"data-translatable >
+                                        Create Ticket // إنشاء
                                     </button>
                                 </form>
                             </div>
@@ -214,35 +217,36 @@
                     <div class="tab-pane dashboard-list-articles-page" id="ViewArticles">
                         <div>
                             <div class="header">
-                                <h2 class="header__title">Help</h2>
-                                <div class="header__description">This is a list of articles that
+                                <h2 class="header__title" data-translatable>Help // مساعدة</h2>
+                                <div class="header__description" data-translatable>This is a list of articles that
                                     includes information about our services.
+                                    //
                                 </div>
                             </div>
                             <div class="content__help">
                                 <div class="account_logo">
                                     <img src="/images/img/favIcon.png" alt="">
-                                    <span>kalemon school </span>
+                                    <span data-translatable>kalemon school // </span>
                                 </div>
                                 <div class="account_logo">
                                     <img src="/images/img/favIcon.png" alt="">
-                                    <span>kalemon school </span>
+                                    <span data-translatable>kalemon school // </span>
                                 </div>
                                 <div class="account_logo">
                                     <img src="/images/img/favIcon.png" alt="">
-                                    <span>kalemon school </span>
+                                    <span data-translatable>kalemon school // </span>
                                 </div>
                                 <div class="account_logo">
                                     <img src="/images/img/favIcon.png" alt="">
-                                    <span>kalemon school </span>
+                                    <span data-translatable>kalemon school // </span>
                                 </div>
                                 <div class="account_logo">
                                     <img src="/images/img/favIcon.png" alt="">
-                                    <span>kalemon school </span>
+                                    <span data-translatable>kalemon school // </span>
                                 </div>
                                 <div class="account_logo">
                                     <img src="/images/img/favIcon.png" alt="">
-                                    <span>kalemon school </span>
+                                    <span data-translatable>kalemon school // </span>
                                 </div>
                             </div>
                         </div>
@@ -251,47 +255,44 @@
                     <!-- edit-profile-page -->
                     <div class="tab-pane edit-profile-page" id="EditProfile">
                         <div class="header">
-                            <h2 class="header__title">Edit Profile</h2>
-                            <div class="header__description">Here you can edit your user by changing
+                            <h2 class="header__title" data-translatable >Edit Profile // تعديل الملف الشخصي</h2>
+                            <div class="header__description" data-translatable>Here you can edit your user by changing
                                 your email or your password.
+                                //
                             </div>
                         </div>
 
                             <div class="row form_inputs">
                                 <form class="form staff-editor__update-email" method="post"
                                       action="/productSupport/editProfile"><label class="form-field"><span
-                                        class="form-field__label">
-                                            <!-- react-text: 2748 -->Email
+                                        class="form-field__label" data-translatable >Email // البريد الإلكتروني
                                     <!-- /react-text --></span><span class="input input_large"><input
                                         type="text" name="email" value="{{user.email}}"
                                         aria-required="true" class="input__text"></span></label>
                                     <button
-                                            class="button button_primary button_medium submit-button staff-editor__submit-button">
+                                            class="button button_primary button_medium submit-button staff-editor__submit-button" data-translatable>
                                         Update
-                                        email
+                                        email // تعديل
                                     </button>
                                 </form>
                                 <span class="separator staff-editor__separator"></span>
-                                <div class="edit-profile-page__title">Edit password</div>
+                                <div class="edit-profile-page__title" data-translatable >Edit password // تعديل الرقم السري</div>
                                 <form class="form" method="post" action="/productSupport/editProfile"><label class="form-field"><span
-                                        class="form-field__label">
-                                                        <!-- react-text: 992 -->Old password
+                                        class="form-field__label" data-translatable>Old password // الرقم السري السابق
                                     <!-- /react-text --></span><span
                                         class="input input_large"><input type="password"
                                                                          name="oldPassword" aria-required="true"
                                                                          class="input__text"
                                                                          value=""></span></label><label
                                         class="form-field"><span
-                                        class="form-field__label">
-                                                        <!-- react-text: 997 -->New password
+                                        class="form-field__label" data-translatable >New password // الرقم السري الجديد
                                     <!-- /react-text --></span><span
                                         class="input input_large"><input type="password" name="password"
                                                                          aria-required="true"
                                                                          class="input__text"
                                                                          value=""></span></label><label
                                         class="form-field"><span
-                                        class="form-field__label">
-                                                        <!-- react-text: 1002 -->Repeat new password
+                                        class="form-field__label" data-translatable > Repeat new password // تأكيد الرقم السري الجديد
                                     <!-- /react-text --></span><span
                                         class="input input_large"><input type="password"
                                                                          name="repeatNewPassword"
@@ -299,8 +300,8 @@
                                                                          class="input__text"
                                                                          value=""></span></label>
                                     <button
-                                            class="button button_primary button_large submit-button" type="submit">Change
-                                        password
+                                            class="button button_primary button_large submit-button" type="submit" data-translatable>Change
+                                        password // تغيير الرقم السري
                                     </button>
                                 </form>
                             </div>

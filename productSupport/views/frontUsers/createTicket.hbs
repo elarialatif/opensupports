@@ -9,8 +9,8 @@
                         <div>
                             <div class="create-ticket-form">
                                 <div class="header">
-                                    <h2 class="header__title">Create Ticket</h2>
-                                    <div class="header__description">This is a form for creating
+                                    <h2 class="header__title" data-translatable >Create Ticket // إنشاء</h2>
+                                    <div class="header__description" data-translatable >This is a form for creating
                                         tickets. Fill the form and send us your
                                         issues/doubts/suggestions. Our support system will answer it
                                         as
@@ -19,8 +19,8 @@
                                 </div>
                                 <form class="form" action="/productSupport/Ticket/create" method="post">
                                     <label class="form-field">
-                                        <span class="form-field__label">
-                                            Name
+                                        <span class="form-field__label" data-translatable>
+                                            Name // الإسم
                                         </span>
                                         <span class="input input_large">
                                             <input type="text" name="name" value="" aria-required="true"
@@ -28,8 +28,8 @@
                                         </span>
                                     </label>
                                     <label class="form-field">
-                                        <span class="form-field__label">
-                                            Email
+                                        <span class="form-field__label" data-translatable>
+                                            Email // البريد الإلكتروني
                                         </span>
                                         <span class="input input_large">
                                             <input type="email" name="email" value="" aria-required="true"
@@ -37,8 +37,8 @@
                                         </span>
                                     </label>
                                     <label class="form-field">
-                                        <span class="form-field__label">
-                                            Title of the Problem
+                                        <span class="form-field__label" data-translatable>
+                                            Title of the Problem // عنوان المشكلة
                                         </span>
                                         <span class="input input_large">
                                             <input type="text" name="title" value="" aria-required="true"
@@ -48,23 +48,23 @@
                                     <div class="row">
                                         <label class="form-field form-field_select col-md-5">
                                             <input type="checkbox" id="buttonDeprtDropDown">
-                                            <span class="form-field__label" for="button">
-                                                Department
+                                            <span class="form-field__label" for="button" data-translatable>
+                                                Department // القسم
                                             </span>
                                             <div class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
 
 
-                                                <select name="department" id="department">
+                                                <select name="department" id="department" >
                                                     {{#each departments}}
-                                                        <option value="{{this}}">{{this}}</option>
+                                                        <option value="{{this}}"  >{{this}}</option>
                                                     {{/each}}
                                                 </select>
                                             </div>
                                         </label>
                                         <label class="form-field form-field_select col-md-5">
                                             <input type="checkbox" id="buttonProdDropDown">
-                                            <span class="form-field__label">
-                                                Product
+                                            <span class="form-field__label" data-translatable>
+                                                Product // المنتج
                                             </span>
                                             <div
                                                     class="drop-down drop-down_closed drop-down_medium language-selector __ProdDropDown">
@@ -80,14 +80,14 @@
                                         </label>
                                     </div>
                                     <div class="form-field">
-                                        <span class="form-field__label">
-                                            Problem Description
+                                        <span class="form-field__label" data-translatable>
+                                            Problem Description // وصف المشكلة
                                         </span>
                                         <div class="text-editor">
                                             <div class="quill text-editor__editor">
 
-                                                <textarea id="editor" name="content">
-                                                                            Describe Here!!
+                                                <textarea id="editor" name="content" data-translatable>
+                                                                            Describe Here!! // أوصف هنا
                                                                         </textarea>
                                                 <input name="image" type="file" id="upload" class="hidden" onchange="">
 

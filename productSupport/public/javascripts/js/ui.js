@@ -22,8 +22,6 @@ $(document).ready(function () {
     //
 
     $(".lang_change_ar").on("click", function () {
-
-
         $('html').attr('dir', 'rtl');
         i18n.changeLanguage('ar');
     });
