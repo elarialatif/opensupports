@@ -14774,7 +14774,7 @@ body {
 }
 /* ===========================notification===================== */
 #note {
-    position: absolute;
+    position: fixed;
     z-index: 6001;
     top: 1rem;
     bottom: auto;
@@ -14792,7 +14792,7 @@ body {
 }
 .cssanimations.csstransforms #note {
     -webkit-transform: translateY(-150px);
-    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -webkit-animation: slideDown 6s 1.0s 1 ease forwards;
     -moz-transform:    translateY(-50px);
     -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
 }
