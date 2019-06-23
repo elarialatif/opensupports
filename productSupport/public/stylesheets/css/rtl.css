@@ -1,6 +1,13 @@
 html[dir=rtl] * {
     direction: rtl;
 }
+html[dir=rtl] .lang_change_en {
+    display: block;
+        text-align: left;
+}
+html[dir=rtl] .lang_change_ar {
+    display:  none;
+}
 html[dir=rtl] .header__title,
 html[dir=rtl] .header__description {
     text-align: right;
@@ -55,7 +62,89 @@ html[dir=rtl] .menu__icon {
 }
 html[dir=rtl] .table__cell {
     text-align: center;
+    float: none;
 }
 html[dir=rtl] .table__header-column {
     text-align: center;
+    float: none;
 }
+html[dir=rtl] .form-group.Remember {
+    text-align: right;
+}
+html[dir=rtl] .my_account .form-group label:before, 
+.Remember.form-group label:before {
+    float: left;
+}
+html[dir=rtl] .dataTables_length {
+    float: right;
+}
+html[dir=rtl] .form-field__label {
+    text-align: right;
+}
+html[dir=rtl] .staff-editor__submit-button {
+    right: auto;
+    left: 0;
+}
+html[dir=rtl] .edit-profile-page__title {
+    text-align: right;
+}
+html[dir=rtl] .modal-footer {
+    text-align: left;
+}
+/* ============================ Admin ====================================== */
+html[dir=rtl] .menu_horizontal {
+    text-align: right;
+}
+html[dir=rtl] .menu_horizontal-list, .menu_horizontal-list-bright {
+    text-align: right;
+}
+html[dir=rtl] .menu_horizontal-list .menu__list-item, .menu_horizontal-list-bright .menu__list-item {
+    margin-right: 20px;
+    margin-left: auto;
+}
+html[dir=rtl] .view_ticket form {
+    text-align: right;
+}
+html[dir=rtl] .view_ticket .label_value {
+    text-align: right;
+}
+html[dir=rtl] .onoffswitch-label {
+    direction: ltr;
+}
+html[dir=rtl] .onoffswitch-inner:before {
+    padding-right: 6rem;
+}
+html[dir=rtl] .commenterImage {
+    margin-right: 0;
+    margin-left: 5px;
+    float: right;
+}
+html[dir=rtl] .commentList li > div {
+    text-align: right;
+}
+html[dir=rtl] .view_ticket .btns {
+    text-align: left;
+}
+html[dir=rtl] .staff-editor__activity-title {
+    text-align: right;
+}
+html[dir=rtl] .staff-editor__tickets-title {
+    text-align: right;
+}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}
+html[dir=rtl] {}

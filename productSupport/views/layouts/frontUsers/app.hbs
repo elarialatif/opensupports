@@ -2,12 +2,11 @@
 
 <body>
 
-    <!-- DEFINE A 'header' SECTION -->
-    {{>frontUsers/header}}
-    <div id="app">
+   
         <div data-reactroot="" class="application application_user-system">
             <div class="application__content">
                 <div class="main-layout">
+                    {{>frontUsers/header}}
                     {{{body}}}
                     {{>frontUsers/footer}}
                 </div>

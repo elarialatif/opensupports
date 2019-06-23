@@ -1,0 +1,26 @@
+<div class="main-layout-header">
+    <div class="main-layout-header__login-links">
+        Welcome
+        <span class="main-layout-header__user-name">
+            {{#if user}}
+                ,{{user.name}}
+                {{else}}
+                ,Gust
+            {{/if}}
+        </span>
+    </div>
+    <div class="drop-down drop-down_closed language-selector main-layout-header__languages">
+        <div class="drop-down__current-item">
+            <div class="lang_change_ar">
+                <img class="drop-down__current-item-icon flag"
+                    src="/images/img/eg.png" aria-hidden="true">
+                Arabic
+            </div>
+            <div class="lang_change_en">
+                English
+                <img class="drop-down__current-item-icon flag"
+                    src="/images/img/us.png" aria-hidden="true">
+            </div>
+        </div>
+    </div>
+</div>

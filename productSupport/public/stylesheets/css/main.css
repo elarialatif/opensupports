@@ -14765,3 +14765,10 @@ body {
     color: white;
     margin-left: 1rem;
 }
+/* ===========================Lang===================== */
+.lang_change_en {
+    display: none;
+}
+.lang_change_ar {
+    display: block;
+}
