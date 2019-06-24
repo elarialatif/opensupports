@@ -1,0 +1,86 @@
+<div class="main-home-page__portal-wrapper col-md-8">
+  <div class="widget main-home-page-portal" title="">
+    <div class="main-home-page-portal__title">
+      <div class="header">
+        <h2 class="header__title"  >Galactic
+          Senate</h2>
+        <div class="header__description">
+          Welcome to our support center. You can
+          contact us through a tickets system. Your tickets will be answered by
+          our staff.
+        </div>
+      </div>
+    </div>
+
+    <div class="main-home-page-portal__cards">
+      <a routerLink="/userCard">
+        <div class="main-home-page-portal__card col-md-4">
+          <div class="card card_red">
+            <div class="card__icon"><span class="fa fa-ticket fa-5x undefined" aria-hidden="true"></span></div>
+            <div class="card__title"  >Create
+              Tickets</div>
+            <div class="card__description" >
+              Send ticket through our support center
+              and get response of your doubts, suggestions and issues.
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="main-home-page-portal__card col-md-4">
+        <div type="button" class="card card_green" data-toggle="modal" data-target="#previousTickets">
+          <div class="card__icon">
+            <span class="fa fa-hand-o-left fa-5x undefined" aria-hidden="true"></span>
+          </div>
+          <div class="card__title"  >
+            Previous Tickets
+          </div>
+          <div class="card__description" >All
+            your tickets are stored in your
+            account's profile. Keep track of all your tickets you send to our
+            staff team.
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="previousTickets" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+            <form method="post" action="/productSupport/Ticket/all">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h4 class="modal-title"  >
+                    Type Your Email</h4>
+                </div>
+                <div class="modal-body">
+
+                  <div class="form-group">
+                    <label for="email"  >Email
+                      address:</label>
+                    <input type="email" class="input__text" id="email" name="email" value="">
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-success">Save</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal" 
+                    >Close</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="main-home-page-portal__card col-md-4">
+        <div class="card card_blue">
+          <div class="card__icon"><span class="fa fa-question fa-5x undefined" aria-hidden="true"></span></div>
+          <div class="card__title" >Help</div>
+          <div class="card__description" >Take
+            a look to our articles about common
+            issues, guides and documentation.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
