@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsApiService } from './news-api.service';
 import { AppComponent } from './app.component';
@@ -16,7 +17,9 @@ import { FooterComponent } from './footer/footer.component';
 import { MainLayoutContentComponent } from './main-layout-content/main-layout-content.component';
 import { LoginComponent } from './login/login.component';
 import { MainCardsComponent } from './main-cards/main-cards.component';
-import { AppRoutingModule } from './app-routing.module';
+import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     MainLayoutContentComponent,
     LoginComponent,
-    MainCardsComponent
+    MainCardsComponent,
+    SignupComponent,
+    HomeComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +44,24 @@ import { AppRoutingModule } from './app-routing.module';
     MatIconModule, 
     MatSidenavModule, 
     MatListModule,
-   AppRoutingModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'SignUp',
+        component: SignupComponent
+      },
+      {
+        path: 'userDashboard',
+        component: UserDashboardComponent,
+      }
+   ]),
+
     
   ],
+  
   providers: [NewsApiService],
   bootstrap: [AppComponent]
 })
