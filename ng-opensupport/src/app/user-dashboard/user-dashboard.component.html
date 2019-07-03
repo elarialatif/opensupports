@@ -1,3 +1,296 @@
-<p>
-  user-dashboard works!
-</p>
+
+<div class="main-layout--content row">
+  <div class="dashboard">
+      <div class="dashboard__menu col-md-3">
+          <div class="menu menu_secondary undefined">
+              <div class="menu__header"   >Dashboard </div>
+              <ul class="menu__list nav nav-tabs">
+                  <li class="menu__list-item active" tabindex="0">
+                      <a href="#TicketList" data-toggle="tab"  >
+                          <span class="fa fa-file-text-o fa-lg menu__icon" aria-hidden="true"></span>
+                          Ticket List 
+                      </a>
+                  </li>
+                  <li class="menu__list-item" tabindex="0">
+                      <a href="#CreateTicket" data-toggle="tab"   >
+                          <span class="fa fa-plus fa-lg menu__icon" aria-hidden="true"></span>
+                          Create Ticket 
+                      </a>
+                  </li>
+                  <li class="menu__list-item" tabindex="0">
+                      <a href="#ViewArticles" data-toggle="tab"   >
+                          <span class="fa fa-question fa-lg menu__icon" aria-hidden="true"></span>
+                          Help 
+                      </a>
+                  </li>
+                  <li class="menu__list-item" tabindex="0">
+                      <a href="#EditProfile" data-toggle="tab"   >
+                          <span class="fa fa-pencil fa-lg menu__icon" aria-hidden="true"></span>
+                          Edit Profile 
+                      </a>
+                  </li>
+                  <li class="menu__list-item" tabindex="0">
+                      <a href="/productSupport/logout"  >
+                          <span class="fa fa-lock fa-lg menu__icon" aria-hidden="true"></span>
+                          Close session 
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="dashboard__content col-md-9">
+          <div class="widget col-md-12" title="">
+              <div class="tab-content">
+                  <!-- dashboard-ticket-list -->
+                  <div class="tab-pane dashboard-ticket-list active" id="TicketList">
+                      <div class="header">
+                          <h2 class="header__title"   >Ticket List </h2>
+                          <div class="header__description"   >Here you can find a list of all tickets
+                              you
+                              have sent to our support team.
+
+                          </div>
+                      </div>
+                      <div class="ticket-list">
+                          <div class="ticket-list__filters"></div>
+                          <div class="table__wrapper">
+
+                              <table class="table table-responsive" id="tickets">
+                                  <thead>
+                                      <tr class="table__header">
+                                          <th class="table__header-column ticket-list__number col-md-1"  >
+                                              Number 
+                                          </th>
+                                          <th class="table__header-column ticket-list__title col-md-2"  >
+                                              Title 
+                                          </th>
+                                          <th class="table__header-column ticket-list__title col-md-3"  >
+                                              Product 
+                                          </th>
+                                          <th class="table__header-column ticket-list__department col-md-3"  >
+                                              Department 
+                                          </th>
+                                          <th class="table__header-column ticket-list__department col-md-1"  >
+                                              Status 
+                                          </th>
+                                          <th class="table__header-column ticket-list__date col-md-2"  >
+                                              Date 
+                                          </th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr class="table__row">
+                                          <td class="table__cell ticket-list__number col-md-1">
+                                              <a href="#"></a>
+                                          </td>
+                                          <td class="table__cell ticket-list__title col-md-2">
+                                              <div>
+                                              </div>
+                                          </td>
+                                          <td class="table__cell ticket-list__department col-md-3">
+                                          </td>
+                                          <td class="table__cell ticket-list__department col-md-3">
+                                          </td>
+                                          <td class="table__cell ticket-list__number col-md-1">
+                                          </td>
+                                          <td class="table__cell ticket-list__date col-md-2">31
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- #dashboard-ticket-list -->
+                  <!-- dashboard-create-ticket-page -->
+                  <div class="tab-pane dashboard-create-ticket-page" id="CreateTicket">
+                      <div>
+                          <div class="create-ticket-form">
+                              <div class="header">
+                                  <h2 class="header__title" >Create Ticket  </h2>
+                                  <div class="header__description" >This is a form for creating
+                                      tickets. Fill the form and send us your
+                                      issues/doubts/suggestions. Our support system will answer it
+                                      as
+                                      soon as possible.
+                                  </div>
+                              </div>
+                              <form class="form" action="" method="post">
+                                  <label class="form-field">
+
+                                      <span class="input input_large">
+                                          <input type="hidden" name="" value="" aria-required="true"
+                                              class="input__text">
+                                      </span>
+                                  </label>
+                                  <label class="form-field">
+
+                                      <span class="input input_large">
+                                          <input type="hidden" name="" value=""
+                                              aria-required="true" class="input__text">
+                                      </span>
+                                  </label>
+                                  <label class="form-field">
+                                      <span class="form-field__label" >
+                                          Title of the Problem 
+                                      </span>
+                                      <span class="input input_large">
+                                          <input type="text" name="" value="" aria-required="true"
+                                              class="input__text">
+                                      </span>
+                                  </label>
+                                  <div class="row">
+                                      <label class="form-field form-field_select col-md-5">
+                                          <input type="checkbox" id="buttonDeprtDropDown">
+                                          <span class="form-field__label" for="button" >
+                                              Department 
+                                          </span>
+                                          <div class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
+
+
+                                              <select name="department" id="department">
+                                                  <option class="dropOption" value=""></option>
+                                              </select>
+                                          </div>
+                                      </label>
+                                      <label class="form-field form-field_select col-md-5">
+                                          <input type="checkbox" id="buttonProdDropDown">
+                                          <span class="form-field__label" >
+                                              Product 
+                                          </span>
+                                          <div
+                                              class="drop-down drop-down_closed drop-down_medium language-selector __ProdDropDown">
+                                              <select name="product" id="parentCat">
+                                                  <option class="dropOption" value=""></option>
+                                              </select>
+                                              <div class="drop-down__list-container">
+
+                                              </div>
+                                          </div>
+                                      </label>
+                                  </div>
+                                  <div class="form-field">
+                                      <span class="form-field__label" >
+                                          Problem Description
+                                      </span>
+                                      <div class="text-editor">
+                                          <div class="quill text-editor__editor">
+
+                                              <textarea id="editor" name="content" >
+                                                                          Describe Here!! 
+                                                                      </textarea>
+
+                                          </div>
+                                      </div>
+
+                                  </div>
+                                  <div class="capatcha">
+                                      <span class="msg-error error"></span>
+                                  </div>
+                                  <button type="submit" class="button button_primary button_large submit-button" >
+                                      Create Ticket 
+                                  </button>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- #dashboard-create-ticket-page -->
+                  <!-- dashboard-Help-page -->
+                  <div class="tab-pane dashboard-list-articles-page" id="ViewArticles">
+                      <div>
+                          <div class="header">
+                              <h2 class="header__title" >Help </h2>
+                              <div class="header__description">This is a list of articles that
+                                  includes information about our services.
+                              </div>
+                          </div>
+                          <div class="content__help">
+                              <div class="account_logo">
+                                  <img src="/images/img/favIcon.png" alt="">
+                                  <span >kalemon school</span>
+                              </div>
+                              <div class="account_logo">
+                                  <img src="/images/img/favIcon.png" alt="">
+                                  <span >kalemon school  </span>
+                              </div>
+                              <div class="account_logo">
+                                  <img src="/images/img/favIcon.png" alt="">
+                                  <span >kalemon school  </span>
+                              </div>
+                              <div class="account_logo">
+                                  <img src="/images/img/favIcon.png" alt="">
+                                  <span >kalemon school </span>
+                              </div>
+                              <div class="account_logo">
+                                  <img src="/images/img/favIcon.png" alt="">
+                                  <span >kalemon school </span>
+                              </div>
+                              <div class="account_logo">
+                                  <img src="/images/img/favIcon.png" alt="">
+                                  <span >kalemon school  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- #dashboard-Help-page -->
+                  <!-- edit-profile-page -->
+                  <div class="tab-pane edit-profile-page" id="EditProfile">
+                      <div class="header">
+                          <h2 class="header__title"   >Edit Profile </h2>
+                          <div class="header__description"  >Here you can edit your user by changing
+                              your email or your password.
+                              //
+                          </div>
+                      </div>
+
+                          <div class="row form_inputs">
+                              <form class="form staff-editor__update-email" method="post"
+                                    action="/productSupport/editProfile"><label class="form-field"><span
+                                      class="form-field__label"   >Email 
+                                  <!-- /react-text --></span><span class="input input_large"><input
+                                      type="text" name="email" value=""
+                                      aria-required="true" class="input__text"></span></label>
+                                  <button
+                                          class="button button_primary button_medium submit-button staff-editor__submit-button"  >
+                                      Update
+                                      email 
+                                  </button>
+                              </form>
+                              <span class="separator staff-editor__separator"></span>
+                              <div class="edit-profile-page__title"  >Edit password </div>
+                              <form class="form" method="post" action="/productSupport/editProfile"><label class="form-field"><span
+                                      class="form-field__label" >Old password 
+                                  <!-- /react-text --></span><span
+                                      class="input input_large"><input type="password"
+                                                                       name="" aria-required="true"
+                                                                       class="input__text"
+                                                                       value=""></span></label><label
+                                      class="form-field"><span
+                                      class="form-field__label"  >New password
+                                  <!-- /react-text --></span><span
+                                      class="input input_large"><input type="password" name="password"
+                                                                       aria-required="true"
+                                                                       class="input__text"
+                                                                       value=""></span></label><label
+                                      class="form-field"><span
+                                      class="form-field__label"  > Repeat new password
+                                  <!-- /react-text --></span><span
+                                      class="input input_large"><input type="password"
+                                                                       name=""
+                                                                       aria-required="true"
+                                                                       class="input__text"
+                                                                       value=""></span></label>
+                                  <button
+                                          class="button button_primary button_large submit-button" type="submit" >Change
+                                      password 
+                                  </button>
+                              </form>
+                          </div>
+                  </div>
+                  <!-- #edit-profile-page -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

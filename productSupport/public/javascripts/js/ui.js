@@ -37,4 +37,6 @@ $(document).ready(function () {
         note = document.getElementById("note");
         note.style.display = 'none';
     }, false);
+    // 
+    
 });

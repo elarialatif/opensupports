@@ -3,18 +3,18 @@
     <div class="widget main-home-page__widget widget-transition--widget" title="Log in"
       style="transform: rotateY(0deg);">
       <h2 class="widget--title">Log in</h2>
-      <form class="form login-widget__form" action="" method="">
+      <form class="form login-widget__form" action="" method="" [formGroup]="form">
         <div class="login-widget__inputs">
           <label class="form-field login-widget__input">
             <span  class="form-field__label"></span>
             <span class="input input_small">
-              <input type="text" name="" placeholder="email" aria-required="true" class="input__text" value="">
+              <input type="text" name="email" formControlName="email" placeholder="email" aria-required="true" class="input__text" value="">
             </span>
           </label>
           <label class="form-field login-widget__input">
             <span class="form-field__label"></span>
             <span  class="input input_small">
-              <input type="password" name="" placeholder="password" aria-required="true" class="input__text" value="">
+              <input type="password" name="password" formControlName="password" placeholder="password" aria-required="true" class="input__text" value="">
             </span>
           </label>
 
@@ -24,14 +24,14 @@
           </div>
         </div>
         <div class="login-widget__submit-button">
-          <button class="button button_primary button_large submit-button" routerLink='userDashboard'>Log
+          <button class="button button_primary button_large submit-button" (click)="login()" >Log
             in</button>
           <br>
 
           <br>
         </div>
       </form>
-      <button class="button button_link button_large login-widget__forgot-password"  >Forgot
+      <button class="button button_link button_large login-widget__forgot-password"   >Forgot
         your password?</button>
       <a  class="button button_link button_large login-widget__forgot-password" >sign in</a>
     </div>
