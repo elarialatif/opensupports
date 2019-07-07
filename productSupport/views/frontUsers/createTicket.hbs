@@ -1,4 +1,8 @@
-
+<!--<style>-->
+<!--.fr-wrapper div:first-child a{-->
+<!--display: none !important;-->
+<!--}-->
+<!--</style>-->
 <div class="main-layout--content row">
     <div class="dashboard">
         <div class="dashboard__content col-md-12">
@@ -9,8 +13,8 @@
                         <div>
                             <div class="create-ticket-form">
                                 <div class="header">
-                                    <h2 class="header__title" data-translatable >Create Ticket // إنشاء</h2>
-                                    <div class="header__description" data-translatable >This is a form for creating
+                                    <h2 class="header__title" data-translatable>Create Ticket // إنشاء</h2>
+                                    <div class="header__description" data-translatable>This is a form for creating
                                         tickets. Fill the form and send us your
                                         issues/doubts/suggestions. Our support system will answer it
                                         as
@@ -54,9 +58,9 @@
                                             <div class="drop-down drop-down_closed drop-down_medium __DeprtDropDown">
 
 
-                                                <select name="department" id="department" >
+                                                <select name="department" id="department">
                                                     {{#each departments}}
-                                                        <option value="{{this}}"  >{{this}}</option>
+                                                        <option value="{{this}}">{{this}}</option>
                                                     {{/each}}
                                                 </select>
                                             </div>
@@ -70,7 +74,7 @@
                                                     class="drop-down drop-down_closed drop-down_medium language-selector __ProdDropDown">
                                                 <select name="product" id="parentCat">
                                                     {{#each products}}
-                                                        <option value="{{id}}">{{name}}</option>
+                                                        <option value="{{id}}" data-translatable>{{enName}} // {{arName}}</option>
                                                     {{/each}}
                                                 </select>
                                                 <div class="drop-down__list-container">
@@ -86,9 +90,9 @@
                                         <div class="text-editor">
                                             <div class="quill text-editor__editor">
 
-                                                <textarea id="editor" name="content" data-translatable>
-                                                                            Describe Here!! // أوصف هنا
-                                                                        </textarea>
+                                                <div id="editor" name="content">
+
+                                                                        </div>
                                                 <input name="image" type="file" id="upload" class="hidden" onchange="">
 
                                             </div>
@@ -114,47 +118,97 @@
 </div>
 
 
-    <!--<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>-->
-    <!--<script>-->
-        <!--CKEDITOR.replace('editor', {-->
-            <!--filebrowserUploadUrl: '/uploader/upload'-->
-        <!--});-->
-    <!--</script>-->
+<!--<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>-->
+<!--<script>-->
+<!--CKEDITOR.replace('editor', {-->
+<!--filebrowserUploadUrl: '/uploader/upload'-->
+<!--});-->
+<!--</script>-->
 
-<link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+<!--<link href='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/css/froala_editor.pkgd.min.css' rel='stylesheet'-->
+      <!--type='text/css'/>-->
 
-<!-- Include JS file. -->
-<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/js/froala_editor.pkgd.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.0/js/plugins/image.min.js"></script>
+<!--&lt;!&ndash; Include JS file. &ndash;&gt;-->
+<!--<script type='text/javascript'-->
+        <!--src='https://cdn.jsdelivr.net/npm/froala-editor@3.0.0/js/froala_editor.pkgd.min.js'></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/3.0.0/js/plugins/image.min.js"></script>-->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
-    var editor = new FroalaEditor('#editor',{
-        imageUploadURL: '/productSupport/uploadeImageFromEditor',
-        events: {
-        'image.removed': function ($img) {
-            $.ajax({
-                // Request method.
-                method: 'POST',
+    // $(document).ready(function () {
+    //     $("p[data-f-id|='pbf']").remove();
+    //     $(".fr-wrapper a:first").remove();
+    // });
+</script>
+<script>
+    var toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+        ['blockquote', 'code-block'],
 
-                // Request URL.
-                url: '/productSupport/delete_file',
+        // custom button values
+        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+        [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+        [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+        [{ 'direction': 'rtl' }],                         // text direction
 
-                // Request params.
-                data: {
-                    src: $img.attr('src')
-                }
-            })
-                    .done (function (data) {
-                        console.log ('Image was deleted');
-                    })
-                    .fail (function (err) {
-                        console.log ('Image delete problem: ' + JSON.stringify(err));
-                    })
-        }
-    }
-       // imageManagerDeleteURL: '/productSupport/delete_file'
+        [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+        [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+        [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+        [{ 'font': [] }],
+        [{ 'align': [] }]
+        , [ 'image'],
+                                         // remove formatting button
+    ];
+    var quill = new Quill('#editor', {
+        modules: {
+            toolbar: toolbarOptions
+        },
+        theme: 'snow'
     });
-console.log(editor.opts.events)
-  </script>
+    // var editor = new FroalaEditor('#editor', {
+    //     imageUploadURL: '/productSupport/uploadeImageFromEditor',
+    //     key: 'ziRA1E3B9pA5B-11D-11xg1A3ZB5D1D4B-11ED2EG2pdeoC1clIH4wB-22yQD5uF4YE3E3A9==',
+    //     events: {
+    //         'image.removed': function ($img) {
+    //             $.ajax({
+    //                 // Request method.
+    //                 method: 'POST',
+    //
+    //                 // Request URL.
+    //                 url: '/productSupport/delete_file',
+    //
+    //                 // Request params.
+    //                 data: {
+    //                     src: $img.attr('src')
+    //                 }
+    //             })
+    //                     .done(function (data) {
+    //                         console.log('Image was deleted');
+    //                     })
+    //                     .fail(function (err) {
+    //                         console.log('Image delete problem: ' + JSON.stringify(err));
+    //                     })
+    //         },
+    //         'buttons.refresh': function (clickEvent) {
+    //             $("p[data-f-id|='pbf']").remove();
+    //             $(".fr-wrapper a:first").remove();
+    //         },
+    //         'keyup': function (clickEvent) {
+    //             $("p[data-f-id|='pbf']").remove();
+    //             $(".fr-wrapper a:first").remove();
+    //         },
+    //         'focus': function (clickEvent) {
+    //             $(".fr-wrapper a:first").remove();
+    //             $("p[data-f-id|='pbf']").remove();
+    //
+    //         },
+    //
+    //     }
+    //     // imageManagerDeleteURL: '/productSupport/delete_file'
+    // });
+    // console.log(editor.opts.events)
+</script>
 
 
 

@@ -11,6 +11,10 @@ var Ticket = mongoose.model('tickets', {
         type: String,
         require: true,
     },
+    number: {
+        type: String,
+        require: true,
+    },
     title: {
         type: String,
         require: true,

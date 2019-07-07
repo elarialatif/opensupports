@@ -1,9 +1,9 @@
 <div class="main-layout-footer">
     <div class="main-layout-footer__powered">
-      <span  data-translatable>Powered by // تم بواسطة</span>
+        <span data-translatable>Powered by // تم بواسطة</span>
 
         <a class="main-layout-footer__os-link" id="output" href="http://www.opensupports.com/" data-translatable
-           target="_blank">AlmotahidaEducationGroup //  المتحدة اديوكيشن جروب</a><span>
+           target="_blank">AlmotahidaEducationGroup // المتحدة اديوكيشن جروب</a><span>
         </span>
 
     </div>
@@ -24,23 +24,75 @@
 <script src="https://unpkg.com/i18next/i18next.js"></script>
 <script>
     $(document).ready(function () {
-        $('.table').DataTable({
-            "iDisplayLength": 2
-        });
+        if (sessionStorage.getItem("lang")) {
+            $('.table').DataTable({
+                "iDisplayLength": 20,
+                "language": {
+                    "lengthMenu": "عرض _MENU_ صف فى الصفحة",
+                    "zeroRecords": "لايوجد كلمات بهذا الاسم ",
+                    "info": "عرض الصفحة  _PAGE_ من  _PAGES_",
+                    "infoEmpty": "لا توجد صوف ",
+                    "infoFiltered": "( بحت فى  _MAX_ العدد الكلى)",
+                    "decimal":        "",
+                    "emptyTable":     "لا توجد بيانات فى الجدول",
+                    "infoPostFix":    "",
+                    "thousands":      ",",
+                    "loadingRecords": "تحميل...",
+                    "processing":     "جار العمل...",
+                    "search":         "بحث:",
+                    "paginate": {
+                        "first": "الاول",
+                        "last": "الاخير",
+                        "next": "التالى",
+                        "previous": "السابق"
+                    },
+                    "aria": {
+                        "sortAscending":  ": ترتيب تصاعدى",
+                        "sortDescending": ": ترتيب تنازلى"
+                    }
+                }
+            });
+        }
+        else {
+            $('.table').DataTable({
+                "iDisplayLength": 20,
+            });
+        }
+
     });
 </script>
-<div id="note" style="display: none">
-    You smell good
+<div id="appendNote">
+
 </div>
 <script src="/socket.io/socket.io.js"></script>
 
 <script>
     var socket = io();
     socket.on('adminCommentResponse', function (data) {
-        $('#note').css('display', 'block');
-        $('#note').html(data)
+        // $('#appendNote').empty();
+        if (data.sendTo !== '') {
+            if (data.sendTo === '{{user.id}}') {
+                $('#appendNote').append('<div id="note"> ' + data.message + ' </div>');
+            }
+        }
+        else {
+            if ('{{user.role}}' === 'admin') {
+                $('#appendNote').append('<div id="note"> ' + data.message + ' </div>');
+            }
+
+        }
+
+
     });
 
+</script>
+<script>
+    $(document).ready(function () {
+        // PAGE IS FULLY LOADED
+        // FADE OUT YOUR OVERLAYING DIV
+        $('#overlay').fadeOut();
+        $('#app').css('display', 'block');
+    });
 </script>
 <script src="/javascripts/lang.js"></script>
 

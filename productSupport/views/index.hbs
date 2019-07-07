@@ -1,21 +1,24 @@
-
 <div class="main-layout--content row">
     <div class="main-home-page">
 
         <div class="col-md-4 main-home-page__login-widget">
             <div class="widget-transition login-widget__container">
                 <div class="widget main-home-page__widget widget-transition--widget" title="Log in"
-                    style="transform: rotateY(0deg);">
+                     style="transform: rotateY(0deg);">
                     <h2 class="widget--title" data-translatable>Log in // تسجيل الدخول</h2>
                     <form class="form login-widget__form" action="/productSupport/login" method="post">
                         <div class="login-widget__inputs"><label class="form-field login-widget__input"><span
-                                    class="form-field__label"></span><span class="input input_small"><input type="text"
-                                        name="email" placeholder="email" aria-required="true" class="input__text"
-                                        value=""></span></label><label class="form-field login-widget__input"><span
-                                    class="form-field__label"></span><span class="input input_small"><input
-                                        type="password" name="password" placeholder="password" aria-required="true"
-                                        class="input__text" value=""></span></label>
-                            
+                                class="form-field__label"></span><span class="input input_small"><input type="text"
+                                                                                                        name="email"
+                                                                                                        placeholder="email"
+                                                                                                        aria-required="true"
+                                                                                                        class="input__text"
+                                                                                                        value=""></span></label><label
+                                class="form-field login-widget__input"><span
+                                class="form-field__label"></span><span class="input input_small"><input
+                                type="password" name="password" placeholder="password" aria-required="true"
+                                class="input__text" value=""></span></label>
+
                             <div class="form-group Remember">
                                 <input type="checkbox" id="Remember">
                                 <label for="Remember" data-translatable>Remember me // تذكرني</label>
@@ -23,7 +26,7 @@
                         </div>
                         <div class="login-widget__submit-button">
                             <button class="button button_primary button_large submit-button"
-                                onclick="location.href='dashboard.html'" data-translatable>Log
+                                    onclick="location.href='dashboard.html'" data-translatable>Log
                                 in // دخول
                             </button>
                             <br>
@@ -31,12 +34,12 @@
                             <br>
                         </div>
                     </form>
-                    <button class="button button_link button_large login-widget__forgot-password" data-translatable>Forgot
+                    <button class="button button_link button_large login-widget__forgot-password" data-translatable>
+                        Forgot
                         your password? // هل نسيت كلمة السر؟
 
-                    </button> <a href="/productSupport/signIn"
-                        class="button button_link button_large login-widget__forgot-password" data-translatable>sign in // حساب جديد
-                    </a>
+                    </button>
+
                 </div>
             </div>
         </div>
@@ -45,10 +48,13 @@
             <div class="widget main-home-page-portal" title="">
                 <div class="main-home-page-portal__title">
                     <div class="header">
-                        <h2 class="header__title" data-translatable>Galactic Senate</h2>
+                        <h2 class="header__title" data-translatable>Kalemon Support // الدعم الفنى لكلمن</h2>
                         <div class="header__description" data-translatable>Welcome to our support center. You can
-                            contact us through a tickets system. Your tickets will be answered by
-                            our staff.
+                            contact us through a tickets system. Your tickets will be answered by our staff. // مرحبا بك
+                            فى مركز
+                            الدعم الخاص بكلمن .يمكنك الاتصال بنا عبر البطاقات التى تنشائها .بطاقتك سوف يتم الرد عليها عن
+                            طريق فريق العمل الخاص بكلمن
+
                         </div>
                     </div>
                 </div>
@@ -58,25 +64,28 @@
                         <div class="main-home-page-portal__card col-md-4">
                             <div class="card card_red">
                                 <div class="card__icon"><span class="fa fa-ticket fa-5x undefined"
-                                        aria-hidden="true"></span></div>
-                                <div class="card__title" data-translatable>Create Tickets</div>
-                                <div class="card__description" data-translatable >Send ticket through our support center
-                                    and get response of your doubts, suggestions and issues.
+                                                              aria-hidden="true"></span></div>
+                                <div class="card__title" data-translatable>Create Tickets // انشاء بطاقات</div>
+                                <div class="card__description" data-translatable>Send ticket through our support center
+                                    and get response of your doubts, suggestions and issues. // ارسل البطاقات عبر مركز
+                                    الدعم وسوف يتم الرد على اقترحاتك ومشاكلك
                                 </div>
                             </div>
                         </div>
                     </a>
+                    <a href="#">
                     <div class="main-home-page-portal__card col-md-4">
                         <div type="button" class="card card_green" data-toggle="modal" data-target="#previousTickets">
                             <div class="card__icon">
                                 <span class="fa fa-hand-o-left fa-5x undefined" aria-hidden="true"></span>
                             </div>
                             <div class="card__title" data-translatable>
-                                Previous Tickets
+                                Previous Tickets // البطاقات السابقه
                             </div>
                             <div class="card__description" data-translatable>All your tickets are stored in your
                                 account's profile. Keep track of all your tickets you send to our
-                                staff team.
+                                staff team. // كل بطاقتك التى قمت بناشئها سابقا . ابقى على اطلاع كل بطاقتط التى قمت
+                                بانشاءها سابقا
                             </div>
                         </div>
                         <!-- Modal -->
@@ -87,34 +96,38 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title" data-translatable>Type Your Email</h4>
+                                            <h4 class="modal-title" data-translatable>Type Your Email // ادخل البريد
+                                                الاكترونى الخاص بك </h4>
                                         </div>
                                         <div class="modal-body">
 
                                             <div class="form-group">
-                                                <label for="email" data-translatable>Email address:</label>
+                                                <label for="email" data-translatable>Email address: // البريد
+                                                    الاكترونى </label>
                                                 <input type="email" class="input__text" id="email" name="email"
-                                                    value="">
+                                                       value="">
                                             </div>
 
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-success">Save</button>
+                                            <button type="submit" class="btn btn-success" data-translatable>Save //  حفظ</button>
                                             <button type="button" class="btn btn-default"
-                                                data-dismiss="modal" data-translatable>Close</button>
+                                                    data-dismiss="modal" data-translatable>Close // غلق
+                                            </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
+                    </a>
                     <div class="main-home-page-portal__card col-md-4">
                         <div class="card card_blue">
                             <div class="card__icon"><span class="fa fa-question fa-5x undefined"
-                                    aria-hidden="true"></span></div>
-                            <div class="card__title" data-translatable>Help</div>
+                                                          aria-hidden="true"></span></div>
+                            <div class="card__title" data-translatable>Help // مساعده</div>
                             <div class="card__description" data-translatable>Take a look to our articles about common
-                                issues, guides and documentation.
+                                issues, guides and documentation. // القى نظرة عل كل المقالات التى تتحدث عن البطاقات
                             </div>
                         </div>
                     </div>

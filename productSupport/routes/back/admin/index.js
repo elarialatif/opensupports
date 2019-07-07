@@ -10,7 +10,7 @@ var AdminAuth = require('../../../Middlewares/admin')
 var logController = require('../../../controllers/logController');
 var logAction = require('../../../helper/LogActions');
 var Log = require('../../../models/Log');
-var Comment = require('../../../models/Comment')
+var Comment = require('../../../models/Comment');
 /* GET home page. */
 router.all('/*', AdminAuth.AdminAuthicated, (req, res, next) => {
     req.app.locals.layout = 'layouts/backUsers/app';
@@ -27,7 +27,7 @@ router.get('/products/delete/:id', function (req, res, next) {
 
         let LogName = 'تم مسح  المنتج  رقم ';
         let Model = 'Product';
-        logController.addLog(LogName, req.user.name, Model, result.id, logAction.delete);
+        logController.addLog(LogName, req.user.name, Model, result.id, logAction.delete, req.user.email);
         res.redirect('/admin/products');
     })
 });
@@ -35,36 +35,82 @@ router.post('/products/update/:id', function (req, res, next) {
     console.log(req.params.id)
     Product.findByIdAndUpdate({_id: req.params.id}, {
         $set: {
-            name: req.body.name
+            enName: req.body.enname,
+            arName: req.body.arname
         }
     }).then(result => {
         let LogName = 'تم تعديل  المنتج  رقم ';
         let Model = 'Product';
-        logController.addLog(LogName, req.user.name, Model, result.id, logAction.edit);
+        logController.addLog(LogName, req.user.name, Model, result.id, logAction.edit, req.user.email);
         res.redirect('/admin/products');
     })
 });
 router.post('/products/create', function (req, res, next) {
-    product = productController.addProduct(req.body.name, req.user);
+    product = productController.addProduct(req.body.enname, req.body.arname, req.user);
     product.then(result => {
         res.writeHead(200, {'Content-Type': 'application/json'});
         res.end(JSON.stringify(result));
     })
 });
 router.get('/tickets/all', function (req, res, next) {
-    Ticket.find({}).populate('product').then(tickets => {
 
-        res.render('backUsers/admin/tickets', {title: 'Express', tickets: tickets, departments: helpers.departments});
-    });
+    if (req.user.role === 'stuff') {
+        Ticket.find({
+            $and: [{
+                department: {$in: req.user.departments},
+                product: {$in: req.user.products},
+                status: 'open',
+                workedBy: {$exists: false},
+            }]
+        }).populate('product').then(tickets => {
+            Ticket.find({
+                $and: [{
+                    department: {$in: req.user.departments},
+                    product: {$in: req.user.products},
+                    status: 'open',
+                    workedBy: req.user.id,
+                }]
+            }).populate('product').then(MyTickets => {
+                res.render('backUsers/admin/tickets', {
+                    title: 'Express',
+                    tickets: tickets,
+                    MyTickets: MyTickets,
+                    departments: helpers.departments
+                });
+            });
+
+        });
+    }
+    else {
+        Ticket.find({}).populate('product').then(tickets => {
+
+            res.render('backUsers/admin/tickets', {
+                title: 'Express',
+                tickets: tickets,
+                departments: helpers.departments
+            });
+        });
+    }
+
 });
 router.get('/ticket/view/:id', function (req, res, next) {
     Ticket.findById({_id: req.params.id}).populate('product').populate('workedBy').then(ticket => {
         Comment.find({ticket: req.params.id}).populate('user').then(comments => {
-            res.render('backUsers/admin/viewTicket', {
-                ticket: ticket,
-                departments: helpers.departments,
-                comments: comments
-            });
+            User.find({
+                $and: [{
+                    departments: {$in: [ticket.department]},
+                    products: {$in: [ticket.product]},
+                    role: 'stuff',
+                }]
+            }).then(stuff => {
+                res.render('backUsers/admin/viewTicket', {
+                    ticket: ticket,
+                    departments: helpers.departments,
+                    comments: comments,
+                    stuff: stuff
+                });
+            })
+
         })
 
     });

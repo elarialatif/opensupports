@@ -8,7 +8,7 @@
                 <h2 class="header__title" data-translatable >Sign up // انشاء حساب جديد</h2>
                 <div class="header__description" data-translatable>Here you can create an account for our support
                     center.
-                    It is required to send tickets and see documentation. 
+                    It is required to send tickets and see documentation.
                     //
                 </div>
             </div>
@@ -18,7 +18,7 @@
             <form class="form signup-widget__form" method="post" action="/productSupport/signIn">
                 <div class="signup-widget__inputs"><label
                         class="form-field signup-widget__input"><span class="form-field__label" data-translatable>
-                                                <!-- react-text: 455 -->Full name // الإسم بالكامل 
+                                                <!-- react-text: 455 -->Full name // الإسم بالكامل
                     <!-- /react-text --></span><span class="input input_medium"><input
                         type="text" name="name" aria-required="true" class="input__text"
                         value="{{form.name}}"></span></label><label
@@ -29,33 +29,33 @@
                         value="{{form.email}}"></span></label>
                     <label
                             class="form-field signup-widget__input"><span class="form-field__label" data-translatable >
-                                                <!-- react-text: 460 -->Role //
-                        <!-- /react-text --></span><span class="input input_medium"> <select id="role" name="role"  >
+                                                <!-- react-text: 460 -->Role // الصلاحية
+                        <!-- /react-text --></span><span class="input input_medium"> <select id="role" name="role"  class="selectpicker"  data-live-search="true">
                         {{#each roles}}
-                            <option class="input input_medium" value="{{this}}">{{this}}</option>
+                            <option class="input input_medium" value="{{this}}" data-translatable>{{this}} //  {{arRoles this}}</option>
                         {{/each}}
                     </select></span></label>
 
                     <label
                             class="form-field signup-widget__input"><span class="form-field__label" data-translatable>
-                                                <!-- react-text: 460 -->Products // المنتجات
+                                                <!-- react-text: 460 -->Products //  المنتجات
                         <!-- /react-text --></span><span class="input input_medium"> <select id="role" name="products" class="selectpicker" multiple data-live-search="true">
                         {{#each products}}
-                            <option class="input input_medium" value="{{id}}">{{name}}</option>
+                            <option class="input input_medium" value="{{id}}" data-translatable>{{enName}} //  {{arName}}</option>
                         {{/each}}
                     </select></span></label>
 
                     <label
                             class="form-field signup-widget__input"><span class="form-field__label" data-translatable>
-                                                <!-- react-text: 460 -->Departments //الاقسام
+                                                <!-- react-text: 460 -->Departments // الاقسام
                         <!-- /react-text --></span><span class="input input_medium"> <select id="role" name="departments" class="selectpicker" multiple data-live-search="true">
                         {{#each departments}}
-                            <option class="input input_medium" value="{{this}}">{{this}}</option>
+                            <option class="input input_medium" value="{{this}}" data-translatable>{{this}} //  {{arDepartment this }}</option>
                         {{/each}}
                     </select></span>
                     </label><label
                             class="form-field signup-widget__input"><span class="form-field__label" data-translatable>
-                                                <!-- react-text: 465 -->Password //الرقم السري 
+                                                <!-- react-text: 465 -->Password // الرقم السري
                         <!-- /react-text --></span><span class="input input_medium"><input
                             type="password" name="password" aria-required="true"
                             class="input__text" value=""></span></label><label
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <button class="button button_primary button_large submit-button" data-translatable>Sign
-                        up //انشاء
+                        up // انشاء
                     </button>
             </form>
         </div>
@@ -93,6 +93,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-    $('select').selectpicker();
-</script>
+<!--<script>-->
+    <!--$('select').selectpicker();-->
+<!--</script>-->

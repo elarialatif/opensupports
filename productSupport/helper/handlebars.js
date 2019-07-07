@@ -16,4 +16,26 @@ module.exports = {
         if (pram2 === 0) return 0;
         else return (Math.round(pram1 / pram2) * 100);
     },
+    arRole: function (pram1) {
+        switch (pram1) {
+            case 'admin':
+                return 'مدير';
+                break;
+            case 'stuff':
+                return 'فريق العمل';
+                break;
+            case 'user':
+                return 'مستخدم';
+        }
+    },
+    arDepartment: function (pram1) {
+        switch (pram1) {
+            case 'support':
+                return 'الدعم';
+                break;
+            case 'developments':
+                return 'التطوير';
+                break;
+        }
+    },
 };

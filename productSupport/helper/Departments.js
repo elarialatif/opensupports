@@ -1,4 +1,5 @@
 module.exports = {
 
-    departments: {0: 'support', 1: 'developments'}
+    departments: {0: 'support', 1: 'developments'},
+
 };

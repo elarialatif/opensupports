@@ -2,9 +2,10 @@ var Product = require('../models/Product');
 var logController = require('./logController');
 var logAction = require('../helper/LogActions');
 module.exports = {
-    addProduct: function (name, user) {
+    addProduct: function (enName,arName, user) {
         newProduct = new Product();
-        newProduct.name = name;
+        newProduct.enName = enName;
+        newProduct.arName = arName;
         newProduct.user = user.id;
         return newProduct.save().then(result => {
             let LogName = 'تم اضافة المنتج رقم ';

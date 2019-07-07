@@ -16,7 +16,7 @@
                         <table class="table table-responsive dataTable no-footer">
                             <thead>
                             <tr class="table__header" role="row">
-                                <th class="table__header-column" data-translatable>Code // الرقم</th>
+
                                 <th class="table__header-column" data-translatable>Name // الاسم</th>
                                 <th class="table__header-column" data-translatable>CreatedBY // المؤلف</th>
                                 <th class="table__header-column" data-translatable>Date // تاريخ الانشاء</th>
@@ -26,8 +26,8 @@
                             <tbody id="productTableBody">
                             {{#each products}}
                                 <tr class="table__row odd" role="row">
-                                    <td class="table__cell">{{id}}</td>
-                                    <td class="table__cell">{{name}}</td>
+
+                                    <td class="table__cell" data-translatable>{{enName}} // {{arName}}</td>
                                     <td class="table__cell">admin</td>
                                     <td class="table__cell">{{time date 'D MMMM  YYYY'}}</td>
                                     <td class="table__cell">
@@ -50,10 +50,18 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="form-group">
-                                                                <label for="name" data-translatable>Name: // الاسم
+                                                                <label for="name" data-translatable>enName: // الاسم
+                                                                    بلانجليزى
                                                                     : </label>
                                                                 <input type="text" class="input__text" id="name"
-                                                                       name="name" value="{{name}}">
+                                                                       name="enname" value="{{enName}}">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="name" data-translatable>arName: // الاسم
+                                                                    بالعربى
+                                                                    : </label>
+                                                                <input type="text" class="input__text" id="name"
+                                                                       name="arname" value="{{arName}}">
                                                             </div>
 
                                                         </div>
@@ -94,18 +102,28 @@
                                             <button type="button" class="close"
                                                     data-dismiss="modal">&times;
                                             </button>
-                                            <h4 class="modal-title"  data-translatable>Add Product // حفظ </h4>
+                                            <h4 class="modal-title" data-translatable>Add Product // حفظ </h4>
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label for="productName"  data-translatable>Name: // الاسم :</label>
-                                                <input type="text" class="input__text" id="productName"
-                                                       name="name" value="{{productName}}">
+                                                <label for="productName" data-translatable>en-Name: // الاسم بالانجليزى
+                                                    :</label>
+                                                <input type="text" class="input__text" id="productEnName"
+                                                       name="enname" value="{{productName}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="productName" data-translatable>ar-Name: // الاسم بالعربى
+                                                    :</label>
+                                                <input type="text" class="input__text" id="productArName"
+                                                       name="arname" value="{{productName}}">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" id="addProduct" class="btn btn-success"  data-translatable>Save // حفظ </button>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal"  data-translatable>Close // غلق
+                                            <button type="submit" id="addProduct" class="btn btn-success"
+                                                    data-translatable>Save // حفظ
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                                    data-translatable>Close // غلق
                                             </button>
                                         </div>
                                     </div>
@@ -115,18 +133,20 @@
                         </div>
                         <script>
                             $("#addProduct").click(function () {
-                                var name = $('#productName').val();
+                                var arname = $('#productArName').val();
+                                var enname = $('#productEnName').val();
                                 $.ajax({
                                     type: 'post',
                                     url: "/admin/products/create",
                                     data: {
-                                        name: name,
+                                        arname: arname,
+                                        enname: enname,
                                     },
                                     success: function (data) {
                                         $('#productTableBody').append(
                                                 '<tr style="background-color:#09090926">' +
                                                 '<td>' + data._id + '</td>' +
-                                                '<td>' + data.name + '</td>' +
+                                                '<td>' + data.enName + '</td>' +
                                                 '<td>' + 'admin' + '</td>' +
                                                 '<td>' + '{{time data.date  '
                                             D MMMM YYYY '}}' + '</td>' +

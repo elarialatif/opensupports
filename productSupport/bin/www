@@ -22,14 +22,13 @@ app.set('port', port);
 var server = http.createServer(app);
 var io = require('socket.io')(server);
 
-io.on('connection', function (socket) {
+io.on('connect', function (socket) {
     console.log('A user connected');
     socket.on('adminComment', function (data) {
-
             io.sockets.emit('adminCommentResponse', data);
+            console.log('from console', data);
 
 
-        console.log('from console',data);
     });
 
     socket.on('disconnect', function () {
@@ -40,9 +39,6 @@ io.on('connection', function (socket) {
 /**
  * Listen on provided port, on all network interfaces.
  */
-module.exports = {
-    io: io
-}
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

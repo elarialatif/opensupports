@@ -1,7 +1,7 @@
 module.exports = {
-    AdminAuthicated: function (req, res, next) {
+    stuffAuthicated: function (req, res, next) {
         if (req.isAuthenticated()) {
-            if (req.user.role === 'stuff') next();
+            if (req.user.role === 'stuff' || req.user.role === 'admin') next();
             else res.redirect('back')
 
         }

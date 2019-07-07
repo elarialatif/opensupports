@@ -25,7 +25,13 @@ app.engine('hbs', exphbs({
     extname: 'hbs',
     defaultLayout: 'layouts/frontUsers/app',
     layoutsDir: __dirname + '/views/',
-    helpers: {time: helpers.time, ifEquals: helpers.ifEquals,division:helpers.division}
+    helpers: {
+        time: helpers.time,
+        ifEquals: helpers.ifEquals,
+        division: helpers.division,
+        arRoles: helpers.arRole,
+        arDepartment: helpers.arDepartment
+    }
 }));
 app.set('view engine', 'hbs');
 app.use(session({

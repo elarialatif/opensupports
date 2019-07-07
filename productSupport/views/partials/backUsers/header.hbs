@@ -1,6 +1,6 @@
 <div class="main-layout-header">
     <div class="main-layout-header__login-links AdminTabs">
-      <span data-translatable>   Welcome // مرحبا   </span>
+        <span data-translatable>   Welcome // مرحبا   </span>
         <span class="main-layout-header__user-name">
             , {{user.name}}
         </span>
@@ -9,13 +9,13 @@
         <div class="drop-down__current-item">
             <div class="lang_change_ar">
                 <img class="drop-down__current-item-icon flag"
-                    src="/images/img/eg.png" aria-hidden="true">
+                     src="/images/img/eg.png" aria-hidden="true">
                 Arabic
             </div>
             <div class="lang_change_en">
                 English
                 <img class="drop-down__current-item-icon flag"
-                    src="/images/img/us.png" aria-hidden="true">
+                     src="/images/img/us.png" aria-hidden="true">
             </div>
         </div>
     </div>
@@ -28,13 +28,14 @@
                     <div class="admin-panel-staff-widget__user-data">
                         <div class="admin-panel-staff-widget__name">{{user.name}}</div>
                         <div class="admin-panel-staff-widget__actions">
-                            <button class="button button_link button_large admin-panel-staff-widget__action" data-translatable
-                                onclick="location.href='/admin/myAccount'">
+                            <button class="button button_link button_large admin-panel-staff-widget__action"
+                                    data-translatable
+                                    onclick="location.href='/admin/myAccount'">
                                 My Account // حسابى
                             </button>
                             <span class="admin-panel-staff-widget__action-separator">|</span>
                             <button class="button button_link button_large admin-panel-staff-widget__action"
-                                onclick="location.href='/productSupport/logout'" data-translatable>
+                                    onclick="location.href='/productSupport/logout'" data-translatable>
                                 Close session // تسجيل خروج
                             </button>
                         </div>
@@ -48,21 +49,27 @@
                 <div class="admin-panel-menu">
                     <div class="menu menu_horizontal undefined">
                         <ul class="menu__list">
-                            <li id="dash_Tab" class="menu__list-item" onclick="location.href='/admin/adminDashboard'">
+                            <li id="dash_Tab" class="menu__list-item" {{#ifEquals user.role 'admin'}}
+                                onclick="location.href='/admin/adminDashboard'" {{else}}
+                                onclick="location.href='/stuff/dashboard'" {{/ifEquals}}>
                                 <span class="fa fa-tachometer fa-lg menu__icon" aria-hidden="true"></span>
                                 <span class="admin-panel-menu__item-text" data-translatable>Dashboard // الرئيسة</span>
                             </li>
-                            <li id="users_Tab" class="menu__list-item" onclick="location.href='/admin/allUsers'">
-                                <span class="fa fa-user fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text" data-translatable>Users // المستخدمين</span>
-                            </li>
-                            <li id="products_Tab" class="menu__list-item" onclick="location.href='/admin/products'">
-                                <span class="fa fa-th-list fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text"data-translatable>Products // المشاريع</span>
-                            </li>
+                            {{#ifEquals user.role 'admin'}}
+                                <li id="users_Tab" class="menu__list-item" onclick="location.href='/admin/allUsers'">
+                                    <span class="fa fa-user fa-lg menu__icon" aria-hidden="true"></span>
+                                    <span class="admin-panel-menu__item-text"
+                                          data-translatable>Users // المستخدمين</span>
+                                </li>
+                                <li id="products_Tab" class="menu__list-item" onclick="location.href='/admin/products'">
+                                    <span class="fa fa-th-list fa-lg menu__icon" aria-hidden="true"></span>
+                                    <span class="admin-panel-menu__item-text"
+                                          data-translatable>Products // المشاريع</span>
+                                </li>
+                            {{/ifEquals}}
                             <li id="tickets_Tab" class="menu__list-item" onclick="location.href='/admin/tickets/all'">
                                 <span class="fa fa-ticket fa-lg menu__icon" aria-hidden="true"></span>
-                                <span class="admin-panel-menu__item-text" data-translatable >Tickets // البطاقات</span>
+                                <span class="admin-panel-menu__item-text" data-translatable>Tickets // البطاقات</span>
                             </li>
                             {{!-- <li id="settings_Tab" class="menu__list-item" onclick="location.href='/admin/settings'">
                                 <span class="fa fa-cogs fa-lg menu__icon" aria-hidden="true"></span>
@@ -100,7 +107,11 @@
                             <li class="menu__list-item menu__list-item_selected" data-tab="tab-1" data-translatable>
                                 All Tickets // كل البطاقات
                             </li>
-
+                            {{#ifEquals user.role 'stuff'}}
+                                <li class="menu__list-item " data-tab="tab-2" data-translatable>
+                                    MyTickets // بطاقتى
+                                </li>
+                            {{/ifEquals}}
                         </ul>
                         {{!--  --}}
                         <ul class="menu__list 5 tabs">
@@ -120,6 +131,10 @@
             var pathName = window.location.pathname;
             switch (pathName) {
                 case '/admin/adminDashboard':
+                    $('#dash_Tab').addClass('menu__list-item_selected');
+                    $('.menu.menu_horizontal-list .menu__list.1').attr('id', 'dashMenuList');
+                    break;
+                case '/stuff/dashboard':
                     $('#dash_Tab').addClass('menu__list-item_selected');
                     $('.menu.menu_horizontal-list .menu__list.1').attr('id', 'dashMenuList');
                     break;

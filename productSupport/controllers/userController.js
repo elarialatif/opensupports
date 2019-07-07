@@ -71,6 +71,9 @@ module.exports = {
             else if (req.user.role === 'admin') {
                 res.redirect('/admin/adminDashboard')
             }
+            else if (req.user.role === 'stuff') {
+                res.redirect('/stuff/dashboard')
+            }
         })
     }
 }

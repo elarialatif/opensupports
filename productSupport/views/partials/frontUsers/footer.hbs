@@ -23,9 +23,49 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('.table').DataTable({
-            "iDisplayLength": 2
-        });
+        if (sessionStorage.getItem("lang")) {
+            $('.table').DataTable({
+                "iDisplayLength": 20,
+                "language": {
+                    "lengthMenu": "عرض _MENU_ صف فى الصفحة",
+                    "zeroRecords": "لايوجد كلمات بهذا الاسم ",
+                    "info": "عرض الصفحة  _PAGE_ من  _PAGES_",
+                    "infoEmpty": "لا توجد صوف ",
+                    "infoFiltered": "( بحت فى  _MAX_ العدد الكلى)",
+                    "decimal":        "",
+                    "emptyTable":     "لا توجد بيانات فى الجدول",
+                    "infoPostFix":    "",
+                    "thousands":      ",",
+                    "loadingRecords": "تحميل...",
+                    "processing":     "جار العمل...",
+                    "search":         "بحث:",
+                    "paginate": {
+                        "first": "الاول",
+                        "last": "الاخير",
+                        "next": "التالى",
+                        "previous": "السابق"
+                    },
+                    "aria": {
+                        "sortAscending":  ": ترتيب تصاعدى",
+                        "sortDescending": ": ترتيب تنازلى"
+                    }
+                }
+            });
+        }
+        else {
+            $('.table').DataTable({
+                "iDisplayLength": 20,
+            });
+        }
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        // PAGE IS FULLY LOADED
+        // FADE OUT YOUR OVERLAYING DIV
+       $('#overlay').fadeOut();
+        $('#app').css('display','block');
     });
 </script>
 <!-- #Scripts -->

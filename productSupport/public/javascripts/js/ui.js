@@ -1,10 +1,15 @@
 $(document).ready(function () {
+    var lang = 'en';
+    if (sessionStorage.getItem("lang")) {
+        $('html').attr('dir', 'rtl');
+        lang = 'ar';
+    }
     var i18n = domI18n({
         selector: '[data-translatable]',
         separator: ' // ',
         languages: ['en', 'ar'],
         defaultLanguage: 'en',
-        currentLanguage: 'en'
+        currentLanguage: lang
     });
 
     console.log("ready!");
@@ -23,11 +28,15 @@ $(document).ready(function () {
 
     $(".lang_change_ar").on("click", function () {
         $('html').attr('dir', 'rtl');
+        sessionStorage.setItem("lang", "ar");
         i18n.changeLanguage('ar');
+        location.reload();
     });
     $(".lang_change_en").on("click", function () {
+        sessionStorage.removeItem("lang");
         i18n.changeLanguage('en');
         $('html').attr('dir', 'ltr');
+        location.reload();
     });
 
 

@@ -6,6 +6,10 @@ var Log = mongoose.model('logs', {
         type: String,
         require: true,
     },
+    email: {
+        type: String,
+        require: true,
+    },
     model: {
         type: String
     },

@@ -12,8 +12,7 @@ var Notification = mongoose.model('notifications', {
         type: String,
     },
     sendTo: [{
-        type: Schema.Types.ObjectId,
-        ref: 'users'
+        type: String,
     }],
     date: {
         type: Date,

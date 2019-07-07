@@ -1,0 +1,117 @@
+<div class="row AdminDashboard">
+    <div class="col-md-12 admin-panel-layout__content">
+        <div title="" class="widget">
+            {{!-- Statistics --}}
+            <div class="admin-panel-activity tab-content current" id="tab-1">
+                <div class="header">
+                    <h2 class="header__title" data-translatable >Statistics // الأحصايات</h2>
+                </div>
+                <div class="graph">
+                    <ul class="chart">
+                        <li>
+                            <span style="height:{{closedTickets}}%" title="Tickets closed"></span>
+                            <span class="ratio" title="{{closedTickets}}"></span>
+                        </li>
+                        <li>
+                            <span style="height:{{comments}}%" title="Replies"></span>
+                            <span class="ratio" title="{{comments}}"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {{!-- Last Activity --}}
+            <div class="admin-panel-activity tab-content" id="tab-2">
+                <div class="header">
+                    <h2 class="header__title" data-translatable>Last Activity // اخر الأحداث </h2>
+                </div>
+                <div>
+                    <div>
+                        {{!-- assigned tickets --}}
+                        {{#each logs}}
+                            <div class="last_activities">
+                                <div class="activity-row">
+                                    <span id="activityIcon{{id}}" class="fa  fa-lg activity-row__icon"
+                                          aria-hidden="true"> </span>
+                                    <span>
+                                    <a class="activity-row__name-link" href="">
+                                        {{user}}
+                                    </a>
+                                </span>
+                                    <span class="activity-row__message">
+                                        {{name}}
+                                    </span>
+                                    <span>
+                                    <a class="activity-row__ticket-link" href="">{{modelObjectId}}</a>
+                                </span>
+                                    <span class="separator"></span>
+                                </div>
+                            </div>
+                            <script>
+                                var activityIcon = $('#activityIcon{{id}}');
+                                switch ('{{action}}') {
+
+                                    case 'edit':
+                                        activityIcon.addClass('fa-exchange');
+                                        break;
+                                    case 'assign':
+                                        activityIcon.addClass('fa-user');
+                                        break;
+                                    case 'create':
+                                        activityIcon.addClass('fa-ticket');
+                                        break;
+                                    case 'commented':
+                                        activityIcon.addClass('fa-comment-o');
+                                        break;
+                                    case 'reopened':
+                                        activityIcon.addClass('fa-unlock-alt');
+                                        break;
+                                    case 'closed':
+                                        activityIcon.addClass('fa-lock');
+                                        break;
+                                    case 'unassigned':
+                                        activityIcon.addClass('fa-user-times ');
+                                        break;
+                                    case 'delete':
+                                        activityIcon.addClass('fa-trash');
+                                        break;
+                                    default:
+                                        activityIcon.addClass('fa-exclamation');
+                                }
+
+
+                            </script>
+                        {{/each}}
+                    </div>
+                    <button id="loadMore" class="button button_secondary button_large submit-button" data-translatable>Load More // تحميل المزيد </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{!-- Load More --}}
+<script>
+    $(function () {
+        "use strict";
+        $('div.last_activities').slice(0, 6).show();
+        $('#loadMore').on('click', function (e) {
+            e.preventDefault();
+            $('div.last_activities:hidden').slice(0, 8).slideDown();
+            if ($('div.last_activities:hidden').length === 0) {
+                $('#loadMore').replaceWith(
+                        "<button onclick='goToTop();' id='top' class='button  button_large btn-warning '><span>No More</span>Go To Top </button>"
+                );
+            }
+        });
+
+
+    });
+
+    function goToTop() {
+        window.scrollTo(0, 0);
+    }
+
+</script>
+
+{{!-- #Load More --}}

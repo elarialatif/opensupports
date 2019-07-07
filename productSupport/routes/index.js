@@ -27,17 +27,22 @@ router.post('/addComment', auth.userAuthicated, function (req, res, next) {
 
                     Notification.addNotifction(`<a href="/admin/ticket/view/${req.body.ticket_id}">${req.body.ticket_id}تمت اضافة رد على المشكلة رقم  #</a> `, req.user.id, ticket.workedBy, 'adminComment');
                     sendTo = ticket.workedBy;
+                    res.send({
+                        comment: comment,
+                        message: `<a href="/admin/ticket/view/${req.body.ticket_id}">${req.body.ticket_id}تمت اضافة رد على المشكلة رقم  #</a> `,
+                        sendTo: sendTo,
+                    });
                 })
             } else {
                 Notification.addNotifction(`<a href="/admin/ticket/view/${req.body.ticket_id}">${req.body.ticket_id}تمت اضافة رد على المشكلة رقم  #</a> `, req.user.id, '', 'userCommit');
-
+                res.send({
+                    comment: comment,
+                    message: `<a href="/admin/ticket/view/${req.body.ticket_id}">${req.body.ticket_id}تمت اضافة رد على المشكلة رقم  #</a> `,
+                    sendTo: sendTo,
+                });
             }
 
-            res.send({
-                comment: comment,
-                message: `<a href="/admin/ticket/view/${req.body.ticket_id}">${req.body.ticket_id}تمت اضافة رد على المشكلة رقم  #</a> `,
-                sendTo:sendTo,
-            });
+
         })
 
     }).catch(err => {

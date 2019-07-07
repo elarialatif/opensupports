@@ -86,6 +86,7 @@ router.post('/Ticket/update/:id', function (req, res, next) {
     }
     else {
         let status = 'closed';
+
         if (req.body.status) {
             status = req.body.status;
         }
@@ -93,8 +94,13 @@ router.post('/Ticket/update/:id', function (req, res, next) {
         val = {
             status: status,
             department: req.body.department,
+
+        };
+        if (req.body.workedBy) {
+            val.workedBy = req.body.workedBy;
         }
     }
+    console.log(val)
     Ticket.findByIdAndUpdate({_id: req.params.id}, {
         $set:
         val
@@ -102,7 +108,7 @@ router.post('/Ticket/update/:id', function (req, res, next) {
     }).then(result => {
         let LogName = 'تم تعديل  المشكلة  رقم ';
         let Model = 'Ticket';
-        logController.addLog(LogName, req.user.name, Model, result.id, logAction.edit);
+        logController.addLog(LogName, req.user.name, Model, result.id, logAction.edit, req.user.email);
         res.redirect('back');
     })
 });
@@ -111,7 +117,7 @@ router.get('/Ticket/delete/:id', function (req, res, next) {
     Ticket.findByIdAndDelete({_id: req.params.id}).then(result => {
         let LogName = 'تم مسح  المشكلة  رقم ';
         let Model = 'Ticket';
-        logController.addLog(LogName, req.user.name, Model, result.id, logAction.delete);
+        logController.addLog(LogName, req.user.name, Model, result.id, logAction.delete, req.user.email);
         if (req.user.role === 'admin') {
             res.redirect('/admin/tickets/all');
         }
@@ -228,7 +234,7 @@ router.post('/delete_file', function (req, res, next) {
         return res.end();
     });
 });
-router.post('/editProfile',function (req, res, next) {
+router.post('/editProfile', function (req, res, next) {
     User.findOne({email: req.user.email}).then(user => {
 
         if (req.files) {
@@ -244,11 +250,11 @@ router.post('/editProfile',function (req, res, next) {
             user.img = fileName;
             res.redirect('back')
         }
-        if (req.body.email) {
+       else if (req.body.email) {
             user.email = req.body.newEmail;
         }
 
-        if(req.body.password) {
+       else  if (req.body.password) {
             if (passwordHash.verify(req.body.oldPassword, user.password) && req.body.password === req.body.repeatNewPassword) {
                 user.password = passwordHash.generate(req.body.password);
             }
@@ -258,7 +264,7 @@ router.post('/editProfile',function (req, res, next) {
 
         }
         user.save().then(done => {
-            res.redirect('/productSupport/logout');
+            res.redirect('back');
         });
 
     }).catch(err => {
